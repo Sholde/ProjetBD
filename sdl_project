@@ -1,0 +1,77 @@
+CREATE TABLE Clients(
+    nom VARCHAR(30) NOT NULL,
+    prenom VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    type_de_reduction VARCHAR(30) NOT NULL,
+    numero_client INT(4),
+    PRIMARY KEY(numero_client)
+);
+CREATE TABLE Film(
+    numero_film INT(3) NOT NULL,
+    nom VARCHAR(30) NOT NULL,
+    genre VARCHAR(30) NOT NULL,
+    duree INT(3) NOT NULL,
+    origine VARCHAR(30) NOT NULL,
+    PRIMARY KEY(numero_film)
+);
+CREATE TABLE Cinema(
+    nom VARCHAR(30) NOT NULL,
+    PRIMARY KEY(nom)
+);
+CREATE TABLE Salle(
+    numero_salle INT(3) NOT NULL,
+    nombre_de_place INT(3) NOT NULL,
+    nom_du_cinema VARCHAR(30) NOT NULL,
+    PRIMARY KEY(numero_salle)
+);
+CREATE TABLE Veut_voir(
+    numero_client INT(3) NOT NULL,
+    numero_film INT(3) NOT NULL,
+    prix INT(3) NOT NULL,
+    FOREIGN KEY(numero_client) REFERENCES Clients(numero_client),
+    FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
+);
+CREATE TABLE Note(
+    numero_client INT(3) NOT NULL,
+    numero_film INT(3) NOT NULL,
+    note INT(3) NOT NULL,
+    FOREIGN KEY(numero_client) REFERENCES Clients(numero_client),
+    FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
+);
+CREATE TABLE Suit(
+    numero_film_precedent INT(3),
+    numero_film_suivant INT(3),
+    FOREIGN KEY(numero_film_precedent) REFERENCES Film(numero_film),
+    FOREIGN KEY(numero_film_suivant) REFERENCES Film(numero_film)
+);
+CREATE TABLE Se_joue_dans(
+    DATE INT(3),
+    heure INT(3),
+    VERSION VARCHAR(30) NOT NULL,
+    numero_film INT(3) NOT NULL,
+    salle INT(3) NOT NULL,
+    FOREIGN KEY(numero_film) REFERENCES Film(numero_film),
+    FOREIGN KEY(salle) REFERENCES Salle(numero_salle)
+);
+CREATE TABLE Personne(
+    numero_personne INT(3) NOT NULL,
+    nom VARCHAR(30),
+    prenom VARCHAR(30),
+    pseudo VARCHAR(30),
+    age INT(3),
+    role VARCHAR(30) NOT NULL,
+    PRIMARY KEY(numero_personne)
+);
+CREATE TABLE Participe_au_film(
+    numero_personne INT(3) NOT NULL,
+    numero_film INT(3) NOT NULL,
+    FOREIGN KEY(numero_personne) REFERENCES Personne(numero_personne),
+    FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
+);
+CREATE TABLE Se_trouve(
+    ville VARCHAR(30) NOT NULL,
+    numero_salle INT(3) NOT NULL,
+    nom VARCHAR(30) NOT NULL,
+    FOREIGN KEY(numero_salle) REFERENCES Salle(numero_salle),
+    FOREIGN KEY(nom) REFERENCES Cinema(nom)
+);
