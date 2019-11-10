@@ -1,0 +1,82 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url(../data/matrix.jpeg);
+}
+
+.menu-bar {
+	background: #3386ff;
+	text-align: center;
+}
+
+.menu-bar ul {
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+
+.menu-bar ul li {
+	width: 120px;
+	margin: 8px;
+	padding:  8px;
+}
+
+.menu-bar ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.active, .menu-bar ul li:hover {
+	background: #33beff;
+	border-radius: 3px;
+}
+
+.menu-bar .fa {
+	margin-right: 8px;
+}
+
+
+.search-box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2f3640;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+}
+
+.search-box:hover > .search-txt{
+	width: 240px;
+	padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+	background: #3386ff;
+}
+
+.search-btn{
+	color: white;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+}
+
+.search-txt{
+	border: none;
+	background: none;
+	outline: none;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	width: 0px;
+}
