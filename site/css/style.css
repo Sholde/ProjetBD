@@ -5,7 +5,7 @@ body {
 }
 
 .menu-bar {
-	background: #3386ff;
+	background: linear-gradient(to top, black, 20%, #3386ff);
 	text-align: center;
 }
 
@@ -27,13 +27,31 @@ body {
 }
 
 .active, .menu-bar ul li:hover {
-	background: #33beff;
+	background: linear-gradient(to top, black, 20%, #33beff);
 	border-radius: 3px;
 }
 
 .menu-bar .fa {
 	margin-right: 8px;
 }
+
+
+.hover-cinema {
+	display: none;
+}
+
+.cinema:hover, .hover-cinema {
+	display: block;
+}
+
+.cinema:hover, .hover-cinema li{
+	float: none;
+}
+
+.hover-cinema {
+	position: absolute;
+}
+
 
 
 .search-box{
