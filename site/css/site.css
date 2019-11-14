@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	color: #eee;
 	font-family: arial, sans-serif;
@@ -17,12 +21,12 @@ a {
 }
 
 .wrapper {
-	margin: 0 auto;
-	width: 1000px;
+	margin-left: 10%;
 }
 
 header {
 	border-bottom: 1px solid #eee;
+	width: 100%;
 }
 
 header li {
@@ -58,4 +62,24 @@ header li:hover .sub-cinema {
 .sub-cinema li:hover a {
 	background-color: #fff;
 	color: #ff1426;
+}
+
+#contenu {
+	position: relative;
+}
+
+footer {
+	color: white;
+	background: black;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0px;
+}
+
+footer p {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
