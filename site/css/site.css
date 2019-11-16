@@ -12,7 +12,9 @@ body {
 	color: #eee;
 	font-family: arial, sans-serif;
 	font-size: 16px;
-	line-height: 22px;
+/*
+	line-height: 22px; -> à mettre autre part (dans section && header?)_ crée des bugs d'affichage avec mon footer
+*/
 }
 
 a {
@@ -68,18 +70,54 @@ header li:hover .sub-cinema {
 	position: relative;
 }
 
+/* Bas de page */
+
 footer {
-	color: white;
-	background: black;
-	width: 100%;
-	height: 30px;
-	position: relative;
-	bottom: 0px;
+	position:relative;
+	bottom:0px;
+	font-size: 12px;
+	font-family: Verdana, sans-serif;
+	background: #1C2129;
 }
 
-footer p {
-	display: flex;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
+.foot_img,img {
+	margin-top:15px;
+	margin-left:75px;
+}
+
+.foot_text {
+	margin-top:10px;
+	margin-bottom:40px;	
+	margin-left:75px;
+}
+
+.foot_text, table{
+	width: 94%;
+	text-align: left;	
+			
+}
+
+.foot_text,th {
+	padding-bottom:10px;
+	color:#FFFFFF;
+}
+
+.foot_text, td {
+	padding-bottom:1px;		
+	color:grey; 
+}
+
+.foot_hr, hr{
+  height: 1px;
+  margin-left: 75px;
+  margin-right: 75px;
+  background-color:#2C3138;
+  border: 0;
+}
+
+.droits {
+	margin-top: 10px;
+	height: 30px; 
+	text-align: center;
+	color: #BBBDBF;	 
 }
