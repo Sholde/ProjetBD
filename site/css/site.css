@@ -86,25 +86,33 @@ footer {
 }
 
 .foot_text {
-	margin-top:10px;
+
+	margin-top:25px;
 	margin-bottom:40px;	
 	margin-left:75px;
+	margin-right:75px;
 }
 
 .foot_text, table{
-	width: 94%;
+	width: 90%;
 	text-align: left;	
 			
 }
 
 .foot_text,th {
-	padding-bottom:10px;
+	padding-bottom:4px;
 	color:#FFFFFF;
 }
 
+.foot_text,td, a, a:visited {
+	color:grey; 
+}
+
+.foot_text,td, a:hover, a:focus, a:active {
+	color:#FFFD;
+}
 .foot_text, td {
 	padding-bottom:1px;		
-	color:grey; 
 }
 
 .foot_hr, hr{
