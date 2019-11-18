@@ -60,27 +60,27 @@ CREATE TABLE Se_joue_dans(
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film),
     FOREIGN KEY(num_salle) REFERENCES Salle(numero_salle)
 );
-
-///////// reste ca a faire
 CREATE TABLE Personne(
-    numero_personne INT(3) NOT NULL,
-    nom VARCHAR(30),
-    prenom VARCHAR(30),
-    pseudo VARCHAR(30),
-    age INT(3),
+    numero_personne INT,
+    nom VARCHAR(30) NOT NULL,
+    prenom VARCHAR(30) NOT NULL,
+    pseudo VARCHAR(30) NOT NULL,
+    age INT NOT NULL,
     role VARCHAR(30) NOT NULL,
     PRIMARY KEY(numero_personne)
 );
 CREATE TABLE Participe_au_film(
-    numero_personne INT(3) NOT NULL,
-    numero_film INT(3) NOT NULL,
+    numero_personne INT,
+    numero_film INT,
+    primary key (numero_personne, numero_film),
     FOREIGN KEY(numero_personne) REFERENCES Personne(numero_personne),
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
 );
 CREATE TABLE Se_trouve(
     ville VARCHAR(30) NOT NULL,
-    numero_salle INT(3) NOT NULL,
-    nom VARCHAR(30) NOT NULL,
+    numero_salle INT,
+    nom_cinema VARCHAR(30),
+    primary key (numero_salle, nom_cinema),
     FOREIGN KEY(numero_salle) REFERENCES Salle(numero_salle),
-    FOREIGN KEY(nom) REFERENCES Cinema(nom)
+    FOREIGN KEY(nom_cinema) REFERENCES Cinema(nom)
 );
