@@ -45,21 +45,21 @@ header li:hover a {
 	color: white;
 }
 
-header li:hover .sub-cinema {
+header li:hover .sub-wrapper {
 	display: block;
 }
 
-.sub-cinema {
+.sub-wrapper {
 	display: none;
 	position: absolute;
 	background-color: #ff1426;
 }
 
-.sub-cinema li a {
-	width: 120px;
+.sub-wrapper li a {
+	width: 200px;
 }
 
-.sub-cinema li:hover a {
+.sub-wrapper li:hover a {
 	background-color: #fff;
 	color: #ff1426;
 }
