@@ -84,3 +84,25 @@ CREATE TABLE Se_trouve(
     FOREIGN KEY(numero_salle) REFERENCES Salle(numero_salle),
     FOREIGN KEY(nom_cinema) REFERENCES Cinema(nom)
 );
+
+// Vue
+create view film_francais
+from film f, se_joue_dans j
+where f.numero_film = j.numero_film
+and j.version like "vf";
+
+create view film_vo
+from film f, se_joue_dans j
+where f.numero_film = j.numero_film
+and j.version like "vo";
+
+create view personne_majeur
+from personne p
+where p.age >= 18;
+
+create view client_avec_reduction
+from clients c
+where c.type_reduction <> "none";
+
+// database
+create database Projet;
