@@ -106,3 +106,5 @@ where c.type_reduction <> "none";
 
 // database
 create database Projet;
+
+create user 'Bob'@'localhost' 
