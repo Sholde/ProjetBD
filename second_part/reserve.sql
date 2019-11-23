@@ -4,7 +4,7 @@ CREATE TABLE Clients(
     prenom VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(30) NOT NULL,
-    type_de_reduction VARCHAR(30) NOT NULL,
+    type_de_reduction bool NOT NULL,
     PRIMARY KEY(numero_client)
 );
 CREATE TABLE Film(
@@ -24,6 +24,7 @@ CREATE TABLE Salle(
     numero_salle INT,
     nom_du_cinema VARCHAR(30),
     nombre_de_place INT(3) NOT NULL,
+    ville VARCHAR(30) NOT NULL,
     PRIMARY KEY(numero_salle, nom_du_cinema)
     foreign key (nom_du_cinema) references Cinema(nom)
 );
@@ -76,16 +77,8 @@ CREATE TABLE Participe_au_film(
     FOREIGN KEY(numero_personne) REFERENCES Personne(numero_personne),
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
 );
-CREATE TABLE Se_trouve(
-    ville VARCHAR(30) NOT NULL,
-    numero_salle INT,
-    nom_cinema VARCHAR(30),
-    primary key (numero_salle, nom_cinema),
-    FOREIGN KEY(numero_salle) REFERENCES Salle(numero_salle),
-    FOREIGN KEY(nom_cinema) REFERENCES Cinema(nom)
-);
 
-// Vue
+/* Vue */
 create view film_francais
 from film f, se_joue_dans j
 where f.numero_film = j.numero_film
@@ -102,9 +95,56 @@ where p.age >= 18;
 
 create view client_avec_reduction
 from clients c
-where c.type_reduction <> "none";
+where c.type_de_reduction <> "none";
 
-// database
+/* Database */
 create database Projet;
 
-create user 'Bob'@'localhost' 
+create user 'Client'@'localhost' identified by 'client';
+create user 'Admin'@'localhost' identified by 'admin';
+create user 'Anonyme'@'localhost' identified by 'anonyme';
+
+grant all on Projet.* to 'Admin'@'localhost';
+
+grant select on Projet.* to 'Anonyme'@'localhost';
+revoke select from Projet.Clients from 'Anonyme'@'localhost';
+revoke select from Projet.VeutVoir from 'Anonyme'@'localhost';
+revoke select from Projet.Note from 'Anonyme'@'localhost';
+
+grant select on Projet.* to 'Client'@'localhost';
+grant all from Projet.Clients from 'Client'@'localhost';
+grant all from Projet.VeutVoir from 'Client'@'localhost';
+grant all from Projet.Note from 'Client'@'localhost';
+
+/* Requête d'insertion */
+
+/* Clients */
+insert into Clients values (1, "Marley", "Bob", "bob.marley@email.com", "bob", "none");
+insert into Clients values (2, "Queen", "Alice", "alice.queen@email.com", "alice", "have");
+
+/* Cinema */
+insert into Cinema values ("Pathé Boulogne", "Pathé Gaumont");
+insert into Cinema values ("Ciné-Sel", "Sel");
+insert into Cinema values ("UGC Versailles", "UGC");
+insert into Cinema values ("UGC Vélizy", "UGC");
+
+/* Salle */
+insert into Cinema values (1, "Pathé Boulogne", 90, "Boulogne");
+insert into Cinema values (2, "Pathé Boulogne", 90, "Boulogne");
+insert into Cinema values (3, "Pathé Boulogne", 90, "Boulogne");
+insert into Cinema values (1, "Ciné-Sel", 60, "Sèvre");
+insert into Cinema values (2, "Ciné-Sel", 60, "Sèvre");
+insert into Cinema values (3, "Ciné-Sel", 60, "Sèvre");
+insert into Cinema values (1, "UGC Versailles", 120, "Versailles");
+insert into Cinema values (2, "UGC Versailles", 90, "Versailles");
+insert into Cinema values (1, "UGC Vélizy", 120, "Vélizy");
+insert into Cinema values (2, "UGC Vélizy", 120, "Vélizy");
+insert into Cinema values (3, "UGC Vélizy", 120, "Vélizy");
+insert into Cinema values (4, "UGC Vélizy", 90, "Vélizy");
+
+/* Film */
+insert into Film values (1, "Matrix", "SF", 120, "USA");
+insert into Film values (2, "Matrix 2", "SF", 120, "USA");
+insert into Film values (3, "Matrix 3", "SF", 120, "USA");
+insert into Film values (4, "The social network", "Biographie", 120, "USA");
+insert into Film values (5, "V for Vendetta", "Action", 120, "USA");
