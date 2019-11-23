@@ -121,6 +121,9 @@ grant all from Projet.Note from 'Client'@'localhost';
 /* Clients */
 insert into Clients values (1, "Marley", "Bob", "bob.marley@email.com", "bob", "none");
 insert into Clients values (2, "Queen", "Alice", "alice.queen@email.com", "alice", "have");
+insert into Clients values (3, "Dubreuil", "Clément", "clement.dubreuil@email.com", "clement", "none");
+insert into Clients values (4, "Abral", "Mohamed", "mohamed.abral@email.com", "mohamed", "have");
+insert into Clients values (5, "Dupont", "Clément", "clement.dupont@email.com", "clement", "none");
 
 /* Cinema */
 insert into Cinema values ("Pathé Boulogne", "Pathé Gaumont");
