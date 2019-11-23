@@ -147,7 +147,12 @@ insert into Cinema values (4, "UGC Vélizy", 90, "Vélizy");
 
 /* Film */
 insert into Film values (1, "Matrix", "SF", 120, "USA");
-insert into Film values (2, "Matrix 2", "SF", 120, "USA");
-insert into Film values (3, "Matrix 3", "SF", 120, "USA");
+insert into Film values (2, "Matrix reloaded", "SF", 120, "USA");
+insert into Film values (3, "Matrix revolution", "SF", 120, "USA");
 insert into Film values (4, "The social network", "Biographie", 120, "USA");
 insert into Film values (5, "V for Vendetta", "Action", 120, "USA");
+insert into Film values (6, "Die hard", "Action", 120, "USA");
+insert into Film values (7, "Toy Story", "Animation", 120, "USA");
+insert into Film values (8, "Toy Story 2", "Animation", 120, "USA");
+insert into Film values (9, "Toy Story 3", "Animation", 120, "USA");
+insert into Film values (10, "Toy Story 4", "Animation", 120, "USA");
