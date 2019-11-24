@@ -1,6 +1,6 @@
 /* Table */
 CREATE TABLE Clients(
-	numero_client INT(4),
+    numero_client INT(4),
     nom VARCHAR(30) NOT NULL,
     prenom VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
@@ -26,14 +26,14 @@ CREATE TABLE Salle(
     nom_du_cinema VARCHAR(30),
     nombre_de_place INT(3) NOT NULL,
     ville VARCHAR(30) NOT NULL,
-    PRIMARY KEY(numero_salle, nom_du_cinema)
-    foreign key (nom_du_cinema) references Cinema(nom)
+    PRIMARY KEY(numero_salle, nom_du_cinema),
+    FOREIGN KEY(nom_du_cinema) REFERENCES Cinema(nom)
 );
 CREATE TABLE Veut_voir(
     numero_client INT,
     numero_film INT,
     prix INT NOT NULL,
-    primary key (numero_client, numero_film),
+    PRIMARY KEY(numero_client, numero_film),
     FOREIGN KEY(numero_client) REFERENCES Clients(numero_client),
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
 );
@@ -41,24 +41,32 @@ CREATE TABLE Note(
     numero_client INT,
     numero_film INT,
     note INT NOT NULL,
-    primary key (numero_client, numero_film),
+    PRIMARY KEY(numero_client, numero_film),
     FOREIGN KEY(numero_client) REFERENCES Clients(numero_client),
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
 );
 CREATE TABLE Suit(
     numero_film_prec INT,
-    numero_film_suivant INT,
-    primary key (numero_film_prec, numero_film_suiv),
+    numero_film_suiv INT,
+    PRIMARY KEY(
+        numero_film_prec,
+        numero_film_suiv
+    ),
     FOREIGN KEY(numero_film_prec) REFERENCES Film(numero_film),
     FOREIGN KEY(numero_film_suiv) REFERENCES Film(numero_film)
 );
 CREATE TABLE Se_joue_dans(
-    date INT,
+    DATE INT,
     heure INT,
-    version VARCHAR(30) NOT NULL,
+    VERSION VARCHAR(30) NOT NULL,
     numero_film INT,
     num_salle INT,
-    primary key (numero_film, num_salle, date, heure),
+    PRIMARY KEY(
+        numero_film,
+        num_salle,
+        DATE,
+        heure
+    ),
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film),
     FOREIGN KEY(num_salle) REFERENCES Salle(numero_salle)
 );
@@ -73,7 +81,7 @@ CREATE TABLE Personne(
 CREATE TABLE Participe_au_film(
     numero_personne INT,
     numero_film INT,
-    primary key (numero_personne, numero_film),
+    PRIMARY KEY(numero_personne, numero_film),
     FOREIGN KEY(numero_personne) REFERENCES Personne(numero_personne),
     FOREIGN KEY(numero_film) REFERENCES Film(numero_film)
 );
