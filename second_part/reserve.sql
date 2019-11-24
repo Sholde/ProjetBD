@@ -181,7 +181,7 @@ insert into Personne values (5, "Moss", "Carrie-Anne", 62, "Actrice");
 
 /* The social Network */
 insert into Personne values (6, "Fincher", "David", 57, "Directeur");
-insert into Personne values (7, "Sorkin", "Aaron", 58, "Ecrivain");
+insert into Personne values (7, "Sorkin", "Aaron", 58, "Scenariste");
 insert into Personne values (8, "Eisenberg", "Jesse", 36, "Acteur");
 insert into Personne values (9, "Garfield", "Andrew", 36, "Acteur");
 insert into Personne values (10, "Timberlake", "Justin", 38, "Acteur");
@@ -192,9 +192,65 @@ insert into Personne values (12, "Weaving", "Hugo", 59, "Acteur");
 insert into Personne values (13, "Portman", "Natalie", 38, "Actrice");
 insert into Personne values (14, "Graves", "Rupert", 56, "Acteur");
 
+/* Die hard */
+insert into Personne values (15, "McTierman", "John", 68, "Directeur");
+insert into Personne values (16, "Willis", "Bruce", 62, "Acteur");
+insert into Personne values (17, "Stuart", "James", 63, "Scenariste");
+insert into Personne values (18, "Rickman", "Alan", 69, "Acteur");
+
 /* Toy Story 1 */
-insert into Personne values (15, "Lasseter", "John", 62, "Directeur");
-insert into Personne values (16, "Docter", "Pete", 51, "Ecrivain");
-insert into Personne values (17, "Hanks", "Tom", 63, "Doubleur");
-insert into Personne values (18, "Allen", "Tim", 66, "Doubleur");
-insert into Personne values (19, "Rickles", "Don", 90, "Doubleur");
+insert into Personne values (19, "Lasseter", "John", 62, "Directeur");
+insert into Personne values (20, "Docter", "Pete", 51, "Scenariste");
+insert into Personne values (21, "Hanks", "Tom", 63, "Doubleur");
+insert into Personne values (22, "Allen", "Tim", 66, "Doubleur");
+insert into Personne values (23, "Rickles", "Don", 90, "Doubleur");
+
+/* Suit */
+insert into Suit values (1, 2);
+insert into Suit values (2, 3);
+insert into Suit values (7, 8);
+insert into Suit values (8, 9);
+insert into Suit values (9, 10);
+
+/* Participe au film */
+insert into Participe_au_film values (1, 1);
+insert into Participe_au_film values (2, 1);
+insert into Participe_au_film values (3, 1);
+insert into Participe_au_film values (4, 1);
+insert into Participe_au_film values (5, 1);
+
+insert into Participe_au_film values (1, 2);
+insert into Participe_au_film values (2, 2);
+insert into Participe_au_film values (3, 2);
+insert into Participe_au_film values (4, 2);
+insert into Participe_au_film values (5, 2);
+
+insert into Participe_au_film values (1, 3);
+insert into Participe_au_film values (2, 3);
+insert into Participe_au_film values (3, 3);
+insert into Participe_au_film values (4, 3);
+insert into Participe_au_film values (5, 3);
+
+insert into Participe_au_film values (6, 4);
+insert into Participe_au_film values (7, 4);
+insert into Participe_au_film values (8, 4);
+insert into Participe_au_film values (9, 4);
+insert into Participe_au_film values (10, 4);
+
+insert into Participe_au_film values (3, 5);
+insert into Participe_au_film values (4, 5);
+insert into Participe_au_film values (11, 5);
+insert into Participe_au_film values (12, 5);
+insert into Participe_au_film values (13, 5);
+insert into Participe_au_film values (14, 5);
+
+insert into Participe_au_film values (15, 6);
+insert into Participe_au_film values (16, 6);
+insert into Participe_au_film values (17, 6);
+insert into Participe_au_film values (18, 6);
+
+insert into Participe_au_film values (19, 7);
+insert into Participe_au_film values (20, 7);
+insert into Participe_au_film values (21, 7);
+insert into Participe_au_film values (22, 7);
+insert into Participe_au_film values (23, 7);
