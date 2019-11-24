@@ -293,8 +293,15 @@ select c.nom
 from Cinema c
 where c.companie like "UGC"
 
-/* Recette pour chaque film */ /* Probleme reduction */
+/* Recette pour chaque film */
 select f.nom, sum(v.prix)
 from Film f, Veut_voir v
 where f.num_film = v.num_film
 group by f.nom
+
+/* nom des film de SF ayant 1000 entré ou plus */
+select f.nom, sum(v.num_client)
+from Film f, Veut_voir v
+where f.num_film = v.num_film
+group by f.nom
+having sum(v.num_client) > 1000
