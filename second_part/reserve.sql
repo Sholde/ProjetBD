@@ -18,7 +18,7 @@ CREATE TABLE Film(
 );
 CREATE TABLE Cinema(
     nom VARCHAR(30),
-    companie VARCHAR(30) NOT NULL UNIQUE,
+    companie VARCHAR(30) NOT NULL,
     PRIMARY KEY(nom)
 );
 CREATE TABLE Salle(
@@ -145,19 +145,19 @@ insert into Cinema values ("UGC Versailles", "UGC");
 insert into Cinema values ("UGC Vélizy", "UGC");
 
 /* Salle */
-insert into Cinema values (1, "Pathé Boulogne", 60, "Boulogne");
-insert into Cinema values (2, "Pathé Boulogne", 60, "Boulogne");
-insert into Cinema values (3, "Pathé Boulogne", 40, "Boulogne");
-insert into Cinema values (4, "Pathé Boulogne", 30, "Boulogne");
-insert into Cinema values (1, "Ciné-Sel", 60, "Sèvre");
-insert into Cinema values (2, "Ciné-Sel", 60, "Sèvre");
-insert into Cinema values (3, "Ciné-Sel", 30, "Sèvre");
-insert into Cinema values (1, "UGC Versailles", 60, "Versailles");
-insert into Cinema values (2, "UGC Versailles", 30, "Versailles");
-insert into Cinema values (1, "UGC Vélizy", 60, "Vélizy");
-insert into Cinema values (2, "UGC Vélizy", 60, "Vélizy");
-insert into Cinema values (3, "UGC Vélizy", 60, "Vélizy");
-insert into Cinema values (4, "UGC Vélizy", 30, "Vélizy");
+insert into Salle values (1, "Pathé Boulogne", 60, "Boulogne");
+insert into Salle values (2, "Pathé Boulogne", 60, "Boulogne");
+insert into Salle values (3, "Pathé Boulogne", 40, "Boulogne");
+insert into Salle values (4, "Pathé Boulogne", 30, "Boulogne");
+insert into Salle values (1, "Ciné-Sel", 60, "Sèvres");
+insert into Salle values (2, "Ciné-Sel", 60, "Sèvres");
+insert into Salle values (3, "Ciné-Sel", 30, "Sèvres");
+insert into Salle values (1, "UGC Versailles", 60, "Versailles");
+insert into Salle values (2, "UGC Versailles", 30, "Versailles");
+insert into Salle values (1, "UGC Vélizy", 60, "Vélizy");
+insert into Salle values (2, "UGC Vélizy", 60, "Vélizy");
+insert into Salle values (3, "UGC Vélizy", 60, "Vélizy");
+insert into Salle values (4, "UGC Vélizy", 30, "Vélizy");
 
 /* Film */
 insert into Film values (1, "The Matrix", "SF", 120, "USA");
@@ -184,17 +184,17 @@ insert into Personne values (6, "Fincher", "David", 57, "Directeur");
 insert into Personne values (7, "Sorkin", "Aaron", 58, "Ecrivain");
 insert into Personne values (8, "Eisenberg", "Jesse", 36, "Acteur");
 insert into Personne values (9, "Garfield", "Andrew", 36, "Acteur");
-insert into Personne values (9, "Timberlake", "Justin", 38, "Acteur");
+insert into Personne values (10, "Timberlake", "Justin", 38, "Acteur");
 
 /* V for Vendetta */
-insert into Personne values (10, "McTeigue", "James", 52, "Directeur");
-insert into Personne values (11, "Weaving", "Hugo", 59, "Acteur");
-insert into Personne values (12, "Portman", "Natalie", 38, "Actrice");
-insert into Personne values (13, "Graves", "Rupert", 56, "Acteur");
+insert into Personne values (11, "McTeigue", "James", 52, "Directeur");
+insert into Personne values (12, "Weaving", "Hugo", 59, "Acteur");
+insert into Personne values (13, "Portman", "Natalie", 38, "Actrice");
+insert into Personne values (14, "Graves", "Rupert", 56, "Acteur");
 
 /* Toy Story 1 */
-insert into Personne values (14, "Lasseter", "John", 62, "Directeur");
-insert into Personne values (15, "Docter", "Pete", 51, "Ecrivain");
-insert into Personne values (16, "Hanks", "Tom", 63, "Doubleur");
-insert into Personne values (17, "Allen", "Tim", 66, "Doubleur");
-insert into Personne values (18, "Rickles", "Don", 90, "Doubleur");
+insert into Personne values (15, "Lasseter", "John", 62, "Directeur");
+insert into Personne values (16, "Docter", "Pete", 51, "Ecrivain");
+insert into Personne values (17, "Hanks", "Tom", 63, "Doubleur");
+insert into Personne values (18, "Allen", "Tim", 66, "Doubleur");
+insert into Personne values (19, "Rickles", "Don", 90, "Doubleur");
