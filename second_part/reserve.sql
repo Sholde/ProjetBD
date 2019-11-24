@@ -39,7 +39,7 @@ CREATE TABLE Veut_voir(
 );
 CREATE TABLE Note(
     num_client INT,
-    numero_film INT,
+    num_film INT,
     note INT NOT NULL,
     PRIMARY KEY(num_client, num_film),
     FOREIGN KEY(num_client) REFERENCES Clients(num_client),
@@ -87,7 +87,7 @@ CREATE TABLE Participe_au_film(
 );
 
 /* Vue */
-create view film_francais
+create view film_vf
 from film f, se_joue_dans j
 where f.num_film = j.num_film
 and j.version like "vf";
@@ -260,3 +260,23 @@ insert into Participe_au_film values (23, 7);
 /* Veut_voir */
 
 /* Note */
+
+/* Requète select */
+
+/* Note Moyenne des film */
+select f.nom, moy(n.note)
+from Film f, Note n
+where f.num_film = n.num_film
+group by f.nom
+
+/* nom, prenom des acteurs / actices jouant dans des film en vf */
+select p.nom, p.prenom
+from Personne p, film_vf vf, Participe_au_film pf
+where p.num_personne = pf.num_personne
+and vf.num_film = pf.num_film
+
+/* nom des film ayant une suite et le nom du film */
+select f_prec.nom, f_suiv.nom
+from Film f_prec, Film f_suiv, Suit s
+where f_prec.num_film = s.num_film_prec
+or f_suiv.num_film = s.num_film_suiv
