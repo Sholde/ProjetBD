@@ -302,6 +302,20 @@ insert into Participe_au_film values (23, 7);
 /* Veut_voir */
 
 /* Note */
+insert into Note values(21,4,4);
+insert into Note values(18,5,5);
+insert into Note values(10,7,4);
+insert into Note values(4,5,1);
+insert into Note values(50,1,5);
+insert into Note values(41,3,4);
+insert into Note values(21,4,3);
+insert into Note values(45,4,2);
+insert into Note values(21,1,3);
+insert into Note values(22,5,4);
+insert into Note values(6,3,5);
+insert into Note values(12,2,2);
+insert into Note values(34,1,3);
+
 
 /* Requète select */
 
