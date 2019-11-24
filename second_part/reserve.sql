@@ -254,3 +254,9 @@ insert into Participe_au_film values (20, 7);
 insert into Participe_au_film values (21, 7);
 insert into Participe_au_film values (22, 7);
 insert into Participe_au_film values (23, 7);
+
+/* Se_joue_dans */
+
+/* Veut_voir */
+
+/* Note */
