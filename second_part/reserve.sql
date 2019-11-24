@@ -56,8 +56,8 @@ CREATE TABLE Suit(
     FOREIGN KEY(num_film_suiv) REFERENCES Film(num_film)
 );
 CREATE TABLE Se_joue_dans(
-    jour INT,
-    heure INT,
+    jour VARCHAR(30),
+    heure VARCHAR(30),
     version VARCHAR(30) NOT NULL,
     num_film INT,
     num_salle INT,
