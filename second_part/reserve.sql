@@ -61,14 +61,16 @@ CREATE TABLE Se_joue_dans(
     version VARCHAR(30) NOT NULL,
     num_film INT,
     num_salle INT,
+    nom_du_cinema VARCHAR(30),
     PRIMARY KEY(
         num_film,
         num_salle,
+        nom_du_cinema,
         jour,
         heure
     ),
     FOREIGN KEY(num_film) REFERENCES Film(num_film),
-    FOREIGN KEY(num_salle) REFERENCES Salle(num_salle)
+    FOREIGN KEY(num_salle, nom_du_cinema) REFERENCES Salle(num_salle, nom_du_cinema)
 );
 CREATE TABLE Personne(
     num_personne INT,
@@ -318,4 +320,4 @@ and n.num_film = 1
 update Se_joue_dans
 set num_salle = 4
 where num_film = 1
-and nom_cinema = "Pathé Boulogne"
+and nom_du_cinema = "Pathé Boulogne"
