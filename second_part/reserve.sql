@@ -5,7 +5,7 @@ CREATE TABLE Clients(
     prenom VARCHAR(30) NOT NULL,
     email VARCHAR(30) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(30) NOT NULL,
-    type_de_reduction VARCHAR(30) NOT NULL,
+    reduction boolean NOT NULL,
     PRIMARY KEY(num_client)
 );
 CREATE TABLE Film(
@@ -56,8 +56,8 @@ CREATE TABLE Suit(
     FOREIGN KEY(num_film_suiv) REFERENCES Film(num_film)
 );
 CREATE TABLE Se_joue_dans(
-    jour VARCHAR(30),
-    heure VARCHAR(30),
+    jour date,
+    heure time,
     version VARCHAR(30) NOT NULL,
     num_film INT,
     num_salle INT,
@@ -105,7 +105,7 @@ where p.age >= 18;
 
 create view client_avec_reduction
 from clients c
-where c.type_de_reduction <> "none";
+where c.reduction <> 0;
 
 /* Database */
 create database Projet;
@@ -129,16 +129,16 @@ grant all from Projet.Note from 'Client'@'localhost';
 /* Requête d'insertion */
 
 /* Clients */
-insert into Clients values (1, "Marley", "Bob", "bob.marley@email.com", "bob", "none");
-insert into Clients values (2, "Queen", "Alice", "alice.queen@email.com", "alice", "have");
-insert into Clients values (3, "Dubreuil", "Clément", "clement.dubreuil@email.com", "clement", "none");
-insert into Clients values (4, "Abral", "Mohamed", "mohamed.abral@email.com", "mohamed", "have");
-insert into Clients values (5, "Dupont", "Clément", "clement.dupont@email.com", "clement", "none");
-insert into Clients values (6, "Zuckerberg", "Mark", "mark.zuckerberg@email.com", "mark", "have");
-insert into Clients values (7, "Dupond", "Charles", "charles.dupond@email.com", "charles", "none");
-insert into Clients values (8, "Daf", "Max", "max.daf@email.com", "max", "none");
-insert into Clients values (9, "Lemond", "Max", "max.lemond@email.com", "max", "none");
-insert into Clients values (10, "Valgrin", "Brad", "brad.valgrin@email.com", "brad", "none");
+insert into Clients values (1, "Marley", "Bob", "bob.marley@email.com", "bob", 0);
+insert into Clients values (2, "Queen", "Alice", "alice.queen@email.com", "alice", 1);
+insert into Clients values (3, "Dubreuil", "Clément", "clement.dubreuil@email.com", "clement", 0);
+insert into Clients values (4, "Abral", "Mohamed", "mohamed.abral@email.com", "mohamed", 1);
+insert into Clients values (5, "Dupont", "Clément", "clement.dupont@email.com", "clement", 0);
+insert into Clients values (6, "Zuckerberg", "Mark", "mark.zuckerberg@email.com", "mark", 1);
+insert into Clients values (7, "Dupond", "Charles", "charles.dupond@email.com", "charles", 0);
+insert into Clients values (8, "Daf", "Max", "max.daf@email.com", "max", 0);
+insert into Clients values (9, "Lemond", "Max", "max.lemond@email.com", "max", 0);
+insert into Clients values (10, "Valgrin", "Brad", "brad.valgrin@email.com", "brad", 0);
 
 /* Cinema */
 insert into Cinema values ("Pathé Boulogne", "Pathé Gaumont");
