@@ -280,3 +280,21 @@ select f_prec.nom, f_suiv.nom
 from Film f_prec, Film f_suiv, Suit s
 where f_prec.num_film = s.num_film_prec
 or f_suiv.num_film = s.num_film_suiv
+
+/* nom des film ayant une note sup moy */ /* Les notes sont entre 0 et 5  */
+select f.nom
+from Film f, Note n
+where f.num_film = n.num_film
+group by f.nom
+having moy(n.note) > 2,5
+
+/* nom des cinema UGC */
+select c.nom
+from Cinema c
+where c.companie like "UGC"
+
+/* Recette pour chaque film */ /* Probleme reduction */
+select f.nom, sum(v.prix)
+from Film f, Veut_voir v
+where f.num_film = v.num_film
+group by f.nom
