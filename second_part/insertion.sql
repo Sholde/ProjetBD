@@ -74,10 +74,10 @@ insert into Salle values (3, "UGC Vélizy", 60, "Vélizy");
 insert into Salle values (4, "UGC Vélizy", 30, "Vélizy");
 
 /* Film */
-insert into Film values (1, "The Matrix", "SF", 120, "USA");
-insert into Film values (2, "The Matrix reloaded", "SF", 120, "USA");
-insert into Film values (3, "The Matrix revolution", "SF", 120, "USA");
-insert into Film values (4, "The social network", "Biographie", 120, "USA");
+insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA");
+insert into Film values (2, "The Matrix reloaded", "Science-Fiction - Action", 120, "USA");
+insert into Film values (3, "The Matrix revolution", "Science-Fiction - Action", 120, "USA");
+insert into Film values (4, "The social network", "Biographie - Drame", 120, "USA");
 insert into Film values (5, "V for Vendetta", "Action", 120, "USA");
 insert into Film values (6, "Die hard", "Action", 120, "USA");
 insert into Film values (7, "Toy Story", "Animation", 120, "USA");
