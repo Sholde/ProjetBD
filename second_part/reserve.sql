@@ -356,12 +356,12 @@ from Film f, Veut_voir v
 where f.num_film = v.num_film
 group by f.nom
 
-/* nom des film de SF ayant 1000 entré ou plus */
+/* nom des film de SF ayant 100 entré ou plus */
 select f.nom, sum(v.num_client)
 from Film f, Veut_voir v
 where f.num_film = v.num_film
 group by f.nom
-having sum(v.num_client) > 1000
+having sum(v.num_client) > 100
 
 /* Requête update */
 
