@@ -30,10 +30,11 @@ CREATE TABLE Salle(
     FOREIGN KEY(nom_du_cinema) REFERENCES Cinema(nom)
 );
 CREATE TABLE Veut_voir(
-    num_client INT,
-    num_film INT,
+	num_log INT,
+    num_client INT NOT NULL,
+    num_film INT NOT NULL,
     prix INT NOT NULL,
-    PRIMARY KEY(num_client, num_film),
+    PRIMARY KEY(num_log),
     FOREIGN KEY(num_client) REFERENCES Clients(num_client),
     FOREIGN KEY(num_film) REFERENCES Film(num_film)
 );
