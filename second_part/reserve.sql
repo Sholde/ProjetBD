@@ -11,7 +11,7 @@ CREATE TABLE Clients(
 CREATE TABLE Film(
     num_film INT(3),
     nom VARCHAR(30) NOT NULL,
-    genre VARCHAR(30) NOT NULL,
+    genre VARCHAR(256) NOT NULL,
     duree INT NOT NULL,
     origine VARCHAR(30) NOT NULL,
     PRIMARY KEY(num_film)
@@ -24,10 +24,10 @@ CREATE TABLE Cinema(
 CREATE TABLE Salle(
     num_salle INT,
     nom_du_cinema VARCHAR(30),
-    nombre_de_place INT(3) NOT NULL,
+    nombre_de_place INT NOT NULL,
     ville VARCHAR(30) NOT NULL,
     PRIMARY KEY(num_salle, nom_du_cinema),
-    FOREIGN KEY(nom_du_cinema) REFERENCES Cinema(nom)
+    FOREIGN KEY(nom_du_cinema) REFERENCES Cinema(nom) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Veut_voir(
 	num_log INT,
@@ -35,16 +35,16 @@ CREATE TABLE Veut_voir(
     num_film INT NOT NULL,
     prix INT NOT NULL,
     PRIMARY KEY(num_log),
-    FOREIGN KEY(num_client) REFERENCES Clients(num_client),
-    FOREIGN KEY(num_film) REFERENCES Film(num_film)
+    FOREIGN KEY(num_client) REFERENCES Clients(num_client) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Note(
     num_client INT,
     num_film INT,
     note INT NOT NULL,
     PRIMARY KEY(num_client, num_film),
-    FOREIGN KEY(num_client) REFERENCES Clients(num_client),
-    FOREIGN KEY(num_film) REFERENCES Film(num_film)
+    FOREIGN KEY(num_client) REFERENCES Clients(num_client) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Suit(
     num_film_prec INT,
@@ -53,8 +53,8 @@ CREATE TABLE Suit(
         num_film_prec,
         num_film_suiv
     ),
-    FOREIGN KEY(num_film_prec) REFERENCES Film(num_film),
-    FOREIGN KEY(num_film_suiv) REFERENCES Film(num_film)
+    FOREIGN KEY(num_film_prec) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(num_film_suiv) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Se_joue_dans(
 	jour date,
@@ -70,8 +70,8 @@ CREATE TABLE Se_joue_dans(
         jour,
         heure
     ),
-    FOREIGN KEY(num_film) REFERENCES Film(num_film),
-    FOREIGN KEY(num_salle, nom_du_cinema) REFERENCES Salle(num_salle, nom_du_cinema)
+    FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(num_salle, nom_du_cinema) REFERENCES Salle(num_salle, nom_du_cinema) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Personne(
     num_personne INT,
@@ -85,8 +85,8 @@ CREATE TABLE Participe_au_film(
     num_personne INT,
     num_film INT,
     PRIMARY KEY(num_personne, num_film),
-    FOREIGN KEY(num_personne) REFERENCES Personne(num_personne),
-    FOREIGN KEY(num_film) REFERENCES Film(num_film)
+    FOREIGN KEY(num_personne) REFERENCES Personne(num_personne) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
 create table Ticket (
 	num_log INT,
@@ -94,8 +94,8 @@ create table Ticket (
 	num_client INT NOT NULL,
 	numm_salle INT NOT NULL,
 	Primary key (num_log, num_se_joue),
-	FOREIGN KEY(num_client) REFERENCES Clients(num_client),
-    FOREIGN KEY(num_salle) REFERENCES Salle(num_salle)
+	FOREIGN KEY(num_client) REFERENCES Clients(num_client) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY(num_salle) REFERENCES Salle(num_salle) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 /* ##################################################################### */
@@ -130,15 +130,15 @@ create user 'Anonyme'@'localhost' identified by 'anonyme';
 
 grant all on Projet.* to 'Admin'@'localhost';
 
-grant select on Projet.* to 'Anonyme'@'localhost';
-revoke select from Projet.Clients from 'Anonyme'@'localhost';
-revoke select from Projet.VeutVoir from 'Anonyme'@'localhost';
-revoke select from Projet.Note from 'Anonyme'@'localhost';
+grant select on Projet.Clients to 'Anonyme'@'localhost';
+revoke select on Projet.Clients from 'Anonyme'@'localhost';
+revoke select on Projet.VeutVoir from 'Anonyme'@'localhost';
+revoke select on Projet.Note from 'Anonyme'@'localhost';
 
 grant select on Projet.* to 'Client'@'localhost';
-grant all from Projet.Clients from 'Client'@'localhost';
-grant all from Projet.VeutVoir from 'Client'@'localhost';
-grant all from Projet.Note from 'Client'@'localhost';
+grant all on Projet.Clients to 'Client'@'localhost';
+grant all on Projet.VeutVoir to 'Client'@'localhost';
+grant all on Projet.Note to 'Client'@'localhost';
 
 
 /* ##################################################################### */
