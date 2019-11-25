@@ -78,7 +78,7 @@ CREATE TABLE Personne(
     nom VARCHAR(30) NOT NULL,
     prenom VARCHAR(30) NOT NULL,
     age INT NOT NULL,
-    metier VARCHAR(30) NOT NULL,
+    metier VARCHAR(256) NOT NULL,
     PRIMARY KEY(num_personne)
 );
 CREATE TABLE Participe_au_film(
@@ -92,7 +92,7 @@ create table Ticket (
 	num_log INT,
 	num_se_joue INT,
 	num_client INT NOT NULL,
-	numm_salle INT NOT NULL,
+	num_salle INT NOT NULL,
 	Primary key (num_log, num_se_joue),
 	FOREIGN KEY(num_client) REFERENCES Clients(num_client) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_salle) REFERENCES Salle(num_salle) ON DELETE CASCADE ON UPDATE CASCADE
@@ -123,6 +123,7 @@ where c.reduction <> 0;
 
 /* Database */
 create database Projet;
+use Projet;
 
 create user 'Client'@'localhost' identified by 'client';
 create user 'Admin'@'localhost' identified by 'admin';
@@ -130,10 +131,11 @@ create user 'Anonyme'@'localhost' identified by 'anonyme';
 
 grant all on Projet.* to 'Admin'@'localhost';
 
-grant select on Projet.Clients to 'Anonyme'@'localhost';
+grant select on Projet.* to 'Anonyme'@'localhost';
 revoke select on Projet.Clients from 'Anonyme'@'localhost';
 revoke select on Projet.VeutVoir from 'Anonyme'@'localhost';
 revoke select on Projet.Note from 'Anonyme'@'localhost';
+revoke select on Projet.Ticket from 'Anonyme'@'localhost';
 
 grant select on Projet.* to 'Client'@'localhost';
 grant all on Projet.Clients to 'Client'@'localhost';
@@ -325,7 +327,7 @@ insert into Note values(10,7,4);
 insert into Note values(4,5,1);
 insert into Note values(50,1,5);
 insert into Note values(41,3,4);
-insert into Note values(21,4,3);
+insert into Note values(20,4,3);
 insert into Note values(45,4,2);
 insert into Note values(21,1,3);
 insert into Note values(22,5,4);
@@ -356,14 +358,14 @@ and vf.num_film = pf.num_film
 select f_prec.nom, f_suiv.nom
 from Film f_prec, Film f_suiv, Suit s
 where f_prec.num_film = s.num_film_prec
-or f_suiv.num_film = s.num_film_suiv
+and f_suiv.num_film = s.num_film_suiv
 
 /* nom des film ayant une note sup moy */ /* Les notes sont entre 0 et 5  */
 select f.nom
 from Film f, Note n
 where f.num_film = n.num_film
 group by f.nom
-having moy(n.note) > 2,5
+having avg(n.note) >  CONVERT(2.5, decimal(1,1))
 
 /* nom des cinema UGC */
 select c.nom
