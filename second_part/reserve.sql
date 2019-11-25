@@ -140,6 +140,46 @@ insert into Clients values (7, "Dupond", "Charles", "charles.dupond@email.com", 
 insert into Clients values (8, "Daf", "Max", "max.daf@email.com", "max", 0);
 insert into Clients values (9, "Lemond", "Max", "max.lemond@email.com", "max", 0);
 insert into Clients values (10, "Valgrin", "Brad", "brad.valgrin@email.com", "brad", 0);
+insert into Clients values (11, "Gates", "Bill", "bill.gates@email.com", "bill", 0);
+insert into Clients values (12, "Linus", "Torvalds", "linus.torvalds@email.com", "linus", 0);
+insert into Clients values (13, "Jobs", "Steve", "steve.jobs@email.com", "steve", 0);
+insert into Clients values (14, "Alpher", "Ralph", "Ralph_Asher.Alpher@email.com", "Alpha", 0);
+insert into Clients values (15, "Bethe", "Hans", "bethe.1547@email.com", "Beta", 0);
+insert into Clients values (16, "Gamow", "George", "brad.valgrin@email.com", "Gamma", 1);
+insert into Clients values (17, "Dicaprio", "Leonardo", "leo.caprio@email.com", "leonard", 0);
+insert into Clients values (18, "Lemaître", "Georges", "georgelemaitre@email.com", "lemaitre", 0);
+insert into Clients values (19, "Dieu", "dieu", "leternel@email.com", "dieu", 1);
+insert into Clients values (20, "Van Damme", "jean-claude", "jean-claude@email.com", "vandamme", 1);
+insert into Clients values (21, "Curie", "Marie", "marie8764@email.com", "curie", 1);
+insert into Clients values (22, "Tournachon", "Gaspard-Félix", "Nadar@email.com", "nad", 0);
+insert into Clients values (23, "Dumas", "Alexandre", "dumas_3mousqt@email.com", "alex", 0);
+insert into Clients values (24, "Einstein", "Albert", "Einsteinlebg@email.com", "albert", 1);
+insert into Clients values (25, "Clayton", "Harold", "Clay744@email.com", "clay", 0);
+insert into Clients values (26, "Lawrence", "Ernest", "lawrence.ernest@email.com", "ernest", 0);
+insert into Clients values (27, "Murphree", "Eger", "Eger.murphree@email.com", "murph", 0);
+insert into Clients values (28, "Compton", "Arthur", "arture.compton@email.com", "art", 0);
+insert into Clients values (29, "Bergerac", "Cyrano", "bergerac.cyr@email.com", "cyr", 1);
+insert into Clients values (30, "Poquelin", "Jean-Baptiste", "moliere@email.com", "mol", 0);
+insert into Clients values (31, "Kant", "Emmanuel", "Kant.Emma@email.com", "manu", 0);
+insert into Clients values (32, "Sand", "George", "gege.sand@email.com", "sand", 0);
+insert into Clients values (33, "Al-Kachi", "Ghiyath", "kachi@email.com", "kashi", 1);
+insert into Clients values (34, "Jackson", "Michaël", "thriller@email.com", "mik", 0);
+insert into Clients values (35, "Mendeleïev", "Dmitri", "tableau_periodique@email.com", "dmidmi", 0);
+insert into Clients values (36, "Arendt", "Hannah", "Hanna984@email.com", "arendt", 0);
+insert into Clients values (37, "Gandhi", "Mohandas Karamchand", "gandhi77816@email.com", "gandhi", 0);
+insert into Clients values (38, "Sempé", "Jean-Jacques", "SempeJeanJacques@email.com", "semp", 0);
+insert into Clients values (39, "Goscinny", "René", "reneGos@email.com", "gos", 0);
+insert into Clients values (40, "Perusse", "Francois", "deuxminpeuple@email.com", "brad", 1);
+insert into Clients values (41, "Ravel", "Maurice", "maumau@email.com", "ravel", 0);
+insert into Clients values (42, "Remi", "George", "tintindu45@email.com", "tintin", 0);
+insert into Clients values (43, "Spinoza", "Baruch", "baruch@email.com", "spin", 0);
+insert into Clients values (44, "Franklin", "Benjamin", "benjidu74@email.com", "ben", 0);
+insert into Clients values (45, "Goya", "Francisco", "francis.goya@email.com", "goya", 1);
+insert into Clients values (46, "Hardy", "Olivier", "hardy.olvier@email.com", "olive", 0);
+insert into Clients values (47, "Ionesco", "Eugène", "iones.eug@email.com", "eug", 0);
+insert into Clients values (48, "Ali", "Mohamed", "momoleboxeur@email.com", "box", 0);
+insert into Clients values (49, "Lavoisier", "Antoine Laurent", "antoinelavoisier@email.com", "ant", 0);
+insert into Clients values (50, "Mandela", "Nelson", "mand.nels@email.com", "nels", 0);
 
 /* Cinema */
 insert into Cinema values ("Pathé Boulogne", "Pathé Gaumont");
@@ -263,6 +303,20 @@ insert into Participe_au_film values (23, 7);
 /* Veut_voir */
 
 /* Note */
+insert into Note values(21,4,4);
+insert into Note values(18,5,5);
+insert into Note values(10,7,4);
+insert into Note values(4,5,1);
+insert into Note values(50,1,5);
+insert into Note values(41,3,4);
+insert into Note values(21,4,3);
+insert into Note values(45,4,2);
+insert into Note values(21,1,3);
+insert into Note values(22,5,4);
+insert into Note values(6,3,5);
+insert into Note values(12,2,2);
+insert into Note values(34,1,3);
+
 
 /* Requète select */
 
