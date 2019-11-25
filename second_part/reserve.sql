@@ -34,8 +34,6 @@ CREATE TABLE Veut_voir(
     num_client INT NOT NULL,
     num_film INT NOT NULL,
     prix INT NOT NULL,
-    jour date NOT NULL,
-    heure time NOT NULL,
     PRIMARY KEY(num_log),
     FOREIGN KEY(num_client) REFERENCES Clients(num_client),
     FOREIGN KEY(num_film) REFERENCES Film(num_film)
@@ -59,6 +57,8 @@ CREATE TABLE Suit(
     FOREIGN KEY(num_film_suiv) REFERENCES Film(num_film)
 );
 CREATE TABLE Se_joue_dans(
+	jour date,
+    heure time,
     version VARCHAR(30) NOT NULL,
     num_film INT,
     num_salle INT,
@@ -66,7 +66,9 @@ CREATE TABLE Se_joue_dans(
     PRIMARY KEY(
         num_film,
         num_salle,
-        nom_du_cinema
+        nom_du_cinema,
+        jour,
+        heure
     ),
     FOREIGN KEY(num_film) REFERENCES Film(num_film),
     FOREIGN KEY(num_salle, nom_du_cinema) REFERENCES Salle(num_salle, nom_du_cinema)
@@ -85,6 +87,15 @@ CREATE TABLE Participe_au_film(
     PRIMARY KEY(num_personne, num_film),
     FOREIGN KEY(num_personne) REFERENCES Personne(num_personne),
     FOREIGN KEY(num_film) REFERENCES Film(num_film)
+);
+create table Ticket (
+	num_log INT,
+	num_se_joue INT,
+	num_client INT NOT NULL,
+	numm_salle INT NOT NULL,
+	Primary key (num_log, num_se_joue),
+	FOREIGN KEY(num_client) REFERENCES Clients(num_client),
+    FOREIGN KEY(num_salle) REFERENCES Salle(num_salle)
 );
 
 /* Vue */
