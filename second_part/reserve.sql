@@ -316,9 +316,18 @@ insert into Participe_au_film values (21, 7);
 insert into Participe_au_film values (22, 7);
 insert into Participe_au_film values (23, 7);
 
-/* Se_joue_dans */
+/* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
+insert into Se_joue_dans values('2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
+insert into Se_joue_dans values('2019-12-16', '10-00-00', "vo", 6, 2, "Pathé Boulogne");
+insert into Se_joue_dans values('2019-12-16', '15-00-00', "vf", 4, 1, "Pathé Boulogne");
+insert into Se_joue_dans values('2019-12-16', '15-00-00', "vf", 5, 3, "Pathé Boulogne");
 
-/* Veut_voir */
+
+/* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
+insert into Veut_voir values(1, 1, 1, 6);
+insert into Veut_voir values(2, 1, 1, 6);
+insert into Veut_voir values(3, 2, 1, 5);
+insert into Veut_voir values(4, 50, 1, 6);
 
 /* Note */
 insert into Note values(21,4,4);
@@ -334,6 +343,7 @@ insert into Note values(22,5,4);
 insert into Note values(6,3,5);
 insert into Note values(12,2,2);
 insert into Note values(34,1,3);
+insert into Note values(1,1,3);
 
 /* Ticket */ /* Quand un client achete une place il y a un uplet qui s'ajoute dans cette tavle aussi */
 
@@ -392,8 +402,8 @@ having sum(v.num_client) > 100
 /* Bob change sa note sur le film The Matrix */
 update Note
 set note = 5
-where n.num_client = 1 /* num_client de bob */
-and n.num_film = 1
+where num_client = 1
+and num_film = 1;
 
 /* un admin change la salle du film The Matrix dans la salle 4 au cinéma Pathé Boulogne*/
 update Se_joue_dans
