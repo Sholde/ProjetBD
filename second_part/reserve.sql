@@ -98,6 +98,8 @@ create table Ticket (
     FOREIGN KEY(num_salle) REFERENCES Salle(num_salle)
 );
 
+/* ##################################################################### */
+
 /* Vue */
 create view film_vf
 from film f, se_joue_dans j
@@ -117,6 +119,8 @@ create view client_avec_reduction
 from clients c
 where c.reduction <> 0;
 
+/* ##################################################################### */
+
 /* Database */
 create database Projet;
 
@@ -135,6 +139,9 @@ grant select on Projet.* to 'Client'@'localhost';
 grant all from Projet.Clients from 'Client'@'localhost';
 grant all from Projet.VeutVoir from 'Client'@'localhost';
 grant all from Projet.Note from 'Client'@'localhost';
+
+
+/* ##################################################################### */
 
 /* Requête d'insertion */
 
@@ -326,6 +333,10 @@ insert into Note values(6,3,5);
 insert into Note values(12,2,2);
 insert into Note values(34,1,3);
 
+/* Ticket */ /* Quand un client achete une place il y a un uplet qui s'ajoute dans cette tavle aussi */
+
+
+/* ##################################################################### */
 
 /* Requète select */
 
@@ -371,6 +382,8 @@ from Film f, Veut_voir v
 where f.num_film = v.num_film
 group by f.nom
 having sum(v.num_client) > 100
+
+/* ##################################################################### */
 
 /* Requête update */
 
