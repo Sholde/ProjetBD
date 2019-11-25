@@ -57,6 +57,7 @@ CREATE TABLE Suit(
     FOREIGN KEY(num_film_suiv) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE Se_joue_dans(
+	num_se_joue INT,
 	jour date,
     heure time,
     version VARCHAR(30) NOT NULL,
@@ -64,6 +65,7 @@ CREATE TABLE Se_joue_dans(
     num_salle INT,
     nom_du_cinema VARCHAR(30),
     PRIMARY KEY(
+		num_se_joue,
         num_film,
         num_salle,
         nom_du_cinema,
