@@ -214,21 +214,31 @@ insert into Veut_voir values(9, 1, 27, 1, 6);
 insert into Veut_voir values(10, 1, 16, 1, 5);
 insert into Veut_voir values(11, 1, 16, 1, 5);
 
-insert into Veut_voir values(12, 2, 2, 1, 5);
-insert into Veut_voir values(13, 2, 2, 1, 5);
-insert into Veut_voir values(14, 2, 45, 1, 6);
-insert into Veut_voir values(15, 2, 34, 1, 5);
-insert into Veut_voir values(16, 2, 34, 1, 5);
-insert into Veut_voir values(17, 2, 34, 1, 5);
-insert into Veut_voir values(18, 2, 34, 1, 5);
-insert into Veut_voir values(19, 2, 34, 1, 5);
-insert into Veut_voir values(20, 2, 34, 1, 5);
-insert into Veut_voir values(21, 2, 34, 1, 5);
-insert into Veut_voir values(22, 2, 7, 1, 6);
-insert into Veut_voir values(23, 2, 7, 1, 6);
-insert into Veut_voir values(24, 2, 7, 1, 6);
-insert into Veut_voir values(25, 2, 7, 1, 6);
-insert into Veut_voir values(26, 2, 7, 1, 6);
+insert into Veut_voir values(12, 2, 2, 6, 5);
+insert into Veut_voir values(13, 2, 2, 6, 5);
+insert into Veut_voir values(14, 2, 45, 6, 6);
+insert into Veut_voir values(15, 2, 34, 6, 5);
+insert into Veut_voir values(16, 2, 34, 6, 5);
+insert into Veut_voir values(17, 2, 34, 6, 5);
+insert into Veut_voir values(18, 2, 34, 6, 5);
+insert into Veut_voir values(19, 2, 34, 6, 5);
+insert into Veut_voir values(20, 2, 34, 6, 5);
+insert into Veut_voir values(21, 2, 34, 6, 5);
+insert into Veut_voir values(22, 2, 7, 6, 6);
+insert into Veut_voir values(23, 2, 7, 6, 6);
+insert into Veut_voir values(24, 2, 7, 6, 6);
+insert into Veut_voir values(25, 2, 7, 6, 6);
+insert into Veut_voir values(26, 2, 7, 6, 6);
+
+insert into Veut_voir values(27, 3, 10, 4, 6);
+insert into Veut_voir values(28, 3, 10, 4, 6);
+insert into Veut_voir values(29, 3, 10, 4, 5);
+insert into Veut_voir values(30, 3, 11, 4, 6);
+insert into Veut_voir values(31, 3, 11, 4, 6);
+insert into Veut_voir values(32, 3, 49, 4, 6);
+insert into Veut_voir values(33, 3, 1, 4, 6);
+insert into Veut_voir values(34, 3, 17, 4, 6);
+insert into Veut_voir values(35, 3, 37, 4, 6);
 
 /* Note */
 insert into Note values(21,4,4);
