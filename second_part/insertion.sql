@@ -160,10 +160,10 @@ insert into Clients values (157, "Blondel","Maurice","maurice.blondel@email.com"
 insert into Clients values (158, "Palante","Georges","georges.palante@email.com","palante",0);
 insert into Clients values (159, "Santayana","George","george.santa@email.com","santa",0);
 insert into Clients values (160, "Weber","Max","weber.max@email.com","max",0);
-insert into Clients values (161, "Chestov","Léon","leon.chestove@email.com","chestov",0):
+insert into Clients values (161, "Chestov","Léon","leon.chestove@email.com","chestov",0);
 insert into Clients values (162, "Croce","Benedetto","croce.benedetto@email.com","croce",0);
 insert into Clients values (163, "Max","Scheler","max.scheler@email.com","max",0);
-insert into Clients values (164, "Maritain","Jacques","maritain.jacques@email.com","jak"0);
+insert into Clients values (164, "Maritain","Jacques","maritain.jacques@email.com","jak",0);
 insert into Clients values (165, "Heidegger","Martin","martin.h@email.com","password",0);                      
 insert into Clients values (166, "Dalbiez","Roland","roland.dal@email.com","roland",1);
 insert into Clients values (167, "Carnap","Rudolf","rudol.carnap@email.com","carnap",0);
@@ -181,16 +181,10 @@ insert into Cinema values ("UGC Vélizy", "UGC");
 /* Salle */
 insert into Salle values (1, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
-insert into Salle values (3, "Pathé Boulogne", 30, "Boulogne");
-insert into Salle values (4, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
-insert into Salle values (2, "Ciné-Sel", 30, "Sèvres");
 insert into Salle values (1, "UGC Versailles", 30, "Versailles");
-insert into Salle values (2, "UGC Versailles", 30, "Versailles");
 insert into Salle values (1, "UGC Vélizy", 30, "Vélizy");
 insert into Salle values (2, "UGC Vélizy", 30, "Vélizy");
-insert into Salle values (3, "UGC Vélizy", 30, "Vélizy");
-insert into Salle values (4, "UGC Vélizy", 30, "Vélizy");
 
 /* Film */
 insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA");
@@ -309,38 +303,94 @@ insert into Participe_au_film values (23, 10);
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
 insert into Se_joue_dans values(1, '2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
 insert into Se_joue_dans values(2, '2019-12-16', '10-00-00', "vo", 6, 2, "Pathé Boulogne");
-insert into Se_joue_dans values(3, '2019-12-16', '15-00-00', "vf", 4, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(4, '2019-12-16', '15-00-00', "vf", 5, 3, "Pathé Boulogne");
 
-insert into Se_joue_dans values(5, '2019-12-16', '10-00-00', "vf", 2, 1, "UGC Vélizy");
-insert into Se_joue_dans values(6, '2019-12-16', '10-00-00', "vf", 4, 2, "UGC Vélizy");
-insert into Se_joue_dans values(7, '2019-12-16', '10-00-00', "vf", 5, 3, "UGC Vélizy");
-insert into Se_joue_dans values(8, '2019-12-16', '11-00-00', "vf", 6, 4, "UGC Vélizy");
+insert into Se_joue_dans values(3, '2019-12-16', '10-00-00', "vf", 2, 1, "UGC Vélizy");
+insert into Se_joue_dans values(4, '2019-12-16', '10-00-00', "vf", 4, 2, "UGC Vélizy");
+insert into Se_joue_dans values(5, '2019-12-16', '15-00-00', "vf", 3, 1, "UGC Vélizy");
 
-insert into Se_joue_dans values(9, '2019-12-16', '15-00-00', "vf", 3, 1, "UGC Vélizy");
-insert into Se_joue_dans values(10, '2019-12-16', '15-00-00', "vf", 7, 2, "UGC Vélizy");
-insert into Se_joue_dans values(11, '2019-12-16', '15-00-00', "vf", 6, 3, "UGC Vélizy");
-insert into Se_joue_dans values(12, '2019-12-16', '16-00-00', "vf", 5, 4, "UGC Vélizy");
+insert into Se_joue_dans values(6, '2019-12-16', '11-00-00', "vf", 1, 1, "Ciné-Sel");
+insert into Se_joue_dans values(7, '2019-12-16', '15-00-00', "vf", 4, 2, "Ciné-Sel");
 
-insert into Se_joue_dans values(13, '2019-12-16', '11-00-00', "vf", 1, 1, "Ciné-Sel");
-insert into Se_joue_dans values(14, '2019-12-16', '11-00-00', "vf", 4, 2, "Ciné-Sel");
-insert into Se_joue_dans values(15, '2019-12-16', '16-00-00', "vf", 2, 1, "Ciné-Sel");
-insert into Se_joue_dans values(16, '2019-12-16', '16-00-00', "vf", 5, 2, "Ciné-Sel");
-
-insert into Se_joue_dans values(17, '2019-12-16', '10-00-00', "vo", 3, 2, "UGC Versailles");
-insert into Se_joue_dans values(18, '2019-12-16', '11-00-00', "vf", 3, 1, "UGC Versailles");
-insert into Se_joue_dans values(19, '2019-12-16', '15-00-00', "vf", 7, 1, "UGC Versailles");
-insert into Se_joue_dans values(20, '2019-12-16', '17-00-00', "vo", 7, 2, "UGC Versailles");
+insert into Se_joue_dans values(8, '2019-12-16', '10-00-00', "vo", 3, 2, "UGC Versailles");
+insert into Se_joue_dans values(9, '2019-12-16', '17-00-00', "vo", 7, 2, "UGC Versailles");
 
 /* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
-insert into Veut_voir values(1, 1, 1, 6);
-insert into Veut_voir values(2, 1, 1, 6);
-insert into Veut_voir values(3, 2, 1, 5);
-insert into Veut_voir values(4, 50, 1, 6);
-insert into Veut_voir values(5, 50, 1, 6);
-insert into Veut_voir values(6, 50, 1, 6);
-insert into Veut_voir values(7, 50, 1, 5);
-insert into Veut_voir values(8, 50, 1, 6);
+insert into Veut_voir values(1, 1, 1, 1, 6);
+insert into Veut_voir values(2, 1, 1, 1, 6);
+insert into Veut_voir values(3, 1, 2, 1, 5);
+insert into Veut_voir values(4, 1, 50, 1, 6);
+insert into Veut_voir values(5, 1, 50, 1, 6);
+insert into Veut_voir values(6, 1, 50, 1, 6);
+insert into Veut_voir values(7, 1, 50, 1, 5);
+insert into Veut_voir values(8, 1, 50, 1, 6);
+insert into Veut_voir values(9, 1, 45, 1, 6);
+insert into Veut_voir values(10, 1, 45, 1, 6);
+insert into Veut_voir values(11, 1, 45, 1, 5);
+insert into Veut_voir values(12, 1, 45, 1, 6);
+insert into Veut_voir values(13, 1, 45, 1, 6);
+insert into Veut_voir values(14, 1, 45, 1, 6);
+insert into Veut_voir values(15, 1, 45, 1, 5);
+insert into Veut_voir values(16, 1, 45, 1, 6);
+insert into Veut_voir values(17, 1, 45, 1, 6);
+insert into Veut_voir values(18, 1, 30, 1, 5);
+insert into Veut_voir values(19, 1, 30, 1, 6);
+insert into Veut_voir values(20, 1, 30, 1, 6);
+insert into Veut_voir values(21, 1, 30, 1, 6);
+insert into Veut_voir values(22, 1, 5, 1, 5);
+insert into Veut_voir values(23, 1, 12, 1, 6);
+
+insert into Veut_voir values(24, 2, 6, 6, 6);
+insert into Veut_voir values(25, 2, 6, 6, 6);
+insert into Veut_voir values(26, 2, 6, 6, 5);
+insert into Veut_voir values(27, 2, 24, 6, 6);
+insert into Veut_voir values(28, 2, 24, 6, 6);
+insert into Veut_voir values(29, 2, 24, 6, 6);
+insert into Veut_voir values(30, 2, 24, 6, 5);
+insert into Veut_voir values(31, 2, 47, 6, 6);
+insert into Veut_voir values(32, 2, 47, 6, 6);
+
+insert into Veut_voir values(33, 3, 109, 2, 5);
+insert into Veut_voir values(34, 3, 109, 2, 6);
+insert into Veut_voir values(34, 3, 109, 2, 6);
+insert into Veut_voir values(35, 3, 109, 2, 5);
+insert into Veut_voir values(36, 3, 64, 2, 6);
+insert into Veut_voir values(37, 3, 64, 2, 6);
+insert into Veut_voir values(38, 3, 64, 2, 5);
+insert into Veut_voir values(39, 3, 64, 2, 6);
+insert into Veut_voir values(40, 3, 64, 2, 6);
+insert into Veut_voir values(41, 3, 64, 2, 5);
+insert into Veut_voir values(42, 3, 134, 2, 6);
+insert into Veut_voir values(43, 3, 134, 2, 6);
+insert into Veut_voir values(44, 3, 134, 2, 5);
+insert into Veut_voir values(45, 3, 134, 2, 6);
+insert into Veut_voir values(46, 3, 78, 2, 6);
+insert into Veut_voir values(47, 3, 78, 2, 5);
+insert into Veut_voir values(48, 3, 78, 2, 6);
+insert into Veut_voir values(49, 3, 78, 2, 6);
+
+insert into Veut_voir values(50, 4, 109, 4, 5);
+insert into Veut_voir values(51, 4, 117, 4, 6);
+insert into Veut_voir values(52, 4, 160, 4, 6);
+insert into Veut_voir values(53, 4, 10, 4, 5);
+insert into Veut_voir values(54, 4, 57, 4, 6);
+insert into Veut_voir values(55, 4, 57, 4, 6);
+insert into Veut_voir values(56, 4, 57, 4, 5);
+insert into Veut_voir values(57, 4, 57, 4, 6);
+insert into Veut_voir values(58, 4, 76, 4, 6);
+insert into Veut_voir values(59, 4, 76, 4, 5);
+insert into Veut_voir values(60, 4, 131, 4, 6);
+insert into Veut_voir values(61, 4, 137, 4, 6);
+insert into Veut_voir values(62, 4, 131, 4, 5);
+insert into Veut_voir values(63, 4, 8, 4, 6);
+insert into Veut_voir values(64, 4, 81, 4, 6);
+insert into Veut_voir values(65, 4, 81, 4, 5);
+insert into Veut_voir values(66, 4, 81, 4, 6);
+insert into Veut_voir values(67, 4, 81, 4, 6);
+
+insert into Veut_voir values(68, 5, 14, 3, 6);
+insert into Veut_voir values(70, 5, 14, 3, 5);
+insert into Veut_voir values(71, 5, 14, 3, 6);
+insert into Veut_voir values(72, 5, 14, 3, 6);
 
 /* Note */
 insert into Note values(21,4,4);
