@@ -206,6 +206,29 @@ insert into Veut_voir values(1, 1, 1, 1, 6);
 insert into Veut_voir values(2, 1, 1, 1, 6);
 insert into Veut_voir values(3, 1, 2, 1, 5);
 insert into Veut_voir values(4, 1, 50, 1, 6);
+insert into Veut_voir values(5, 1, 50, 1, 6);
+insert into Veut_voir values(6, 1, 50, 1, 6);
+insert into Veut_voir values(7, 1, 50, 1, 6);
+insert into Veut_voir values(8, 1, 27, 1, 6);
+insert into Veut_voir values(9, 1, 27, 1, 6);
+insert into Veut_voir values(10, 1, 16, 1, 5);
+insert into Veut_voir values(11, 1, 16, 1, 5);
+
+insert into Veut_voir values(12, 2, 2, 1, 5);
+insert into Veut_voir values(13, 2, 2, 1, 5);
+insert into Veut_voir values(14, 2, 45, 1, 6);
+insert into Veut_voir values(15, 2, 34, 1, 5);
+insert into Veut_voir values(16, 2, 34, 1, 5);
+insert into Veut_voir values(17, 2, 34, 1, 5);
+insert into Veut_voir values(18, 2, 34, 1, 5);
+insert into Veut_voir values(19, 2, 34, 1, 5);
+insert into Veut_voir values(20, 2, 34, 1, 5);
+insert into Veut_voir values(21, 2, 34, 1, 5);
+insert into Veut_voir values(22, 2, 7, 1, 6);
+insert into Veut_voir values(23, 2, 7, 1, 6);
+insert into Veut_voir values(24, 2, 7, 1, 6);
+insert into Veut_voir values(25, 2, 7, 1, 6);
+insert into Veut_voir values(26, 2, 7, 1, 6);
 
 /* Note */
 insert into Note values(21,4,4);
