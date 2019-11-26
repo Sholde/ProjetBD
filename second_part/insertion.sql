@@ -327,15 +327,10 @@ insert into Se_joue_dans values(14, '2019-12-16', '11-00-00', "vf", 4, 2, "Ciné
 insert into Se_joue_dans values(15, '2019-12-16', '16-00-00', "vf", 2, 1, "Ciné-Sel");
 insert into Se_joue_dans values(16, '2019-12-16', '16-00-00', "vf", 5, 2, "Ciné-Sel");
 
-insert into Se_joue_dans values(17, '2019-12-16', '15-00-00', "vf", 3, 1, "UGC Vélizy");
-insert into Se_joue_dans values(18, '2019-12-16', '15-00-00', "vf", 7, 2, "UGC Vélizy");
-insert into Se_joue_dans values(19, '2019-12-16', '15-00-00', "vf", 6, 3, "UGC Vélizy");
-insert into Se_joue_dans values(20, '2019-12-16', '16-00-00', "vf", 5, 4, "UGC Vélizy");
-
-insert into Se_joue_dans values(21, '2019-12-16', '10-00-00', "vo", 3, 2, "UGC Versailles");
-insert into Se_joue_dans values(22, '2019-12-16', '11-00-00', "vf", 3, 1, "UGC Versailles");
-insert into Se_joue_dans values(23, '2019-12-16', '15-00-00', "vf", 7, 1, "UGC Versailles");
-insert into Se_joue_dans values(24, '2019-12-16', '17-00-00', "vo", 7, 2, "UGC Versailles");
+insert into Se_joue_dans values(17, '2019-12-16', '10-00-00', "vo", 3, 2, "UGC Versailles");
+insert into Se_joue_dans values(18, '2019-12-16', '11-00-00', "vf", 3, 1, "UGC Versailles");
+insert into Se_joue_dans values(19, '2019-12-16', '15-00-00', "vf", 7, 1, "UGC Versailles");
+insert into Se_joue_dans values(20, '2019-12-16', '17-00-00', "vo", 7, 2, "UGC Versailles");
 
 /* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
 insert into Veut_voir values(1, 1, 1, 6);
