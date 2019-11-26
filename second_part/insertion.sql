@@ -311,7 +311,7 @@ insert into Se_joue_dans values(5, '2019-12-16', '15-00-00', "vf", 3, 1, "UGC V�
 insert into Se_joue_dans values(6, '2019-12-16', '11-00-00', "vf", 1, 1, "Ciné-Sel");
 insert into Se_joue_dans values(7, '2019-12-16', '15-00-00', "vf", 4, 2, "Ciné-Sel");
 
-insert into Se_joue_dans values(8, '2019-12-16', '10-00-00', "vo", 3, 2, "UGC Versailles");
+insert into Se_joue_dans values(8, '2019-12-16', '10-00-00', "vo", 5, 2, "UGC Versailles");
 insert into Se_joue_dans values(9, '2019-12-16', '17-00-00', "vo", 7, 2, "UGC Versailles");
 
 /* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
@@ -391,6 +391,29 @@ insert into Veut_voir values(68, 5, 14, 3, 6);
 insert into Veut_voir values(70, 5, 14, 3, 5);
 insert into Veut_voir values(71, 5, 14, 3, 6);
 insert into Veut_voir values(72, 5, 14, 3, 6);
+
+insert into Veut_voir values(73, 6, 11, 1, 6);
+insert into Veut_voir values(74, 6, 14, 1, 5);
+insert into Veut_voir values(75, 6, 99, 1, 6);
+insert into Veut_voir values(76, 6, 99, 1, 6);
+insert into Veut_voir values(77, 6, 99, 1, 6);
+insert into Veut_voir values(78, 6, 99, 1, 5);
+insert into Veut_voir values(79, 6, 126, 1, 6);
+insert into Veut_voir values(80, 6, 126, 1, 6);
+
+insert into Veut_voir values(81, 7, 14, 4, 6);
+insert into Veut_voir values(82, 7, 84, 4, 5);
+insert into Veut_voir values(83, 7, 89, 4, 6);
+insert into Veut_voir values(84, 7, 89, 4, 6);
+insert into Veut_voir values(85, 7, 89, 4, 6);
+insert into Veut_voir values(86, 7, 89, 4, 5);
+
+insert into Veut_voir values(87, 8, 136, 5, 6);
+insert into Veut_voir values(88, 8, 136, 5, 5);
+insert into Veut_voir values(89, 8, 136, 5, 6);
+insert into Veut_voir values(90, 8, 136, 5, 6);
+insert into Veut_voir values(91, 8, 136, 5, 6);
+insert into Veut_voir values(92, 8, 136, 5, 5);
 
 /* Note */
 insert into Note values(21,4,4);
