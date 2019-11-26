@@ -40,5 +40,6 @@ group by f.nom
 select f.nom, sum(v.num_client)
 from Film f, Veut_voir v
 where f.num_film = v.num_film
+and f.genre like "Science-Fiction"
 group by f.nom
 having sum(v.num_client) > 100

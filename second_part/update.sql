@@ -9,3 +9,10 @@ update Se_joue_dans
 set num_salle = 4
 where num_film = 1
 and nom_du_cinema = "Pathé Boulogne"
+
+/* Retire la réduction du client num 16 */
+update Clients
+set reduction = 0
+where num_client = 16
+
+
