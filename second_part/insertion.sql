@@ -288,6 +288,24 @@ insert into Participe_au_film values (21, 7);
 insert into Participe_au_film values (22, 7);
 insert into Participe_au_film values (23, 7);
 
+insert into Participe_au_film values (19, 8);
+insert into Participe_au_film values (20, 8);
+insert into Participe_au_film values (21, 8);
+insert into Participe_au_film values (22, 8);
+insert into Participe_au_film values (23, 8);
+
+insert into Participe_au_film values (19, 9);
+insert into Participe_au_film values (20, 9);
+insert into Participe_au_film values (21, 9);
+insert into Participe_au_film values (22, 9);
+insert into Participe_au_film values (23, 9);
+
+insert into Participe_au_film values (19, 10);
+insert into Participe_au_film values (20, 10);
+insert into Participe_au_film values (21, 10);
+insert into Participe_au_film values (22, 10);
+insert into Participe_au_film values (23, 10);
+
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
 insert into Se_joue_dans values(1, '2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
 insert into Se_joue_dans values(2, '2019-12-16', '10-00-00', "vo", 6, 2, "Pathé Boulogne");
