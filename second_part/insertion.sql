@@ -415,6 +415,17 @@ insert into Veut_voir values(90, 8, 136, 5, 6);
 insert into Veut_voir values(91, 8, 136, 5, 6);
 insert into Veut_voir values(92, 8, 136, 5, 5);
 
+insert into Veut_voir values(93, 9, 153, 7, 6);
+insert into Veut_voir values(94, 9, 153, 7, 5);
+insert into Veut_voir values(95, 9, 153, 7, 6);
+insert into Veut_voir values(96, 9, 153, 7, 6);
+insert into Veut_voir values(97, 9, 118, 7, 6);
+insert into Veut_voir values(98, 9, 118, 7, 5);
+insert into Veut_voir values(99, 9, 153, 7, 6);
+insert into Veut_voir values(100, 9, 3, 7, 6);
+insert into Veut_voir values(101, 9, 8, 7, 6);
+insert into Veut_voir values(102, 9, 8, 7, 5);
+
 /* Note */
 insert into Note values(21,4,4);
 insert into Note values(18,5,5);
