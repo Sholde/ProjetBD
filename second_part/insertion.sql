@@ -179,17 +179,17 @@ insert into Cinema values ("UGC Versailles", "UGC");
 insert into Cinema values ("UGC Vélizy", "UGC");
 
 /* Salle */
-insert into Salle values (1, "Pathé Boulogne", 60, "Boulogne");
-insert into Salle values (2, "Pathé Boulogne", 60, "Boulogne");
-insert into Salle values (3, "Pathé Boulogne", 40, "Boulogne");
+insert into Salle values (1, "Pathé Boulogne", 30, "Boulogne");
+insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
+insert into Salle values (3, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (4, "Pathé Boulogne", 30, "Boulogne");
-insert into Salle values (1, "Ciné-Sel", 60, "Sèvres");
-insert into Salle values (2, "Ciné-Sel", 60, "Sèvres");
-insert into Salle values (1, "UGC Versailles", 60, "Versailles");
+insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
+insert into Salle values (2, "Ciné-Sel", 30, "Sèvres");
+insert into Salle values (1, "UGC Versailles", 30, "Versailles");
 insert into Salle values (2, "UGC Versailles", 30, "Versailles");
-insert into Salle values (1, "UGC Vélizy", 60, "Vélizy");
-insert into Salle values (2, "UGC Vélizy", 60, "Vélizy");
-insert into Salle values (3, "UGC Vélizy", 60, "Vélizy");
+insert into Salle values (1, "UGC Vélizy", 30, "Vélizy");
+insert into Salle values (2, "UGC Vélizy", 30, "Vélizy");
+insert into Salle values (3, "UGC Vélizy", 30, "Vélizy");
 insert into Salle values (4, "UGC Vélizy", 30, "Vélizy");
 
 /* Film */
@@ -337,6 +337,10 @@ insert into Veut_voir values(1, 1, 1, 6);
 insert into Veut_voir values(2, 1, 1, 6);
 insert into Veut_voir values(3, 2, 1, 5);
 insert into Veut_voir values(4, 50, 1, 6);
+insert into Veut_voir values(5, 50, 1, 6);
+insert into Veut_voir values(6, 50, 1, 6);
+insert into Veut_voir values(7, 50, 1, 5);
+insert into Veut_voir values(8, 50, 1, 6);
 
 /* Note */
 insert into Note values(21,4,4);
