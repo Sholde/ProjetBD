@@ -354,9 +354,3 @@ insert into Note values(12,2,2);
 insert into Note values(34,1,3);
 insert into Note values(1,1,3);
 
-/* Ticket */ /* Quand un client achete une place il y a un uplet qui s'ajoute dans cette tavle aussi */
-insert into Ticket values(1, 1, 1, 1);
-insert into Ticket values(2, 1, 1, 1);
-insert into Ticket values(3, 1, 2, 1);
-insert into Ticket values(4, 1, 50, 1);
-
