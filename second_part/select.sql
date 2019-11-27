@@ -25,10 +25,10 @@ where f.num_film = n.num_film
 group by f.nom
 having avg(n.note) >  CONVERT(2.5, decimal(1,1))
 
-/* nom des cinema UGC */
+/* nom des cinema Pathé */
 select c.nom
 from Cinema c
-where c.companie like "UGC"
+where c.companie like "Pathé%"
 
 /* Recette pour chaque film */
 select f.nom, sum(v.prix)
@@ -43,3 +43,17 @@ where f.num_film = v.num_film
 and f.genre like "Science-Fiction"
 group by f.nom
 having sum(v.num_client) > 100
+
+/* nom des film diffusé par la companie Pathé */
+select f.nom
+from Film f, Se_joue_dans j, Salle s, Cinema ci
+where f.num_film = j.num_film
+and j.num_salle = f.num_salle
+and s.nom_du_cinema = ci.nom
+Group by f.nom
+
+/* Ticket pour le client n */
+select j.num_salle, j.jour, j.heure, v.prix
+from Se_joue_dans j, Veut_voir v
+where v.num_se_joue = j.num_se_joue
+and j.num_client = n
