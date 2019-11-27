@@ -182,9 +182,6 @@ insert into Cinema values ("UGC Vélizy", "UGC");
 insert into Salle values (1, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
-insert into Salle values (1, "UGC Versailles", 30, "Versailles");
-insert into Salle values (1, "UGC Vélizy", 30, "Vélizy");
-insert into Salle values (2, "UGC Vélizy", 30, "Vélizy");
 
 /* Film */
 insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA");
@@ -303,16 +300,11 @@ insert into Participe_au_film values (23, 10);
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
 insert into Se_joue_dans values(1, '2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
 insert into Se_joue_dans values(2, '2019-12-16', '10-00-00', "vo", 6, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(3, '2019-12-16', '15-00-00', "vf", 2, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(4, '2019-12-16', '16-00-00', "vf", 5, 2, "Pathé Boulogne");
 
-insert into Se_joue_dans values(3, '2019-12-16', '10-00-00', "vf", 2, 1, "UGC Vélizy");
-insert into Se_joue_dans values(4, '2019-12-16', '10-00-00', "vf", 4, 2, "UGC Vélizy");
-insert into Se_joue_dans values(5, '2019-12-16', '15-00-00', "vf", 3, 1, "UGC Vélizy");
-
-insert into Se_joue_dans values(6, '2019-12-16', '11-00-00', "vf", 1, 1, "Ciné-Sel");
-insert into Se_joue_dans values(7, '2019-12-16', '15-00-00', "vf", 4, 2, "Ciné-Sel");
-
-insert into Se_joue_dans values(8, '2019-12-16', '10-00-00', "vo", 5, 2, "UGC Versailles");
-insert into Se_joue_dans values(9, '2019-12-16', '17-00-00', "vo", 7, 2, "UGC Versailles");
+insert into Se_joue_dans values(5, '2019-12-16', '10-00-00', "vf", 4, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(6, '2019-12-16', '15-00-00', "vo", 7, 1, "Pathé Boulogne");
 
 /* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
 insert into Veut_voir values(1, 1, 1, 1, 6);
@@ -368,63 +360,38 @@ insert into Veut_voir values(47, 3, 78, 2, 5);
 insert into Veut_voir values(48, 3, 78, 2, 6);
 insert into Veut_voir values(49, 3, 78, 2, 6);
 
-insert into Veut_voir values(50, 4, 109, 4, 5);
-insert into Veut_voir values(51, 4, 117, 4, 6);
-insert into Veut_voir values(52, 4, 160, 4, 6);
-insert into Veut_voir values(53, 4, 10, 4, 5);
-insert into Veut_voir values(54, 4, 57, 4, 6);
-insert into Veut_voir values(55, 4, 57, 4, 6);
-insert into Veut_voir values(56, 4, 57, 4, 5);
-insert into Veut_voir values(57, 4, 57, 4, 6);
-insert into Veut_voir values(58, 4, 76, 4, 6);
-insert into Veut_voir values(59, 4, 76, 4, 5);
-insert into Veut_voir values(60, 4, 131, 4, 6);
-insert into Veut_voir values(61, 4, 137, 4, 6);
-insert into Veut_voir values(62, 4, 131, 4, 5);
-insert into Veut_voir values(63, 4, 8, 4, 6);
-insert into Veut_voir values(64, 4, 81, 4, 6);
-insert into Veut_voir values(65, 4, 81, 4, 5);
-insert into Veut_voir values(66, 4, 81, 4, 6);
-insert into Veut_voir values(67, 4, 81, 4, 6);
+insert into Veut_voir values(50, 4, 109, 5, 5);
+insert into Veut_voir values(51, 4, 117, 5, 6);
+insert into Veut_voir values(52, 4, 160, 5, 6);
+insert into Veut_voir values(53, 4, 10, 5, 5);
+insert into Veut_voir values(54, 4, 57, 5, 6);
+insert into Veut_voir values(55, 4, 57, 5, 6);
+insert into Veut_voir values(56, 4, 57, 5, 5);
+insert into Veut_voir values(57, 4, 57, 5, 6);
+insert into Veut_voir values(58, 4, 76, 5, 6);
+insert into Veut_voir values(59, 4, 76, 5, 5);
+insert into Veut_voir values(60, 4, 131, 5, 6);
+insert into Veut_voir values(61, 4, 137, 5, 6);
+insert into Veut_voir values(62, 4, 131, 5, 5);
+insert into Veut_voir values(63, 4, 8, 5, 6);
+insert into Veut_voir values(64, 4, 81, 5, 6);
+insert into Veut_voir values(65, 4, 81, 5, 5);
+insert into Veut_voir values(66, 4, 81, 5, 6);
+insert into Veut_voir values(67, 4, 81, 5, 6);
 
-insert into Veut_voir values(68, 5, 14, 3, 6);
-insert into Veut_voir values(70, 5, 14, 3, 5);
-insert into Veut_voir values(71, 5, 14, 3, 6);
-insert into Veut_voir values(72, 5, 14, 3, 6);
+insert into Veut_voir values(68, 5, 14, 4, 6);
+insert into Veut_voir values(70, 5, 14, 4, 5);
+insert into Veut_voir values(71, 5, 14, 4, 6);
+insert into Veut_voir values(72, 5, 14, 4, 6);
 
-insert into Veut_voir values(73, 6, 11, 1, 6);
-insert into Veut_voir values(74, 6, 14, 1, 5);
-insert into Veut_voir values(75, 6, 99, 1, 6);
-insert into Veut_voir values(76, 6, 99, 1, 6);
-insert into Veut_voir values(77, 6, 99, 1, 6);
-insert into Veut_voir values(78, 6, 99, 1, 5);
-insert into Veut_voir values(79, 6, 126, 1, 6);
-insert into Veut_voir values(80, 6, 126, 1, 6);
-
-insert into Veut_voir values(81, 7, 14, 4, 6);
-insert into Veut_voir values(82, 7, 84, 4, 5);
-insert into Veut_voir values(83, 7, 89, 4, 6);
-insert into Veut_voir values(84, 7, 89, 4, 6);
-insert into Veut_voir values(85, 7, 89, 4, 6);
-insert into Veut_voir values(86, 7, 89, 4, 5);
-
-insert into Veut_voir values(87, 8, 136, 5, 6);
-insert into Veut_voir values(88, 8, 136, 5, 5);
-insert into Veut_voir values(89, 8, 136, 5, 6);
-insert into Veut_voir values(90, 8, 136, 5, 6);
-insert into Veut_voir values(91, 8, 136, 5, 6);
-insert into Veut_voir values(92, 8, 136, 5, 5);
-
-insert into Veut_voir values(93, 9, 153, 7, 6);
-insert into Veut_voir values(94, 9, 153, 7, 5);
-insert into Veut_voir values(95, 9, 153, 7, 6);
-insert into Veut_voir values(96, 9, 153, 7, 6);
-insert into Veut_voir values(97, 9, 118, 7, 6);
-insert into Veut_voir values(98, 9, 118, 7, 5);
-insert into Veut_voir values(99, 9, 153, 7, 6);
-insert into Veut_voir values(100, 9, 3, 7, 6);
-insert into Veut_voir values(101, 9, 8, 7, 6);
-insert into Veut_voir values(102, 9, 8, 7, 5);
+insert into Veut_voir values(73, 6, 11, 7, 6);
+insert into Veut_voir values(74, 6, 14, 7, 5);
+insert into Veut_voir values(75, 6, 99, 7, 6);
+insert into Veut_voir values(76, 6, 99, 7, 6);
+insert into Veut_voir values(77, 6, 99, 7, 6);
+insert into Veut_voir values(78, 6, 99, 7, 5);
+insert into Veut_voir values(79, 6, 126, 7, 6);
+insert into Veut_voir values(80, 6, 126, 7, 6);
 
 /* Note */
 insert into Note values(21,4,4);
