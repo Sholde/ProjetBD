@@ -95,3 +95,11 @@ GROUP BY
 ) AS table2
 WHERE
     table1.nom_du_film = table2.nom_du_film
+    
+/* nom, prenom et age des acteurs jouant dans des film d'action en vf */
+Select p.nom, p.prenom, p.age
+from Personne p, Film f, Se_joue_dans j
+where f.num_film = j.num_film
+and j.version = "vf"
+and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
+group by p.nom, p.prenom
