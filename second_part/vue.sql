@@ -1,18 +1,24 @@
 /* Vue */
-create view film_vf
-from film f, se_joue_dans j
+create view film_vf as (
+select f.nom
+from Film f, Se_joue_dans j
 where f.num_film = j.num_film
-and j.version like "vf";
+and j.version like "vf"
+group by f.nom);
 
-create view film_vo
-from film f, se_joue_dans j
+create view film_vo as (
+select f.nom
+from Film f, Se_joue_dans j
 where f.num_film = j.num_film
-and j.version like "vo";
+and j.version like "vo"
+group by f.nom);
 
-create view personne_majeur
+create view personne_majeur as (
+select *
 from personne p
-where p.age >= 18;
+where p.age >= 18);
 
-create view client_avec_reduction
-from clients c
-where c.reduction <> 0;
+create view client_avec_reduction as (
+select *
+from Clients c
+where c.reduction <> 0);
