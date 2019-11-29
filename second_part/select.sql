@@ -57,3 +57,41 @@ select j.num_salle, j.jour, j.heure, v.prix
 from Se_joue_dans j, Veut_voir v
 where v.num_se_joue = j.num_se_joue
 and j.num_client = n
+
+/* nom des films de SF avec plus de 3 représentation dont au moins une est dans le cinema de boulogne */
+SELECT
+    table2.nom_du_film
+FROM
+    (
+    SELECT
+        func.nom AS nom_du_film
+    FROM
+        (
+        SELECT
+            f.nom AS nom
+        FROM
+            Film f,
+            Se_joue_dans j
+        WHERE
+            f.num_film = j.num_film AND f.genre LIKE "%Science-Fiction%"
+    ) AS func
+GROUP BY
+    nom_du_film
+HAVING
+    COUNT(nom_du_film) > 2
+) AS table1,
+(
+SELECT
+    f.nom AS nom_du_film
+FROM
+    Film f,
+    Se_joue_dans j,
+    Salle s,
+    Cinema ci
+WHERE
+    f.num_film = j.num_film AND j.num_salle = s.num_salle AND s.nom_du_cinema = ci.nom AND ci.nom LIKE "%Boulogne%"
+GROUP BY
+    f.nom
+) AS table2
+WHERE
+    table1.nom_du_film = table2.nom_du_film
