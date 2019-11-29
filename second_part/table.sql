@@ -66,14 +66,7 @@ CREATE TABLE Se_joue_dans(
     num_film INT,
     num_salle INT,
     nom_du_cinema VARCHAR(30),
-    PRIMARY KEY(
-		num_se_joue,
-        num_film,
-        num_salle,
-        nom_du_cinema,
-        jour,
-        heure
-    ),
+    PRIMARY KEY(num_se_joue),
     FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_salle, nom_du_cinema) REFERENCES Salle(num_salle, nom_du_cinema) ON DELETE CASCADE ON UPDATE CASCADE
 );
