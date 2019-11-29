@@ -20,6 +20,9 @@ grant select on Salle to 'Anonyme'@'localhost';
 grant select on Suit to 'Anonyme'@'localhost';
 */
 
+grant select on personne_majeur to 'Client'@'localhost';
+grant select on film_vo to 'Client'@'localhost';
+grant select on film_vf to 'Client'@'localhost';
 grant select on Film to 'Client'@'localhost';
 grant select on Personne to 'Client'@'localhost';
 grant select on Participe_au_film to 'Client'@'localhost';
