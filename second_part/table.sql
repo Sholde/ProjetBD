@@ -24,7 +24,7 @@ CREATE TABLE Cinema(
 CREATE TABLE Salle(
     num_salle INT,
     nom_du_cinema VARCHAR(30),
-    nombre_de_place INT NOT NULL,
+    nb_de_place INT NOT NULL,
     ville VARCHAR(30) NOT NULL,
     PRIMARY KEY(num_salle, nom_du_cinema),
     FOREIGN KEY(nom_du_cinema) REFERENCES Cinema(nom) ON DELETE CASCADE ON UPDATE CASCADE
