@@ -10,15 +10,6 @@ grant all on Projet.* to 'Admin'@'localhost';
 
 /* pour pouvoir compter les notes et les bénéfices */
 grant select on Projet.* to 'Anonyme'@'localhost';
-/*
-grant select on Film to 'Anonyme'@'localhost';
-grant select on Personne to 'Anonyme'@'localhost';
-grant select on Participe_au_film to 'Anonyme'@'localhost';
-grant select on Cinema to 'Anonyme'@'localhost';
-grant select on Se_joue_dans to 'Anonyme'@'localhost';
-grant select on Salle to 'Anonyme'@'localhost';
-grant select on Suit to 'Anonyme'@'localhost';
-*/
 
 grant select on personne_majeur to 'Client'@'localhost';
 grant select on film_vo to 'Client'@'localhost';
