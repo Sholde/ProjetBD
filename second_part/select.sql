@@ -1,7 +1,7 @@
 /* Requète select */
 
 /* Note Moyenne des film */
-select f.nom, avg(n.note)
+select f.nom as nom, avg(n.note)
 from Film f, Note n
 where f.num_film = n.num_film
 group by f.nom
@@ -28,27 +28,27 @@ having avg(n.note) >  CONVERT(2.5, decimal(1,1))
 /* nom des cinema Pathé */
 select c.nom
 from Cinema c
-where c.companie like "Pathé%"
+where c.companie like "%Pathé%"
 
 /* Recette pour chaque film */
-select f.nom, sum(v.prix)
+select f.nom, sum(v.prix) as recette
 from Film f, Veut_voir v
 where f.num_film = v.num_film
 group by f.nom
 
-/* nom des film de SF ayant 100 entré ou plus */
-select f.nom, sum(v.num_client)
+/* nom des film de SF ayant 30 entré ou plus */
+select f.nom, count(v.num_client)
 from Film f, Veut_voir v
 where f.num_film = v.num_film
-and f.genre like "Science-Fiction"
+and f.genre like "%Science-Fiction%"
 group by f.nom
-having sum(v.num_client) > 100
+having count(v.num_client) > 30
 
 /* nom des film diffusé par la companie Pathé */
 select f.nom
 from Film f, Se_joue_dans j, Salle s, Cinema ci
 where f.num_film = j.num_film
-and j.num_salle = f.num_salle
+and j.num_salle = s.num_salle
 and s.nom_du_cinema = ci.nom
 Group by f.nom
 
@@ -56,7 +56,7 @@ Group by f.nom
 select j.num_salle, j.jour, j.heure, v.prix
 from Se_joue_dans j, Veut_voir v
 where v.num_se_joue = j.num_se_joue
-and j.num_client = n
+and v.num_client = 45
 
 /* nom des films de SF avec plus de 3 représentation dont au moins une est dans le cinema de boulogne */
 SELECT
@@ -98,10 +98,12 @@ WHERE
     
 /* nom, prenom et age des acteurs jouant dans des film d'action en vf */
 Select p.nom, p.prenom, p.age
-from Personne p, Film f, Se_joue_dans j
+from Personne p, Film f, Se_joue_dans j, Participe_au_film pa
 where f.num_film = j.num_film
 and j.version = "vf"
-and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
+and pa.num_personne = p.num_personne
+and pa.num_film = f.num_film
+and (pa.metier like "%Acteur%" or pa.metier like "%Actrice%")
 group by p.nom, p.prenom
 
 /* nom prenom des clients ayant acheté au moin une place */
