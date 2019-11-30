@@ -278,8 +278,8 @@ insert into Participe_au_film values (21, 7, "Doubleur");
 insert into Participe_au_film values (22, 7, "Doubleur");
 insert into Participe_au_film values (23, 7, "Doubleur");
 
-insert into Participe_au_film values (19, 8, "Directeur")
-insert into Participe_au_film values (20, 8, "Scénariste");;
+insert into Participe_au_film values (19, 8, "Directeur");
+insert into Participe_au_film values (20, 8, "Scénariste");
 insert into Participe_au_film values (21, 8, "Doubleur");
 insert into Participe_au_film values (22, 8, "Doubleur");
 insert into Participe_au_film values (23, 8, "Doubleur");
