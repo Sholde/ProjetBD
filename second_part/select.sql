@@ -103,3 +103,15 @@ where f.num_film = j.num_film
 and j.version = "vf"
 and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
 group by p.nom, p.prenom
+
+/* Ajout de requêtes de base pour l'administrateur */
+SELECT * FROM Clients;
+SELECT * FROM Film;
+SELECT * FROM Cinema;
+SELECT * FROM Salle;
+SELECT * FROM Veut_voir;
+SELECT * FROM Note;
+SELECT * FROM Suit;
+SELECT * FROM Se_joue_dans;
+SELECT * FROM Personne;
+SELECT * FROM Participe_au_film;
