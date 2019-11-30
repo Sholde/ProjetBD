@@ -28,7 +28,7 @@ having avg(n.note) >  CONVERT(2.5, decimal(1,1))
 /* nom des cinema Pathé */
 select c.nom
 from Cinema c
-where c.companie like "Pathé%"
+where c.compagnie like "Pathé%"
 
 /* Recette pour chaque film */
 select f.nom, sum(v.prix)
@@ -44,7 +44,7 @@ and f.genre like "Science-Fiction"
 group by f.nom
 having sum(v.num_client) > 100
 
-/* nom des film diffusé par la companie Pathé */
+/* nom des film diffusé par la compagnie Pathé */
 select f.nom
 from Film f, Se_joue_dans j, Salle s, Cinema ci
 where f.num_film = j.num_film
