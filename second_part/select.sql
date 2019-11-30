@@ -103,3 +103,9 @@ where f.num_film = j.num_film
 and j.version = "vf"
 and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
 group by p.nom, p.prenom
+
+/* nom prenom des clients ayant acheté au moin une place */
+select cl.nom, cl.prenom
+from Clients cl
+where cl.num_client in (select v.num_client from Veut_voir v)
+group by cl.nom, cl.prenom

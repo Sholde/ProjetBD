@@ -31,12 +31,11 @@ CREATE TABLE Salle(
 );
 CREATE TABLE Veut_voir(
 	num_veut_voir INT,
-	num_se_joue INT,
+	num_se_joue INT NOT NULL,
     num_client INT NOT NULL,
     num_film INT NOT NULL,
     prix INT NOT NULL,
     PRIMARY KEY(num_veut_voir, num_se_joue),
-    FOREIGN KEY(num_se_joue) REFERENCES Se_joue_dans(num_se_joue) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_client) REFERENCES Clients(num_client) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
