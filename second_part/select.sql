@@ -37,12 +37,12 @@ where f.num_film = v.num_film
 group by f.nom
 
 /* nom des film de SF ayant 30 entré ou plus */
-select f.nom, count(v.num_client)
+select f.nom, count(v.num_veut_voir)
 from Film f, Veut_voir v
 where f.num_film = v.num_film
 and f.genre like "%Science-Fiction%"
 group by f.nom
-having count(v.num_client) > 30
+having count(v.num_veut_voir) > 15
 
 /* nom des film diffusé par la companie Pathé */
 select f.nom
