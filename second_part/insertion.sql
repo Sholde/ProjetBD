@@ -183,16 +183,16 @@ insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
 
 /* Film */
-insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA");
-insert into Film values (2, "The Matrix reloaded", "Science-Fiction - Action", 120, "USA");
-insert into Film values (3, "The Matrix revolution", "Science-Fiction - Action", 120, "USA");
-insert into Film values (4, "The social network", "Biographie - Drame", 120, "USA");
-insert into Film values (5, "V for Vendetta", "Action", 120, "USA");
-insert into Film values (6, "Die hard", "Action", 120, "USA");
-insert into Film values (7, "Toy Story", "Animation", 120, "USA");
-insert into Film values (8, "Toy Story 2", "Animation", 120, "USA");
-insert into Film values (9, "Toy Story 3", "Animation", 120, "USA");
-insert into Film values (10, "Toy Story 4", "Animation", 120, "USA");
+insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA", "all");
+insert into Film values (2, "The Matrix reloaded", "Science-Fiction - Action", 120, "USA", "all");
+insert into Film values (3, "The Matrix revolution", "Science-Fiction - Action", 120, "USA", "all");
+insert into Film values (4, "The social network", "Biographie - Drame", 120, "USA", "all");
+insert into Film values (5, "V for Vendetta", "Action", 120, "USA", "vf");
+insert into Film values (6, "Die hard", "Action", 120, "USA", "all");
+insert into Film values (7, "Toy Story", "Animation", 120, "USA", "vo");
+insert into Film values (8, "Toy Story 2", "Animation", 120, "USA", "vo");
+insert into Film values (9, "Toy Story 3", "Animation", 120, "USA", "vo");
+insert into Film values (10, "Toy Story 4", "Animation", 120, "USA", "vo");
 
 /* Personne */
 /* Matrix (vérifié age) */
@@ -311,7 +311,7 @@ insert into Se_joue_dans values(8, '2019-12-17', '11:00:00', "vf", 1, 1, "Ciné-
 insert into Se_joue_dans values(9, '2019-12-18', '17:00:00', "vf", 4, 1, "Pathé Boulogne");
 insert into Se_joue_dans values(10, '2019-12-18', '17:00:00', "vo", 6, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(11, '2019-12-20', '14:00:00', "vf", 7, 1, "Ciné-Sel");
+insert into Se_joue_dans values(11, '2019-12-20', '14:00:00', "vo", 7, 1, "Ciné-Sel");
 
 insert into Se_joue_dans values(12, '2019-12-21', '21:00:00', "vo", 1, 1, "Pathé Boulogne");
 
