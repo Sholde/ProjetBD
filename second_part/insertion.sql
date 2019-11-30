@@ -296,23 +296,23 @@ insert into Participe_au_film values (22, 10);
 insert into Participe_au_film values (23, 10);
 
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
-insert into Se_joue_dans values(1, '2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(2, '2019-12-16', '10-00-00', "vo", 6, 2, "Pathé Boulogne");
-insert into Se_joue_dans values(3, '2019-12-16', '15-00-00', "vf", 2, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(4, '2019-12-16', '16-00-00', "vf", 5, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(1, '2019-12-16', '10:00:00', "vf", 1, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(2, '2019-12-16', '10:00:00', "vo", 6, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(3, '2019-12-16', '15:00:00', "vf", 2, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(4, '2019-12-16', '16:00:00', "vf", 5, 2, "Pathé Boulogne");
 
-insert into Se_joue_dans values(5, '2019-12-16', '10-00-00', "vf", 4, 1, "Ciné-Sel");
-insert into Se_joue_dans values(6, '2019-12-16', '15-00-00', "vo", 7, 1, "Ciné-Sel");
+insert into Se_joue_dans values(5, '2019-12-16', '10:00:00', "vf", 4, 1, "Ciné-Sel");
+insert into Se_joue_dans values(6, '2019-12-16', '15:00:00', "vo", 7, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(7, '2019-12-17', '09-00-00', "vf", 3, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(8, '2019-12-17', '11-00-00', "vf", 1, 1, "Ciné-Sel");
+insert into Se_joue_dans values(7, '2019-12-17', '09:00:00', "vf", 3, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(8, '2019-12-17', '11:00:00', "vf", 1, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(9, '2019-12-18', '17-00-00', "vf", 4, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(10, '2019-12-18', '17-00-00', "vo", 6, 2, "Ciné-Sel");
+insert into Se_joue_dans values(9, '2019-12-18', '17:00:00', "vf", 4, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(10, '2019-12-18', '17:00:00', "vo", 6, 2, "Ciné-Sel");
 
-insert into Se_joue_dans values(11, '2019-12-20', '14-00-00', "vf", 7, 2, "Ciné-Sel");
+insert into Se_joue_dans values(11, '2019-12-20', '14:00:00', "vf", 7, 2, "Ciné-Sel");
 
-insert into Se_joue_dans values(12, '2019-12-21', '21-00-00', "vo", 1, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(12, '2019-12-21', '21:00:00', "vo", 1, 1, "Pathé Boulogne");
 
 /* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
 insert into Veut_voir values(1, 1, 1, 1, 6);
