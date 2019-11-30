@@ -15,4 +15,15 @@ update Clients
 set reduction = 0
 where num_client = 16
 
+/* Met a jour le prix du billet suivant si il a une reduc ou non, car on a insérer a la main et c'était trop long de vérifié le prix */
+update Veut_voir
+inner join Clients
+	Clients.num_client = Veut_voir.num_client
+set prix = 6
+where Clients.reduction = 0
 
+update Veut_voir
+inner join Clients
+	Clients.num_client = Veut_voir.num_client
+set prix = 5
+where Clients.reduction = 1
