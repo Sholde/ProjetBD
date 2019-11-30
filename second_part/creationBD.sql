@@ -11,6 +11,7 @@ grant all on Projet.* to 'Admin'@'localhost';
 /* pour pouvoir compter les notes et les bénéfices */
 grant select on Projet.* to 'Anonyme'@'localhost';
 
+grant select on client_avec_reduction to 'Client'@'localhost';
 grant select on personne_majeur to 'Client'@'localhost';
 grant select on film_vo to 'Client'@'localhost';
 grant select on film_vf to 'Client'@'localhost';
