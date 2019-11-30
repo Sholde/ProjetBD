@@ -1,7 +1,7 @@
 /* Requète select */
 
 /* Note Moyenne des film */
-select f.nom, moy(n.note)
+select f.nom, avg(n.note)
 from Film f, Note n
 where f.num_film = n.num_film
 group by f.nom

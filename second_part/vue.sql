@@ -15,7 +15,7 @@ group by f.nom);
 
 create view personne_majeur as (
 select *
-from personne p
+from Personne p
 where p.age >= 18);
 
 create view client_avec_reduction as (

@@ -308,9 +308,9 @@ insert into Se_joue_dans values(7, '2019-12-17', '09-00-00', "vf", 3, 1, "Pathé
 insert into Se_joue_dans values(8, '2019-12-17', '11-00-00', "vf", 1, 1, "Ciné-Sel");
 
 insert into Se_joue_dans values(9, '2019-12-18', '17-00-00', "vf", 4, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(10, '2019-12-18', '17-00-00', "vo", 6, 2, "Ciné-Sel");
+insert into Se_joue_dans values(10, '2019-12-18', '17-00-00', "vo", 6, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(11, '2019-12-20', '14-00-00', "vf", 7, 2, "Ciné-Sel");
+insert into Se_joue_dans values(11, '2019-12-20', '14-00-00', "vf", 7, 1, "Ciné-Sel");
 
 insert into Se_joue_dans values(12, '2019-12-21', '21-00-00', "vo", 1, 1, "Pathé Boulogne");
 
@@ -471,15 +471,12 @@ insert into Note values(6,3,5);
 insert into Note values(12,2,2);
 insert into Note values(34,1,3);
 insert into Note values(1,1,3);
-insert into Note values(144, 1, 4);
-insert into Note values(14, 7, 2);
 insert into Note values(99, 4, 5);
 insert into Note values(157, 2, 4);
 insert into Note values(20, 6, 3);
 insert into Note values(32, 5, 1);
 insert into Note values(144, 1, 4);
 insert into Note values(14, 7, 2);
-insert into Note values(99, 4, 5);
 insert into Note values(112, 3, 3);
 insert into Note values(101, 3, 3);
 insert into Note values(139, 3, 4);
@@ -489,7 +486,6 @@ insert into Note values(55, 1, 5);
 insert into Note values(133, 8, 1);
 insert into Note values(4, 6, 2);
 insert into Note values(67, 4, 2);
-insert into Note values(144, 2, 4);
 insert into Note values(37, 10, 2);
 insert into Note values(1, 4, 3);
 insert into Note values(152, 8, 3);
