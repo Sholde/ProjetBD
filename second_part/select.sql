@@ -28,7 +28,7 @@ having avg(n.note) >  CONVERT(2.5, decimal(1,1))
 /* nom des cinema Pathé */
 select c.nom
 from Cinema c
-where c.companie like "%Pathé%"
+where c.compagnie like "%Pathé%"
 
 /* Recette pour chaque film */
 select f.nom, sum(v.prix) as recette
