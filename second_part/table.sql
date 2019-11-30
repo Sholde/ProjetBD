@@ -18,7 +18,7 @@ CREATE TABLE Film(
 );
 CREATE TABLE Cinema(
     nom VARCHAR(30),
-    companie VARCHAR(30) NOT NULL,
+    compagnie VARCHAR(30) NOT NULL,
     PRIMARY KEY(nom)
 );
 CREATE TABLE Salle(
