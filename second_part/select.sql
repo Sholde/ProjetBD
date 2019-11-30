@@ -1,7 +1,7 @@
 /* Requète select */
 
 /* Note Moyenne des film */
-select f.nom, moy(n.note)
+select f.nom, avg(n.note)
 from Film f, Note n
 where f.num_film = n.num_film
 group by f.nom
@@ -48,7 +48,7 @@ having sum(v.num_client) > 100
 select f.nom
 from Film f, Se_joue_dans j, Salle s, Cinema ci
 where f.num_film = j.num_film
-and j.num_salle = f.num_salle
+and j.num_salle = s.num_salle
 and s.nom_du_cinema = ci.nom
 Group by f.nom
 
@@ -56,7 +56,7 @@ Group by f.nom
 select j.num_salle, j.jour, j.heure, v.prix
 from Se_joue_dans j, Veut_voir v
 where v.num_se_joue = j.num_se_joue
-and j.num_client = n
+and v.num_client = n
 
 /* nom des films de SF avec plus de 3 représentation dont au moins une est dans le cinema de boulogne */
 SELECT
@@ -102,7 +102,7 @@ from Personne p, Film f, Se_joue_dans j
 where f.num_film = j.num_film
 and j.version = "vf"
 and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
-group by p.nom, p.prenom
+group by p.nom, p.prenom, p.age
 
 /* Ajout de requêtes de base pour l'administrateur */
 SELECT * FROM Clients;
