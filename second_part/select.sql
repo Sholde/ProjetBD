@@ -23,7 +23,7 @@ select f.nom
 from Film f, Note n
 where f.num_film = n.num_film
 group by f.nom
-having avg(n.note) >  CONVERT(2.5, decimal(1,1))
+having avg(n.note) > 2.5
 
 /* nom des cinema Pathé */
 select c.nom
