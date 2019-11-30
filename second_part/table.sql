@@ -31,12 +31,11 @@ CREATE TABLE Salle(
 );
 CREATE TABLE Veut_voir(
 	num_veut_voir INT,
-	num_se_joue INT,
+	num_se_joue INT NOT NULL,
     num_client INT NOT NULL,
     num_film INT NOT NULL,
     prix INT NOT NULL,
     PRIMARY KEY(num_veut_voir, num_se_joue),
-    FOREIGN KEY(num_se_joue) REFERENCES Se_joue_dans(num_se_joue) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_client) REFERENCES Clients(num_client) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -75,12 +74,12 @@ CREATE TABLE Personne(
     nom VARCHAR(30) NOT NULL,
     prenom VARCHAR(30) NOT NULL,
     age INT NOT NULL,
-    metier VARCHAR(256) NOT NULL,
     PRIMARY KEY(num_personne)
 );
 CREATE TABLE Participe_au_film(
     num_personne INT,
     num_film INT,
+    metier VARCHAR(256) NOT NULL,
     PRIMARY KEY(num_personne, num_film),
     FOREIGN KEY(num_personne) REFERENCES Personne(num_personne) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(num_film) REFERENCES Film(num_film) ON DELETE CASCADE ON UPDATE CASCADE
