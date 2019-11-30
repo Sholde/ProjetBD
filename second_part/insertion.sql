@@ -181,7 +181,6 @@ insert into Cinema values ("Ciné-Sel", "Sel");
 insert into Salle values (1, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
-insert into Salle values (2, "Ciné-Sel", 20, "Sèvres"); 
 
 /* Film */
 insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA");
