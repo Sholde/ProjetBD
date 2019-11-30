@@ -195,37 +195,37 @@ insert into Film values (10, "Toy Story 4", "Animation", 120, "USA");
 
 /* Personne */
 /* Matrix (vérifié age) */
-insert into Personne values (1, "Reeves", "Keanu", 55, "Acteur");
-insert into Personne values (2, "Fishburne", "Laurence", 58, "Acteur");
-insert into Personne values (3, "Wachowski", "Lilly", 62, "Directrice");
-insert into Personne values (4, "Wachowski", "Lana", 60, "Directrice");
-insert into Personne values (5, "Moss", "Carrie-Anne", 62, "Actrice");
+insert into Personne values (1, "Reeves", "Keanu", 55);
+insert into Personne values (2, "Fishburne", "Laurence", 58);
+insert into Personne values (3, "Wachowski", "Lilly", 62);
+insert into Personne values (4, "Wachowski", "Lana", 60);
+insert into Personne values (5, "Moss", "Carrie-Anne", 62);
 
 /* The social Network */
-insert into Personne values (6, "Fincher", "David", 57, "Directeur");
-insert into Personne values (7, "Sorkin", "Aaron", 58, "Scenariste");
-insert into Personne values (8, "Eisenberg", "Jesse", 36, "Acteur");
-insert into Personne values (9, "Garfield", "Andrew", 36, "Acteur");
-insert into Personne values (10, "Timberlake", "Justin", 38, "Acteur");
+insert into Personne values (6, "Fincher", "David", 57);
+insert into Personne values (7, "Sorkin", "Aaron", 58);
+insert into Personne values (8, "Eisenberg", "Jesse", 36);
+insert into Personne values (9, "Garfield", "Andrew", 36);
+insert into Personne values (10, "Timberlake", "Justin", 38);
 
 /* V for Vendetta */
-insert into Personne values (11, "McTeigue", "James", 52, "Directeur");
-insert into Personne values (12, "Weaving", "Hugo", 59, "Acteur");
-insert into Personne values (13, "Portman", "Natalie", 38, "Actrice");
-insert into Personne values (14, "Graves", "Rupert", 56, "Acteur");
+insert into Personne values (11, "McTeigue", "James", 52);
+insert into Personne values (12, "Weaving", "Hugo", 59);
+insert into Personne values (13, "Portman", "Natalie", 38);
+insert into Personne values (14, "Graves", "Rupert", 56);
 
 /* Die hard */
-insert into Personne values (15, "McTierman", "John", 68, "Directeur");
-insert into Personne values (16, "Willis", "Bruce", 62, "Acteur");
-insert into Personne values (17, "Stuart", "James", 63, "Scenariste");
-insert into Personne values (18, "Rickman", "Alan", 69, "Acteur");
+insert into Personne values (15, "McTierman", "John", 68);
+insert into Personne values (16, "Willis", "Bruce", 62);
+insert into Personne values (17, "Stuart", "James", 63);
+insert into Personne values (18, "Rickman", "Alan", 69);
 
 /* Toy Story 1 */
-insert into Personne values (19, "Lasseter", "John", 62, "Directeur");
-insert into Personne values (20, "Docter", "Pete", 51, "Scenariste");
-insert into Personne values (21, "Hanks", "Tom", 63, "Doubleur");
-insert into Personne values (22, "Allen", "Tim", 66, "Doubleur");
-insert into Personne values (23, "Rickles", "Don", 90, "Doubleur");
+insert into Personne values (19, "Lasseter", "John", 62);
+insert into Personne values (20, "Docter", "Pete", 51);
+insert into Personne values (21, "Hanks", "Tom", 63);
+insert into Personne values (22, "Allen", "Tim", 66);
+insert into Personne values (23, "Rickles", "Don", 90);
 
 /* Suit */
 insert into Suit values (1, 2);
@@ -235,65 +235,65 @@ insert into Suit values (8, 9);
 insert into Suit values (9, 10);
 
 /* Participe au film */
-insert into Participe_au_film values (1, 1);
-insert into Participe_au_film values (2, 1);
-insert into Participe_au_film values (3, 1);
-insert into Participe_au_film values (4, 1);
-insert into Participe_au_film values (5, 1);
+insert into Participe_au_film values (1, 1, "Acteur");
+insert into Participe_au_film values (2, 1, "Acteur");
+insert into Participe_au_film values (3, 1, "Directrice - Scénariste");
+insert into Participe_au_film values (4, 1, "Directrice - Scénariste");
+insert into Participe_au_film values (5, 1, "Actrice");
 
-insert into Participe_au_film values (1, 2);
-insert into Participe_au_film values (2, 2);
-insert into Participe_au_film values (3, 2);
-insert into Participe_au_film values (4, 2);
-insert into Participe_au_film values (5, 2);
+insert into Participe_au_film values (1, 2, "Acteur");
+insert into Participe_au_film values (2, 2, "Acteur");
+insert into Participe_au_film values (3, 2, "Directrice - Scénariste");
+insert into Participe_au_film values (4, 2, "Directrice - Scénariste");
+insert into Participe_au_film values (5, 2, "Actrice");
 
-insert into Participe_au_film values (1, 3);
-insert into Participe_au_film values (2, 3);
-insert into Participe_au_film values (3, 3);
-insert into Participe_au_film values (4, 3);
-insert into Participe_au_film values (5, 3);
+insert into Participe_au_film values (1, 3, "Acteur");
+insert into Participe_au_film values (2, 3, "Acteur");
+insert into Participe_au_film values (3, 3, "Directrice - Scénariste");
+insert into Participe_au_film values (4, 3, "Directrice - Scénariste");
+insert into Participe_au_film values (5, 3, "Actrice");
 
-insert into Participe_au_film values (6, 4);
-insert into Participe_au_film values (7, 4);
-insert into Participe_au_film values (8, 4);
-insert into Participe_au_film values (9, 4);
-insert into Participe_au_film values (10, 4);
+insert into Participe_au_film values (6, 4,"Directeur");
+insert into Participe_au_film values (7, 4, "Scénariste");
+insert into Participe_au_film values (8, 4, "Acteur");
+insert into Participe_au_film values (9, 4, "Acteur");
+insert into Participe_au_film values (10, 4, "Acteur");
 
-insert into Participe_au_film values (3, 5);
-insert into Participe_au_film values (4, 5);
-insert into Participe_au_film values (11, 5);
-insert into Participe_au_film values (12, 5);
-insert into Participe_au_film values (13, 5);
-insert into Participe_au_film values (14, 5);
+insert into Participe_au_film values (3, 5, "Scénariste");
+insert into Participe_au_film values (4, 5, "Scénariste");
+insert into Participe_au_film values (11, 5, "Directeur");
+insert into Participe_au_film values (12, 5, "Acteur");
+insert into Participe_au_film values (13, 5, "Actrice");
+insert into Participe_au_film values (14, 5, "Acteur");
 
-insert into Participe_au_film values (15, 6);
-insert into Participe_au_film values (16, 6);
-insert into Participe_au_film values (17, 6);
-insert into Participe_au_film values (18, 6);
+insert into Participe_au_film values (15, 6, "Directeur");
+insert into Participe_au_film values (16, 6, "Acteur");
+insert into Participe_au_film values (17, 6, "Scénariste");
+insert into Participe_au_film values (18, 6, "Acteur");
 
-insert into Participe_au_film values (19, 7);
-insert into Participe_au_film values (20, 7);
-insert into Participe_au_film values (21, 7);
-insert into Participe_au_film values (22, 7);
-insert into Participe_au_film values (23, 7);
+insert into Participe_au_film values (19, 7, "Directeur");
+insert into Participe_au_film values (20, 7, "Scénariste");
+insert into Participe_au_film values (21, 7, "Doubleur");
+insert into Participe_au_film values (22, 7, "Doubleur");
+insert into Participe_au_film values (23, 7, "Doubleur");
 
-insert into Participe_au_film values (19, 8);
-insert into Participe_au_film values (20, 8);
-insert into Participe_au_film values (21, 8);
-insert into Participe_au_film values (22, 8);
-insert into Participe_au_film values (23, 8);
+insert into Participe_au_film values (19, 8, "Directeur")
+insert into Participe_au_film values (20, 8, "Scénariste");;
+insert into Participe_au_film values (21, 8, "Doubleur");
+insert into Participe_au_film values (22, 8, "Doubleur");
+insert into Participe_au_film values (23, 8, "Doubleur");
 
-insert into Participe_au_film values (19, 9);
-insert into Participe_au_film values (20, 9);
-insert into Participe_au_film values (21, 9);
-insert into Participe_au_film values (22, 9);
-insert into Participe_au_film values (23, 9);
+insert into Participe_au_film values (19, 9, "Directeur");
+insert into Participe_au_film values (20, 9, "Scénariste");
+insert into Participe_au_film values (21, 9, "Doubleur");
+insert into Participe_au_film values (22, 9, "Doubleur");
+insert into Participe_au_film values (23, 9, "Doubleur");
 
-insert into Participe_au_film values (19, 10);
-insert into Participe_au_film values (20, 10);
-insert into Participe_au_film values (21, 10);
-insert into Participe_au_film values (22, 10);
-insert into Participe_au_film values (23, 10);
+insert into Participe_au_film values (19, 10, "Directeur");
+insert into Participe_au_film values (20, 10, "Scénariste");
+insert into Participe_au_film values (21, 10, "Doubleur");
+insert into Participe_au_film values (22, 10, "Doubleur");
+insert into Participe_au_film values (23, 10, "Doubleur");
 
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
 insert into Se_joue_dans values(1, '2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
