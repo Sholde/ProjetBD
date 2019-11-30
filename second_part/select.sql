@@ -104,6 +104,12 @@ and j.version = "vf"
 and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
 group by p.nom, p.prenom, p.age
 
+/* nom prenom des clients ayant acheté au moin une place */
+select cl.nom, cl.prenom
+from Clients cl
+where cl.num_client in (select v.num_client from Veut_voir v)
+group by cl.nom, cl.prenom
+
 /* Ajout de requêtes de base pour l'administrateur */
 SELECT * FROM Clients;
 SELECT * FROM Film;
