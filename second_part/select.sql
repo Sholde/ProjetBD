@@ -28,7 +28,7 @@ having avg(n.note) >  CONVERT(2.5, decimal(1,1))
 /* nom des cinema Pathé */
 select c.nom
 from Cinema c
-where c.companie like "Pathé%"
+where c.compagnie like "Pathé%"
 
 /* Recette pour chaque film */
 select f.nom, sum(v.prix)
@@ -44,11 +44,11 @@ and f.genre like "Science-Fiction"
 group by f.nom
 having sum(v.num_client) > 100
 
-/* nom des film diffusé par la companie Pathé */
+/* nom des film diffusé par la compagnie Pathé */
 select f.nom
 from Film f, Se_joue_dans j, Salle s, Cinema ci
 where f.num_film = j.num_film
-and j.num_salle = f.num_salle
+and j.num_salle = s.num_salle
 and s.nom_du_cinema = ci.nom
 Group by f.nom
 
@@ -56,7 +56,7 @@ Group by f.nom
 select j.num_salle, j.jour, j.heure, v.prix
 from Se_joue_dans j, Veut_voir v
 where v.num_se_joue = j.num_se_joue
-and j.num_client = n
+and v.num_client = n
 
 /* nom des films de SF avec plus de 3 représentation dont au moins une est dans le cinema de boulogne */
 SELECT
@@ -102,10 +102,22 @@ from Personne p, Film f, Se_joue_dans j
 where f.num_film = j.num_film
 and j.version = "vf"
 and (p.metier like "%Acteur%" or p.metier like "%Actrice%")
-group by p.nom, p.prenom
+group by p.nom, p.prenom, p.age
 
 /* nom prenom des clients ayant acheté au moin une place */
 select cl.nom, cl.prenom
 from Clients cl
 where cl.num_client in (select v.num_client from Veut_voir v)
 group by cl.nom, cl.prenom
+
+/* Ajout de requêtes de base pour l'administrateur */
+SELECT * FROM Clients;
+SELECT * FROM Film;
+SELECT * FROM Cinema;
+SELECT * FROM Salle;
+SELECT * FROM Veut_voir;
+SELECT * FROM Note;
+SELECT * FROM Suit;
+SELECT * FROM Se_joue_dans;
+SELECT * FROM Personne;
+SELECT * FROM Participe_au_film;

@@ -143,7 +143,8 @@ insert into Clients values (139, "Marx","Karl","karl.marx@email.com","karl",0);
 insert into Clients values (140, "Engels","Friedrich","engels.fried@email.com","fried",0);
 insert into Clients values (141, "Joly","Maurice","joly.maurice@email.com","joly",0);
 insert into Clients values (142, "Tucker","Benjamin","Tucker.benjamin@email.com","ben",0);
-insert into Clients values (143, "Brentano","Franz","franz.bren@email.com","franz",0);                                              
+insert into Clients values (143, "Brentano","Franz","franz.bren@email.com","franz",0);
+insert into Clients values (144, "Max","Frisch","max.frisch@email.com","frisch",0);                                              
 insert into Clients values (145, "Mach","Ernst","ernst.mach@email.com","ernst",0);
 insert into Clients values (146, "James","William","William.james@email.com","james",0);
 insert into Clients values (147, "Cohen","Hermann","cohen.hermann@email.com","herm",0);
@@ -180,6 +181,7 @@ insert into Cinema values ("Ciné-Sel", "Sel");
 insert into Salle values (1, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
 insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
+insert into Salle values (2, "Ciné-Sel", 20, "Sèvres"); 
 
 /* Film */
 insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA");
@@ -296,23 +298,24 @@ insert into Participe_au_film values (22, 10, "Doubleur");
 insert into Participe_au_film values (23, 10, "Doubleur");
 
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
-insert into Se_joue_dans values(1, '2019-12-16', '10-00-00', "vf", 1, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(2, '2019-12-16', '10-00-00', "vo", 6, 2, "Pathé Boulogne");
-insert into Se_joue_dans values(3, '2019-12-16', '15-00-00', "vf", 2, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(4, '2019-12-16', '16-00-00', "vf", 5, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(1, '2019-12-16', '10:00:00', "vf", 1, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(2, '2019-12-16', '10:00:00', "vo", 6, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(3, '2019-12-16', '15:00:00', "vf", 2, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(4, '2019-12-16', '16:00:00', "vf", 5, 2, "Pathé Boulogne");
 
-insert into Se_joue_dans values(5, '2019-12-16', '10-00-00', "vf", 4, 1, "Ciné-Sel");
-insert into Se_joue_dans values(6, '2019-12-16', '15-00-00', "vo", 7, 1, "Ciné-Sel");
+insert into Se_joue_dans values(5, '2019-12-16', '10:00:00', "vf", 4, 1, "Ciné-Sel");
+insert into Se_joue_dans values(6, '2019-12-16', '15:00:00', "vo", 7, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(7, '2019-12-17', '09-00-00', "vf", 3, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(8, '2019-12-17', '11-00-00', "vf", 1, 1, "Ciné-Sel");
+insert into Se_joue_dans values(7, '2019-12-17', '09:00:00', "vf", 3, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(8, '2019-12-17', '11:00:00', "vf", 1, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(9, '2019-12-18', '17-00-00', "vf", 4, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(10, '2019-12-18', '17-00-00', "vo", 6, 1, "Ciné-Sel");
+insert into Se_joue_dans values(9, '2019-12-18', '17:00:00', "vf", 4, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(10, '2019-12-18', '17:00:00', "vo", 6, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(11, '2019-12-20', '14-00-00', "vf", 7, 1, "Ciné-Sel");
+insert into Se_joue_dans values(11, '2019-12-20', '14:00:00', "vf", 7, 1, "Ciné-Sel");
 
-insert into Se_joue_dans values(12, '2019-12-21', '21-00-00', "vo", 1, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(12, '2019-12-21', '21:00:00', "vo", 1, 1, "Pathé Boulogne");
+
 
 /* Veut_voir */ /* 6 euro sans reduc, 5 euro avec */
 insert into Veut_voir values(1, 1, 1, 1, 6);
