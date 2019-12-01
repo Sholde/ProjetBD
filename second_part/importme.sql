@@ -148,7 +148,7 @@ CREATE TABLE `Participe_au_film` (
 
 LOCK TABLES `Participe_au_film` WRITE;
 /*!40000 ALTER TABLE `Participe_au_film` DISABLE KEYS */;
-INSERT INTO `Participe_au_film` VALUES (1,1,'Acteur'),(1,2,'Acteur'),(1,3,'Acteur'),(2,1,'Acteur'),(2,2,'Acteur'),(2,3,'Acteur'),(3,1,'Directrice - Scénariste'),(3,2,'Directrice - Scénariste'),(3,3,'Directrice - Scénariste'),(3,5,'Scénariste'),(4,1,'Directrice - Scénariste'),(4,2,'Directrice - Scénariste'),(4,3,'Directrice - Scénariste'),(4,5,'Scénariste'),(5,1,'Actrice'),(5,2,'Actrice'),(5,3,'Actrice'),(6,4,'Directeur'),(7,4,'Scénariste'),(8,4,'Acteur'),(9,4,'Acteur'),(10,4,'Acteur'),(11,5,'Directeur'),(12,5,'Acteur'),(13,5,'Actrice'),(14,5,'Acteur'),(15,6,'Directeur'),(16,6,'Acteur'),(17,6,'Scénariste'),(18,6,'Acteur'),(19,7,'Directeur'),(19,9,'Directeur'),(19,10,'Directeur'),(20,7,'Scénariste'),(20,9,'Scénariste'),(20,10,'Scénariste'),(21,7,'Doubleur'),(21,8,'Doubleur'),(21,9,'Doubleur'),(21,10,'Doubleur'),(22,7,'Doubleur'),(22,8,'Doubleur'),(22,9,'Doubleur'),(22,10,'Doubleur'),(23,7,'Doubleur'),(23,8,'Doubleur'),(23,9,'Doubleur'),(23,10,'Doubleur');
+INSERT INTO `Participe_au_film` VALUES (1,1,'Acteur'),(1,2,'Acteur'),(1,3,'Acteur'),(2,1,'Acteur'),(2,2,'Acteur'),(2,3,'Acteur'),(3,1,'Directrice - Scénariste'),(3,2,'Directrice - Scénariste'),(3,3,'Directrice - Scénariste'),(3,5,'Scénariste'),(4,1,'Directrice - Scénariste'),(4,2,'Directrice - Scénariste'),(4,3,'Directrice - Scénariste'),(4,5,'Scénariste'),(5,1,'Actrice'),(5,2,'Actrice'),(5,3,'Actrice'),(6,4,'Directeur'),(7,4,'Scénariste'),(8,4,'Acteur'),(9,4,'Acteur'),(10,4,'Acteur'),(11,5,'Directeur'),(12,5,'Acteur'),(13,5,'Actrice'),(14,5,'Acteur'),(15,6,'Directeur'),(16,6,'Acteur'),(17,6,'Scénariste'),(18,6,'Acteur'),(19,7,'Directeur'),(19,8,'Directeur'),(19,9,'Directeur'),(19,10,'Directeur'),(20,7,'Scénariste'),(20,8,'Scénariste'),(20,9,'Scénariste'),(20,10,'Scénariste'),(21,7,'Doubleur'),(21,8,'Doubleur'),(21,9,'Doubleur'),(21,10,'Doubleur'),(22,7,'Doubleur'),(22,8,'Doubleur'),(22,9,'Doubleur'),(22,10,'Doubleur'),(23,7,'Doubleur'),(23,8,'Doubleur'),(23,9,'Doubleur'),(23,10,'Doubleur');
 /*!40000 ALTER TABLE `Participe_au_film` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -442,4 +442,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-30 19:32:43
+-- Dump completed on 2019-12-01 15:24:00
