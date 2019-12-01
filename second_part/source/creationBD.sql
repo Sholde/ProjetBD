@@ -25,3 +25,5 @@ grant select on Suit to 'Client'@'localhost';
 grant all on Clients to 'Client'@'localhost';
 grant all on Veut_voir to 'Client'@'localhost';
 grant all on Note to 'Client'@'localhost';
+
+flush privileges;
