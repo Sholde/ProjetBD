@@ -189,6 +189,9 @@ insert into Film values (3, "The Matrix revolution", "Science-Fiction - Action",
 insert into Film values (4, "The social network", "Biographie - Drame", 120, "USA", "all");
 insert into Film values (5, "V for Vendetta", "Action", 120, "USA", "vf");
 insert into Film values (6, "Die hard", "Action", 120, "USA", "vo");
+insert into Film values (7, "Die hard 2", "Action", 120, "USA", "vo");
+insert into Film values (8, "Die hard 3", "Action", 120, "USA", "vo");
+insert into Film values (9, "Die hard 4", "Action", 120, "USA", "vo");
 
 /* Personne */
 /* Matrix (vérifié age) */
@@ -220,6 +223,9 @@ insert into Personne values (18, "Rickman", "Alan", 69);
 /* Suit */
 insert into Suit values (1, 2);
 insert into Suit values (2, 3);
+insert into Suit values (6, 7);
+insert into Suit values (7, 8);
+insert into Suit values (8, 9);
 
 /* Participe au film */
 insert into Participe_au_film values (1, 1, "Acteur");
@@ -257,6 +263,18 @@ insert into Participe_au_film values (15, 6, "Directeur");
 insert into Participe_au_film values (16, 6, "Acteur");
 insert into Participe_au_film values (17, 6, "Scénariste");
 insert into Participe_au_film values (18, 6, "Acteur");
+
+insert into Participe_au_film values (15, 7, "Directeur");
+insert into Participe_au_film values (16, 7, "Acteur");
+insert into Participe_au_film values (17, 7, "Scénariste");
+
+insert into Participe_au_film values (15, 8, "Directeur");
+insert into Participe_au_film values (16, 8, "Acteur");
+insert into Participe_au_film values (17, 8, "Scénariste");
+
+insert into Participe_au_film values (15, 9, "Directeur");
+insert into Participe_au_film values (16, 9, "Acteur");
+insert into Participe_au_film values (17, 9, "Scénariste");
 
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
 insert into Se_joue_dans values(1, '2019-12-16', '10:00:00', "vf", 1, 1, "Pathé Boulogne");
