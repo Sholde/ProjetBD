@@ -356,14 +356,14 @@ insert into Veut_voir values(70, 5, 14, 4, 5);
 insert into Veut_voir values(71, 5, 14, 4, 6);
 insert into Veut_voir values(72, 5, 14, 4, 6);
 
-insert into Veut_voir values(73, 6, 11, 7, 6);
-insert into Veut_voir values(74, 6, 14, 7, 5);
-insert into Veut_voir values(75, 6, 99, 7, 6);
-insert into Veut_voir values(76, 6, 99, 7, 6);
-insert into Veut_voir values(77, 6, 99, 7, 6);
-insert into Veut_voir values(78, 6, 99, 7, 5);
-insert into Veut_voir values(79, 6, 126, 7, 6);
-insert into Veut_voir values(80, 6, 126, 7, 6);
+insert into Veut_voir values(73, 6, 11, 5, 6);
+insert into Veut_voir values(74, 6, 14, 5, 5);
+insert into Veut_voir values(75, 6, 99, 5, 6);
+insert into Veut_voir values(76, 6, 99, 5, 6);
+insert into Veut_voir values(77, 6, 99, 5, 6);
+insert into Veut_voir values(78, 6, 99, 5, 5);
+insert into Veut_voir values(79, 6, 126, 5, 6);
+insert into Veut_voir values(80, 6, 126, 5, 6);
 
 insert into Veut_voir values(81, 7, 87, 3, 6);
 insert into Veut_voir values(82, 7, 87, 3, 6);
@@ -402,14 +402,14 @@ insert into Veut_voir values(111, 10, 153, 6, 6);
 insert into Veut_voir values(112, 10, 153, 6, 6);
 insert into Veut_voir values(113, 10, 153, 6, 6);
 
-insert into Veut_voir values(114, 11, 36, 7, 6);
-insert into Veut_voir values(115, 11, 36, 7, 6);
-insert into Veut_voir values(116, 11, 36, 7, 6);
-insert into Veut_voir values(117, 11, 144, 7, 6);
-insert into Veut_voir values(118, 11, 36, 7, 6);
-insert into Veut_voir values(119, 11, 36, 7, 6);
-insert into Veut_voir values(120, 11, 36, 7, 6);
-insert into Veut_voir values(121, 11, 36, 7, 6);
+insert into Veut_voir values(114, 11, 36, 2, 6);
+insert into Veut_voir values(115, 11, 36, 2, 6);
+insert into Veut_voir values(116, 11, 36, 2, 6);
+insert into Veut_voir values(117, 11, 144, 2, 6);
+insert into Veut_voir values(118, 11, 36, 2, 6);
+insert into Veut_voir values(119, 11, 36, 2, 6);
+insert into Veut_voir values(120, 11, 36, 2, 6);
+insert into Veut_voir values(121, 11, 36, 2, 6);
 
 insert into Veut_voir values(122, 12, 14, 1, 6);
 insert into Veut_voir values(123, 12, 15, 1, 6);
