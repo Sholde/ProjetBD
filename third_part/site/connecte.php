@@ -1,6 +1,5 @@
 <?php
 	header("Location: index.php");
-	print "<html><head><title>Connexion</title></head><body>";
 	
 	$email = $_POST['email'];
 	$mdp = $_POST['mdp'];
@@ -23,9 +22,8 @@
 	$link->close();
 	
 	session_start();
-	$_SESSION['session'] = "client"; 
+	$_SESSION['session'] = "client";
 	
-	print "</body></html>";
 	exit();
 ?>
 
