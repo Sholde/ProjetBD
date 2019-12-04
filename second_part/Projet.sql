@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Dim 01 Décembre 2019 à 18:33
+-- Généré le :  Mer 04 Décembre 2019 à 14:48
 -- Version du serveur :  10.1.24-MariaDB-6
 -- Version de PHP :  7.0.22-3
 
@@ -678,8 +678,7 @@ INSERT INTO `Veut_voir` (`num_veut_voir`, `num_se_joue`, `num_client`, `num_film
 (125, 12, 14, 1, 6),
 (126, 12, 117, 1, 6),
 (127, 12, 117, 1, 6),
-(128, 12, 9, 1, 6),
-(129, 12, 9, 1, 6);
+(128, 12, 9, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -786,7 +785,8 @@ ALTER TABLE `Suit`
 -- Index pour la table `Veut_voir`
 --
 ALTER TABLE `Veut_voir`
-  ADD PRIMARY KEY (`num_veut_voir`,`num_se_joue`),
+  ADD PRIMARY KEY (`num_veut_voir`),
+  ADD KEY `num_se_joue` (`num_se_joue`),
   ADD KEY `num_client` (`num_client`),
   ADD KEY `num_film` (`num_film`);
 
@@ -832,8 +832,9 @@ ALTER TABLE `Suit`
 -- Contraintes pour la table `Veut_voir`
 --
 ALTER TABLE `Veut_voir`
-  ADD CONSTRAINT `Veut_voir_ibfk_1` FOREIGN KEY (`num_client`) REFERENCES `Clients` (`num_client`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Veut_voir_ibfk_2` FOREIGN KEY (`num_film`) REFERENCES `Film` (`num_film`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `Veut_voir_ibfk_1` FOREIGN KEY (`num_se_joue`) REFERENCES `Se_joue_dans` (`num_se_joue`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Veut_voir_ibfk_2` FOREIGN KEY (`num_client`) REFERENCES `Clients` (`num_client`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `Veut_voir_ibfk_3` FOREIGN KEY (`num_film`) REFERENCES `Film` (`num_film`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
