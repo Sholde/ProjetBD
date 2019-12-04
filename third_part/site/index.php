@@ -10,7 +10,13 @@
 					<a href="index.php">Acceuil</a>
 				</li>
 				<li>
+					<a href="liste_cinema.php">Cinéma</a>
+				</li>
+				<li>
 					<a href="liste_film.php">Film</a>
+				</li>
+				<li>
+					<a href="rechercher.php">Rechercher</a>
 				</li>
 				<?php
 					session_start();
