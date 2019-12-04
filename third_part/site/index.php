@@ -21,6 +21,9 @@
 					}
 					else {
 						print "<li>
+							<a href=\"compte.php\">Compte</a>
+						</li>";
+						print "<li>
 							<a href=\"deconnecte.php\">Se Déconnecter</a>
 						</li>";
 					}

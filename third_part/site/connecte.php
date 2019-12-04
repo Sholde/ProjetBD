@@ -11,10 +11,12 @@
 	
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "Select num_client from Clients where email like '$email' and mot_de_passe = '$mdp';";
+	$query = "Select num_client from Clients where email = '$email' and mot_de_passe = '$mdp';";
 	$result = $link->query($query) or die("erreur select");
 	
-	if(!$result)
+	$tuple = mysqli_fetch_object($result);
+	
+	if(!$tuple)
 	{
 		die("email ou mot de passe incorrect<br><a href=\"se_connecter.php\">Se connecter</a");
 	}
@@ -22,7 +24,7 @@
 	$link->close();
 	
 	session_start();
-	$_SESSION['session'] = "client";
+	$_SESSION['session'] = $email;
 	
 	exit();
 ?>
