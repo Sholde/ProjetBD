@@ -1,4 +1,5 @@
 <?php
+	
 	print "<html><head><title>Film</title></head><body>";
 	
 	$film = $_GET['num_film'];
@@ -39,6 +40,7 @@
 	}
 	print "</table>";
 	
+	$result->close();
 	$link->close();
 	
 	print "</body></html>";
