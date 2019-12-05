@@ -15,6 +15,9 @@ CREATE TABLE Film(
     duree INT NOT NULL,
     origine VARCHAR(30) NOT NULL,
     version_disponible VARCHAR(3) NOT NULL,
+		affiche VARCHAR(30) NOT NULL,
+		bande_annonce VARCHAR(30) NOT NULL,
+		description VARCHAR(30) NOT NULL,
     PRIMARY KEY(num_film)
 );
 CREATE TABLE Cinema(
