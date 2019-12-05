@@ -23,14 +23,14 @@
 				</tr>
 			</table>
 			<input type="Submit" value="S'inscrire"><input type="reset">
-			<?php
-				if(isset($_GET['not'])) {
-					$not = $_GET['not'];
-					if ($not == 1){
-							print "<div id=\"email\">Cet adresse email existe déjà</div>";
-					}
-				}
-			?>
 		</form>
+		<?php
+			if(isset($_GET['not'])) {
+				$not = $_GET['not'];
+				if ($not == 1){
+						print "<div id=\"erreur\">Cet adresse email existe déjà</div>";
+				}
+			}
+		?>
 	</body>
 </html>

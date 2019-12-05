@@ -66,7 +66,7 @@
 	if(isset($_GET['not'])) {
 		$not = $_GET['not'];
 		if ($not == 1){
-			print "<div id=\"email\">Cet adresse email existe déjà</div>";
+			print "<div class=\"erreur\">Cet adresse email existe déjà</div>";
 		}
 	}
 	
