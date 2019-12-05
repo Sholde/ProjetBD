@@ -1,5 +1,4 @@
 <?php
-	header("Location: index.php");
 	
 	$email = $_POST['email'];
 	$mdp = $_POST['mdp'];
@@ -18,7 +17,8 @@
 	
 	if(!$tuple)
 	{
-		die("email ou mot de passe incorrect<br><a href=\"se_connecter.php\">Se connecter</a");
+		header("Location: se_connecter.php?not=1");
+		exit();
 	}
 	
 	$link->close();
@@ -26,6 +26,7 @@
 	session_start();
 	$_SESSION['session'] = $email;
 	
+	header("Location: index.php");
 	exit();
 ?>
 

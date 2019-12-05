@@ -24,6 +24,9 @@
 						print "<li>
 							<a href=\"se_connecter.php\">Se connecter</a>
 						</li>";
+						print "<li>
+							<a href=\"formulaire_inscription.php\">S'inscrire</a>
+						</li>";
 					}
 					else {
 						print "<li>

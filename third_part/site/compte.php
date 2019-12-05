@@ -37,6 +37,7 @@
 			<td><input type=\"text\" value=\"$tuple->mot_de_passe\" name=\"mdp\"></td>
 	";
 	
+	/* affiche les réduction */
 	$reduc = $tuple->reduction;
 	if($reduc) {
 		print "
@@ -60,6 +61,14 @@
 	print "</table>";
 	print "<input type=\"submit\" value=\"valider\">";
 	print "</form>";
+	
+	/* affiche si l'utilisateur met un email déjà existant */
+	if(isset($_GET['not'])) {
+		$not = $_GET['not'];
+		if ($not == 1){
+			print "<div id=\"email\">Cet adresse email existe déjà</div>";
+		}
+	}
 	
 	$link->close();
 	
