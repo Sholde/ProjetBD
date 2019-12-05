@@ -1,6 +1,6 @@
 <?php
 	
-	if(!isset($_GET['num'])) {
+	if(!isset($_GET['num_se_joue']) | !isset($_GET['num_film'])) {
 		header("Location: index.php");
 		exit();
 	}
@@ -14,7 +14,8 @@
 	print "<html><head><title>Réserve</title></head><body>";
 	
 	/* variable */
-	$num = $_GET['num'];
+	$num_se_joue = $_GET['num_se_joue'];
+	$num_film = $_GET['num_film'];
 	
 	/* connexion serveur */
 	$link = new mysqli("localhost", "Client", "client");
@@ -25,10 +26,10 @@
 	/* connexion bd */
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "Select * from Se_joue_dans where num_se_joue = $num;";
-	$result = $link->query($query) or die("erreur select");
+	$query_se_joue = "Select * from Se_joue_dans where num_se_joue = $num_se_joue;";
+	$num_se_joue = $link->query($query_se_joue) or die("erreur select");
 	
-	$tuple = mysqli_fetch_object($result);
+	$tuple = mysqli_fetch_object($num_se_joue);
 	
 	print "<form method=\"POST\" action=\"reserve\">";
 	print "<table>";

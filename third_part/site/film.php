@@ -1,7 +1,7 @@
 <?php
 	print "<html><head><title>Film</title></head><body>";
 	
-	$film = $_GET['num_film'];
+	$num_film = $_GET['num_film'];
 	
 	$link = new mysqli("localhost", "Anonyme", "anonyme");
 	if($link->connect_errno) {
@@ -10,8 +10,8 @@
 	
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "Select f.num_film, f.nom, f.genre from Film f where f.num_film = $film;";
-	$result = $link->query($query) or die("not exist in data base ");
+	$query = "Select f.num_film, f.nom, f.genre from Film f where f.num_film = $num_film;";
+	$result = $link->query($query) or die("erreur select");
 	
 	print "<table>";
 	while ($tuple = mysqli_fetch_object($result)){ 
