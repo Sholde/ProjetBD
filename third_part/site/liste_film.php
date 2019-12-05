@@ -15,7 +15,7 @@
 	while ($tuple = mysqli_fetch_object($result)){ 
 		print "
 			<tr>
-			<td>$tuple->nom<br>$tuple->genre</td>
+			<td><a href=\"film.php?num=$tuple->num_film\">$tuple->nom</a></td>
 			<td><a href=\"projection_film.php?num_film=$tuple->num_film\">Voir les projection</td>
 			</tr>";
 	}
