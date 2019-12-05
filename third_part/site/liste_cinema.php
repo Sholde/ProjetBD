@@ -20,7 +20,7 @@
 			$tuple->ville<br>
 			nb salle : $tuple->nb
 			</td>
-			<td><a href=\"cinema.php?nom=$tuple->nom\" name=\"$tuple->nom\">Voir les projections</a></td>
+			<td><a href=\"projection_cinema.php?nom=$tuple->nom\">Voir les projections</a></td>
 			</tr>";
 	}
 	print "</table>";
