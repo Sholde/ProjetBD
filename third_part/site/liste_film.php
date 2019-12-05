@@ -13,7 +13,7 @@
 	
 	print "<table>";
 	while ($tuple = mysqli_fetch_object($result)){ 
-		print "<tr><td><a href=\"film.php\" name=\"$tuple->num_film\">$tuple->nom</a><br>$tuple->genre</td></tr>";
+		printf("<tr><td><a href=\"film.php?num_film=$tuple->num_film \">$tuple->nom</a> <br>$tuple->genre</td></tr>");
 	}
 	print "</table>";
 	
