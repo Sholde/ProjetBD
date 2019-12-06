@@ -1,5 +1,7 @@
 <?php
-	print "<html><head><title>Cinéma</title></head><body>";
+	print "<html><head><title>Cinéma</title>
+	<link rel=\"stylesheet\" href=\"liste.css\">
+	</head><body>";
 	
 	$link = new mysqli("localhost", "Anonyme", "anonyme");
 	if($link->connect_errno) {
@@ -15,8 +17,8 @@
 	while ($tuple = mysqli_fetch_object($result)){ 
 		print "
 			<tr>
-			<td>image cinema</td>
-			<td><a href=\"cinema.php?nom=$tuple->nom\">$tuple->nom</a><br>$tuple->ville</td>
+			<td class=\"image\">image cinema</td>
+			<td class=\"contenu\"><a href=\"cinema.php?nom=$tuple->nom\">$tuple->nom</a><br>$tuple->ville</td>
 			</tr>
 		";
 	}
