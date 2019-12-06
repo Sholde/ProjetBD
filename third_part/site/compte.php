@@ -22,19 +22,19 @@
 			<h3>Compte</h3>
 			<tr>
 			<td>Nom : </td>
-			<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\"></td>
+			<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"10\" placeholder=\"3 - 10 caractères\"></td>
 			</tr>
 			<tr>
 			<td>Prénom : </td>
-			<td><input type=\"text\" value=\"$tuple->prenom\" name=\"prenom\"></td>
+			<td><input type=\"text\" value=\"$tuple->prenom\" name=\"prenom\" minlength=\"3\" maxlength=\"10\" placeholder=\"3 - 10 caractères\"></td>
 			</tr>
 			<tr>
 			<td>email : </td>
-			<td><input type=\"text\" value=\"$tuple->email\" name=\"email\"></td>
+			<td><input type=\"text\" value=\"$tuple->email\" name=\"email\"  minlength=\"11\"></td>
 			</tr>
 			<tr>
 			<td>Mot de passe : </td>
-			<td><input type=\"text\" value=\"$tuple->mot_de_passe\" name=\"mdp\"></td>
+			<td><input type=\"text\" value=\"$tuple->mot_de_passe\" name=\"mdp\" minlength=\"3\" maxlength=\"16\" placeholder=\"3 - 16 caractères\"></td>
 	";
 	
 	/* affiche les réduction */

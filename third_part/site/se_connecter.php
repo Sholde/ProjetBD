@@ -7,11 +7,11 @@
 			<table>
 				<tr>
 				<td>email : </td>
-				<td><input type="text" name="email"></td>
+				<td><input type="text" name="email" minlength="11"></td>
 				</tr>
 				<tr>
 				<td>Mot de passe : </td>
-				<td><input type="password" name="mdp"></td>
+				<td><input type="password" name="mdp" minlength="3" maxlength="16" placeholder="3 - 16 caractères"></td>
 				</tr>
 			</table>
 			<input type="Submit" value="Se connecter"><input type="reset">
