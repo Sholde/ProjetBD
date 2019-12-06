@@ -44,6 +44,24 @@
 						<td>Note du film:$tuple->moyenne - Nombre de votes: $tuple->nb_note</td>
 						</tr>
 		";
+		print "
+		<tr>
+			<td>Attribuer une note:</td>
+		</tr>
+		<tr>
+			<td>
+			 <form method=\"POST\" action=\"change_note.php\">
+			 <input type=\"radio\" name=\"note\" value=\"1\" checked>1
+			 <input type=\"radio\" name=\"note\" value=\"2\" >2
+			 <input type=\"radio\" name=\"note\" value=\"3\" >3
+			 <input type=\"radio\" name=\"note\" value=\"4\" >4
+			 <input type=\"radio\" name=\"note\" value=\"5\" >5
+			 <button type=\"submit\" name=\"numero_film\" value=$num_film > Noter</button>
+			</form>
+			</td>
+		</tr>
+		";
+		
 		$prec = mysqli_fetch_object($film_prec);
 		if($prec) {
 			print "
@@ -61,6 +79,7 @@
 			";
 		}
 	}
+	
 	print "</table>";
 	
 	$result->close();
