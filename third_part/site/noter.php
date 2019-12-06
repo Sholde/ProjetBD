@@ -23,7 +23,7 @@
 	$tuple = mysqli_fetch_object($result);
 	$num_client = $tuple->num_client;
 	
-	$query = "SELECT * from Clients C, Note N where N.num_client = C.num_client and N.num_film = $num_film;";
+	$query = "SELECT * from Clients C, Note N where N.num_client = $num_client and C.num_client = $num_client and N.num_film = $num_film;";
 	$result = $link->query($query) or die("erreur select");
 	
 	$tuple = mysqli_fetch_object($result);
