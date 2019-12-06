@@ -8,15 +8,16 @@
 	
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "Select F.num_film, F.nom, F.genre from Film F;";
+	$query = "Select F.*, avg(N.note) as moyenne from Film F, Note N where N.num_film = F.num_film group by F.num_film;";
 	$result = $link->query($query) or die("erreur select");
 	
 	print "<table>";
 	while ($tuple = mysqli_fetch_object($result)){ 
 		print "
 			<tr>
-			<td><a href=\"film.php?num_film=$tuple->num_film\">$tuple->nom</a></td>
-			<td><a href=\"projection_film.php?num_film=$tuple->num_film\">Voir les projection</td>
+			<td>image</td>
+			<td><a href=\"film.php?num_film=$tuple->num_film\">$tuple->nom</a><br>
+			Note : $tuple->moyenne</td>
 			</tr>";
 	}
 	print "</table>";

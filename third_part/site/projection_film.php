@@ -15,7 +15,7 @@
 	
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "Select * from Film F, Se_joue_dans J where J.num_film = F.num_film and F.num_film = $num_film;";
+	$query = "Select * from Film F, Se_joue_dans J, Salle S where S.nom_du_cinema = J.nom_du_cinema and S.num_salle = J.num_salle and J.num_film = F.num_film and F.num_film = $num_film;";
 	$result = $link->query($query) or die("erreur select");
 	
 	$query = "Select nom from Film F where F.num_film = $num_film;";
@@ -38,8 +38,10 @@
 				$tuple->origine<br>
 				date: $tuple->jour<br>
 				heure: $tuple->heure<br>
-				<br>
 			</a>
+			<a href=\"cinema.php?nom=$tuple->nom_du_cinema\">$tuple->nom_du_cinema</a><br>
+			$tuple->ville<br>
+			<br>
 		";
 	}
 	

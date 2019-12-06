@@ -12,7 +12,7 @@
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
 	$query = "SELECT F.*, avg(N.note) AS moyenne, COUNT(N.num_client) AS nb_note FROM Note N, Film F WHERE F.num_film = $num_film and N.num_film = $num_film;";
-	$result = $link->query($query) or die("not exist in data base");
+	$result = $link->query($query) or die("erreur select");
 	
 	$query_suiv = "
 		select F_suiv.num_film as num, F_suiv.nom as nom
@@ -21,7 +21,7 @@
 		and F_suiv.num_film = S.num_film_suiv
 		and S.num_film_prec = $num_film;
 	";
-	$film_suiv = $link->query($query_suiv) or die("not exist in data base 2");
+	$film_suiv = $link->query($query_suiv) or die("erreur select");
 	
 	$query_prec = "
 		select F_prec.num_film as num, F_prec.nom as nom
@@ -30,7 +30,7 @@
 		and F_suiv.num_film = S.num_film_suiv
 		and S.num_film_suiv = $num_film;
 	";
-	$film_prec = $link->query($query_prec) or die("not exist in data base 2");
+	$film_prec = $link->query($query_prec) or die("erreur select");
 	
 	print "<table>";
 	while ($tuple = mysqli_fetch_object($result)){ 
@@ -41,7 +41,13 @@
 						<td>genre: $tuple->genre  -  origine: $tuple->origine  -  duree: $tuple->duree  -  version: $tuple->version_disponible</td>
 						</tr>
 						<tr>
-						<td>Note du film:$tuple->moyenne - Nombre de votes: $tuple->nb_note</td>
+						<td>Note : $tuple->moyenne - $tuple->nb_note votes</td>
+						</tr>
+						<tr>
+						<td><a href=\"projection_film.php?num_film=$tuple->num_film\">Voir les projections</a></td>
+						</tr>
+						<tr>
+						<td><a href=\"formulaire_noter.php?num_film=$tuple->num_film\">Noter le film</a></td>
 						</tr>
 		";
 		$prec = mysqli_fetch_object($film_prec);
