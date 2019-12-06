@@ -38,7 +38,7 @@
 						<td> $tuple->nom </td>
 						</tr>
 						<tr>
-						<td>genre: $tuple->genre  -  origine: $tuple->origine  -  duree: $tuple->duree  -  version: $tuple->version_disponible</td>
+						<td>genre: $tuple->genre - origine: $tuple->origine - duree: $tuple->duree - version: $tuple->version_disponible</td>
 						</tr>
 						<tr>
 						<td>Note : $tuple->moyenne - $tuple->nb_note votes</td>

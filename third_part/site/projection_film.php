@@ -24,8 +24,9 @@
 	$tuple = mysqli_fetch_object($raw_film);
 	print "
 		<div>
-			Liste des projections du film $tuple->nom
+			Liste des projections du film $tuple->nom :
 		</div>
+		<br>
 	";
 	
 	/* affiche les films disponnible dans ce cinema */
@@ -37,9 +38,8 @@
 			$tuple->origine<br>
 			date: $tuple->jour<br>
 			heure: $tuple->heure<br>
+			<a href=\"cinema.php?nom=$tuple->nom_du_cinema\">$tuple->nom_du_cinema</a> à $tuple->ville<br>
 			<a href=\"formulaire_reserve.php?num_se_joue=$tuple->num_se_joue&num_film=$tuple->num_film\">Réserver</a><br>
-			<a href=\"cinema.php?nom=$tuple->nom_du_cinema\">$tuple->nom_du_cinema</a><br>
-			$tuple->ville<br>
 			<br>
 		";
 	}

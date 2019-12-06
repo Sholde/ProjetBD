@@ -1,13 +1,14 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="menu.css">
 		<title>Réserve Ta Place</title>
 	</head>
 	<body>
 		<div>
 			<h1>Réserve Ta Place</h1>
-			<ul>
+			<ul class="menu">
 				<li>
-					<a href="index.php">Acceuil</a>
+					<a href="info.php">Info</a>
 				</li>
 				<li>
 					<a href="liste_cinema.php">Cinéma</a>
@@ -40,4 +41,9 @@
 			</ul>
 		</div>
 	</body>
+	<footer>
+		<div>
+			reserve-ta-place.com &copy;
+		</div>
+	</footer>
 </html>

@@ -12,6 +12,7 @@
 	$num_client = $_POST['num_client'];
 	$prix = $_POST['prix'];
 	$nb_place = $_POST['nb_place'];
+	$tmp = $nb_place;
 	
 	$link = new mysqli("localhost", "Client", "client");
 	if($link->connect_errno) {
@@ -32,7 +33,7 @@
 		$max++;
 	}
 	
-	print "Place acheté : $nb_place";
+	print "Place acheté : $tmp";
 	
 	$result->close();
 	$link->close();

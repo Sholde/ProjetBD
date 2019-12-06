@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	margin-top:	20px;
+	text-align:	center;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.menu {
+	margin-top: 30px;
+}
+
+.menu {
+	width: 500px;
+	padding: 20 0 40 0;
+	list-style: none;
+	background: #AAAAAA;
+	margin-left: 37%;
+	border-radius: 3px;
+}
+
+.menu > li {
+	margin-top: 20px;
+	margin-left: 31%;
+}
+
+.menu > li > a {
+	text-align: center;
+	display: block;
+	padding: 20px;
+	background: red;
+	width: 200px;
+	border-radius: 3px;
+}
+
+.menu > li > a:hover {
+	background: white;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
