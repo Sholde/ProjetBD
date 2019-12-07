@@ -5,40 +5,43 @@
 }
 
 h1 {
-	margin-left: 15%;
+	margin-left: 10%;
 	margin-top: 2%;
+}
+
+a {
+	display: block;
 }
 
 .contenu {
 	margin-top: 2%;
-	margin-left: 15%;
-	width: 70%;
+	margin-left: 10%;
+	width: 80%;
 	padding: 10px;
 	background: #444444;
 	display: block;
-	border-radius: 10px;
+}
+
+.one {
+	margin: 20px;
+	display: block;
+}
+
+.image {
+	display: inline-block;
+	background: green;
+	width: 100px;
 }
 
 .text {
+	margin-left: 2%;
 	display: inline-block;
-	width: 100%;
+	background: red;
+	width: 90%;
 }
 
 a {
 	margin: 30px;
-	padding: 20px;
-	background: red;
 	font-size: 20px;
-	display: block;
-	text-decoration: none;
-	color: black;
-	border-radius: 10px;
 }
 
-ul {
-	list-style: none;
-}
-
-a:hover {
-	background: white;
-}
