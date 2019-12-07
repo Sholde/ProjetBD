@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	margin-left: 10%;
+	margin-top: 2%;
+}
+
+a {
+	display: block;
+}
+
+.contenu {
+	margin-top: 2%;
+	margin-left: 10%;
+	width: 80%;
+	padding: 10px;
+	background: #444444;
+	display: block;
+}
+
+.one {
+	margin: 20px;
+	background: white;
+	display: block;
+}
+
+.image {
+	display: inline-block;
+	background: green;
+}
+
+.void {
+	display: inline-block;
+	background: yellow;
+	padding-left: 10px;
+}
+
+.text {
+	display: inline-block;
+	background: red;
+}
+
