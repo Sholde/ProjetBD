@@ -21,9 +21,8 @@
 	while ($tuple = mysqli_fetch_object($result)){ 
 		print "
 			<div class=\"one\">
-			<div class=\"image\">image<br>cinema</div>
-			<div class=\"void\">fsf</div>
-			<div class=\"text\"><a href=\"cinema.php?nom=$tuple->nom\">$tuple->nom<br>$tuple->ville</a></div>
+				<div class=\"image\">image<br>cinema</div>
+				<div class=\"text\"><a href=\"cinema.php?nom=$tuple->nom\">$tuple->nom<br>$tuple->ville</a></div>
 			</div>
 		";
 	}

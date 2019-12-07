@@ -24,23 +24,24 @@ a {
 
 .one {
 	margin: 20px;
-	background: white;
 	display: block;
 }
 
 .image {
 	display: inline-block;
 	background: green;
-}
-
-.void {
-	display: inline-block;
-	background: yellow;
-	padding-left: 10px;
+	width: 100px;
 }
 
 .text {
+	margin-left: 2%;
 	display: inline-block;
 	background: red;
+	width: 90%;
+}
+
+a {
+	margin: 30px;
+	font-size: 20px;
 }
 
