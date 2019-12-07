@@ -13,9 +13,14 @@
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 		?>
-		<section>
+		<header>
 			<h1>Page d'administration:</h1>
+		</header>
+		<section>
 			<h2>Modification de la base de donnée</h2>
+			<?php
+				
+			?>
 			<h2>Statistiques</h2>
 			<?php
 				$query = "SELECT COUNT(num_client) AS nb_inscrit FROM Clients;";
@@ -31,13 +36,18 @@
 				$query = "SELECT f.nom, sum(v.prix) as recette FROM Film f, Veut_voir v WHERE f.num_film = v.num_film GROUP BY f.nom;";
 				$result = $link->query($query) or die("erreur select");
 			  print "<h3>Profit par film:$profit</h3>";
+			  print "<p>";
 			  while ($profit = mysqli_fetch_object($result))
 			  {
 					print "<ul>";
-					print "<li>$profit->nom à fait $profit->recette €</li>";
+					print "<li>$profit->nom : $profit->recette €</li>";
 					print "</ul>";					
 				}
-			  //~ print "<h3></h3>";
+				print "</p>";
+				
+				$query = "SELECT f.nom, sum(v.prix) as recette FROM Film f, Veut_voir v WHERE f.num_film = v.num_film GROUP BY f.nom;";
+				$result = $link->query($query) or die("erreur select");
+			  print "<h3></h3>";
 			?>
 		</section>
 	</body>
