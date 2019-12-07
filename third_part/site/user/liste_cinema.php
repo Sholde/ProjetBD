@@ -20,10 +20,12 @@
 	print "<div class=\"contenu\">";
 	while ($tuple = mysqli_fetch_object($result)){ 
 		print "
-			<div class=\"one\">
-				<div class=\"image\">image<br>cinema</div>
-				<div class=\"text\"><a href=\"cinema.php?nom=$tuple->nom\">$tuple->nom<br>$tuple->ville</a></div>
-			</div>
+				<a href=\"cinema.php?nom=$tuple->nom\">
+					<ul class=\"text\">
+						<li>$tuple->nom</li>
+						<li>$tuple->ville</li>
+					</ul>
+				</a>
 		";
 	}
 	print "</div>";
