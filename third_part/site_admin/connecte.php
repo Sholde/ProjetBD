@@ -36,25 +36,31 @@
 				$query = "SELECT f.nom, sum(v.prix) as recette FROM Film f, Veut_voir v WHERE f.num_film = v.num_film GROUP BY f.nom;";
 				$result = $link->query($query) or die("erreur select");
 			  print "<h3>Profit par film:$profit</h3>";
+			  print "<table>";
+			  print "<tr><th>Nom du film</th><th>Profit</th></tr>";
 			  while ($profit = mysqli_fetch_object($result))
 			  {
-					print "<ul>";
-					print "<li>$profit->nom : $profit->recette €</li>";
-					print "</ul>";					
-				}				
+					print "<tr>";
+					print "<td>$profit->nom </td><td> $profit->recette € </td>";
+					print "</tr>";					
+				}		
+				print "</table>";		
 				$query = "SELECT c.nom, (select sum(v.prix) as recette from Veut_voir v where v.num_se_joue IN (
 									select s.num_se_joue FROM Se_joue_dans s WHERE s.nom_du_cinema = c.nom)) as recette
 									FROM Cinema c;";
 				$result = $link->query($query) or die("erreur select");
 			  print "<h3>Profit des cinémas:</h3>";
+			  print "<table>";
+			   print "<tr><th>Nom du Cinéma</th><th>Profit</th></tr>";
 				while ($profit_cine = mysqli_fetch_object($result))
 			  {
 					$total = $total + $profit_cine->recette; 
-					print "<ul>";
-					print "<li>$profit_cine->nom : $profit_cine->recette €</li>";
-					print "</ul>";					
-				}
-				print "total : $total €";
+					print "<tr>";
+					print "<td>$profit_cine->nom </td><td> $profit_cine->recette €</td>";
+					print "</tr>";					
+				}		
+				print "<td>total </td><td> $total €</td>";
+				print "</table>";
 			?>
 		</section>
 	</body>
