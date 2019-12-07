@@ -33,7 +33,7 @@
 	$film_prec = $link->query($query_prec) or die("erreur select");
 	
 	print "<table>";
-	while ($tuple = mysqli_fetch_object($result)){ 
+	$tuple = mysqli_fetch_object($result);
 		print "	<tr>
 						<td> $tuple->nom </td>
 						</tr>
@@ -43,13 +43,62 @@
 						<tr>
 						<td>Note : $tuple->moyenne - $tuple->nb_note votes</td>
 						</tr>
+		";
+		
+	/* directeur */
+		
+	$query = "select * from Personne P, Participe_au_film PA where PA.num_personne = P.num_personne and PA.num_film = $num_film and PA.metier like '%Direct%';";
+	$result = $link->query($query) or die("erreur select");
+	
+	print "<tr>";
+	print "<td> Directeur : ";
+	print "<ul>";
+	while($tuple = mysqli_fetch_object($result)) {
+		print "<li>$tuple->nom $tuple->prenom</li>";
+	}
+	print "</ul>";
+	print "</td>";
+	print "</tr>";
+	
+	/* scénariste */
+	
+	$query = "select * from Personne P, Participe_au_film PA where PA.num_personne = P.num_personne and PA.num_film = $num_film and PA.metier like '%Scénar%';";
+	$result = $link->query($query) or die("erreur select");
+	
+	print "<tr>";
+	print "<td> Scénariste : ";
+	print "<ul>";
+	while($tuple = mysqli_fetch_object($result)) {
+		print "<li>$tuple->nom $tuple->prenom</li>";
+	}
+	print "</ul>";
+	print "</td>";
+	print "</tr>";
+	
+	
+	/* acteur */
+	$query = "select * from Personne P, Participe_au_film PA where PA.num_personne = P.num_personne and PA.num_film = $num_film and PA.metier like '%Act%';";
+	$result = $link->query($query) or die("erreur select");
+	
+	print "<tr>";
+	print "<td> Acteur : ";
+	print "<ul>";
+	while($tuple = mysqli_fetch_object($result)) {
+		print "<li>$tuple->nom $tuple->prenom</a></li>";
+	}
+	print "</ul>";
+	print "</td>";
+	print "</tr>";
+		
+		print "
 						<tr>
-						<td><a href=\"projection_film.php?num_film=$tuple->num_film\">Voir les projections</a></td>
+						<td><a href=\"projection_film.php?num_film=$num_film\">Voir les projections</a></td>
 						</tr>
 						<tr>
-						<td><a href=\"formulaire_noter.php?num_film=$tuple->num_film\">Noter le film</a></td>
+						<td><a href=\"formulaire_noter.php?num_film=$num_film\">Noter le film</a></td>
 						</tr>
 		";
+		
 		$prec = mysqli_fetch_object($film_prec);
 		if($prec) {
 			print "
@@ -66,7 +115,6 @@
 				</tr>
 			";
 		}
-	}
 	print "</table>";
 	
 	$result->close();
