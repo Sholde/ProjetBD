@@ -19,7 +19,7 @@
 		<ul>
 			<li><a href="client.php">Clients</a></li>
 			<li><a href="#">Réservation</a></li>
-			<li><a href="#">Note</a></li>
+			<li><a href="note.php">Note</a></li>
 			<li><a href="film.php">Film</a></li>
 			<li><a href="#">Projection</a></li>
 			<li><a href="#">Salle</a></li>
