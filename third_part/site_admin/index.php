@@ -12,7 +12,7 @@
 			$total = 0; 
 			$link = new mysqli("localhost", "Admin", "admin");
 			if($link->connect_errno) {
-				die ("$id n'existe pas ou mauvais mot de passe <a href=index.html>retourner à la page de connexion</a>");
+				die ("erreur connection");
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 		?>
@@ -20,7 +20,7 @@
 			<h1>Page d'administration :</h1>
 		</header>
 		<section>
-			<a href="modification.php"><h2>Modification de la base de donnée</h2></a>
+			<a href="liste_table.php"><h2>Modification de la base de donnée</h2></a>
 			<h2>Statistiques</h2>
 			<?php
 				$query = "SELECT COUNT(num_client) AS nb_inscrit FROM Clients;";
