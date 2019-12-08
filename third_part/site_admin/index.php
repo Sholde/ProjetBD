@@ -9,8 +9,7 @@
 				header("Location: se_connecter.php");
 				exit();
 			}
-		
-			$total = 0; /* je ne sais pas si c'est necessaire en php */
+			$total = 0; 
 			$link = new mysqli("localhost", "Admin", "admin");
 			if($link->connect_errno) {
 				die ("$id n'existe pas ou mauvais mot de passe <a href=index.html>retourner à la page de connexion</a>");
@@ -37,7 +36,7 @@
 				$query = "SELECT f.nom, sum(v.prix) as recette FROM Film f, Veut_voir v WHERE f.num_film = v.num_film GROUP BY f.nom;";
 				$result = $link->query($query) or die("erreur select");
 			  print "<h3>Profit par film :</h3>";
-			  print "<table>";
+			  print "<table border>";
 			  print "<tr><th>Nom du film</th><th>Profit</th></tr>";
 			  while ($profit = mysqli_fetch_object($result))
 			  {
@@ -51,7 +50,7 @@
 									FROM Cinema c;";
 				$result = $link->query($query) or die("erreur select");
 			  print "<h3>Profit des cinémas:</h3>";
-			  print "<table>";
+			  print "<table border>";
 			   print "<tr><th>Nom du Cinéma</th><th>Profit</th></tr>";
 				while ($profit_cine = mysqli_fetch_object($result))
 			  {
