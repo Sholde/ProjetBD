@@ -3,6 +3,31 @@
 		<title>Reserve ta place : elem</title>
 	</head>	
 	<body>
+		<form method="POST" action="client.php">
+			<table>
+				<tr>
+				<td>Numero :</td>
+				<td><input type="text" name="num" minlength="1"></td>
+				</tr>
+				<tr>
+				<td>Nom :</td>
+				<td><input type="text" name="nom"></td>
+				</tr>
+				<td>Prenom :</td>
+				<td><input type="text" name="prenom"></td>
+				</tr>
+				<td>email :</td>
+				<td><input type="text" name="email"></td>
+				</tr>
+				<td>Reduction :</td>
+				<td><input type="radio" name="reduc" value="1">oui<br>
+				<input type="radio" name="reduc" value="0">non<br>
+				<input type="radio" name="reduc" value="-1" checked>Peut importe<br>
+				</td>
+				</tr>
+			</table>
+			<input type="submit" value="rechercher">
+		</form>
 		<?php
 			session_start();
 			if(!isset($_SESSION['admin']))  {
@@ -15,13 +40,59 @@
 				die ("erreur connection");
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
-		
-			$query = "select * from Clients;";
+			
+			
+			/* SURTUOT NE PAS EFFACER */
+			/* C'EST LA RECHERCHE */
+			$array = array();
+			$have = 0;
+			
+			if(isset($_POST['num']) and is_numeric($_POST['num'])) {
+				$num = $_POST['num'];
+				$array[] = "num_client = $num";
+				$have++;
+			}
+			if(isset($_POST['nom'])) {
+				$nom = $_POST['nom'];
+				$array[] = "nom like \"%$nom%\"";
+				$have++;
+			}
+			if(isset($_POST['prenom'])) {
+				$prenom = $_POST['prenom'];
+				$array[] = "prenom like \"%$prenom%\"";
+				$have++;
+			}
+			if(isset($_POST['email'])) {
+				$email = $_POST['email'];
+				$array[] = "email like \"%$email%\"";
+				$have++;
+			}
+			if(isset($_POST['reduc']) and $_POST['reduc'] != -1) {
+				$reduc = $_POST['reduc'];
+				$array[] = "reduction = $reduc";
+				$have++;
+			}
+			
+			if($have == 0) {
+				$query = "select * from Clients;";
+			}
+			else {
+				$query = "select * from Clients where ";
+				$query = $query . " " . $array[$have-1];
+				$have--;
+				while($have > 0) {
+					$query = $query . " and " . $array[$have-1];
+					$have--;
+				}
+				$query = $query . " ;" ;
+			}
+			/* SURTUOT NE PAS EFFACER */
+			
 			$result = $link->query($query) or die("erreur select");
 			
 			if(isset($_GET['modif'])) {
-				$num = $_GET['modif'];
-				print "erreur modification du numero $num";
+				$ancien_num = $_GET['modif'];
+				print "erreur modification du numero $ancien_num";
 			}
 			print "<table border>";
 			while($tuple = mysqli_fetch_object($result)) {
