@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Reserve ta place : elem</title>
+		<title>Client</title>
 	</head>	
 	<body>
 		<h2>Recherche :</h2>
@@ -8,7 +8,7 @@
 			<table>
 				<tr>
 				<td>Numero :</td>
-				<td><input type="text" name="num"></td>
+				<td><input type="text" name="num" size="5" maxlength="7"></td>
 				</tr>
 				<tr>
 				<td>Nom :</td>
@@ -20,14 +20,14 @@
 				<td>email :</td>
 				<td><input type="text" name="email"></td>
 				</tr>
-				<td>Reduction :</td>
+				<td>Réduction :</td>
 				<td><input type="radio" name="reduc" value="1">oui<br>
 				<input type="radio" name="reduc" value="0">non<br>
-				<input type="radio" name="reduc" value="-1" checked>Peut importe<br>
 				</td>
 				</tr>
 			</table>
 			<input type="submit" value="rechercher">
+			<input type="reset" value="annuler">
 		</form>
 		<?php
 			session_start();
@@ -67,7 +67,7 @@
 				$array[] = "email like \"%$email%\"";
 				$have++;
 			}
-			if(isset($_POST['reduc']) and $_POST['reduc'] != -1) {
+			if(isset($_POST['reduc'])) {
 				$reduc = $_POST['reduc'];
 				$array[] = "reduction = $reduc";
 				$have++;
