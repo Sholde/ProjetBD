@@ -3,11 +3,12 @@
 		<title>Reserve ta place : elem</title>
 	</head>	
 	<body>
+		<h2>Recherche :</h2>
 		<form method="POST" action="client.php">
 			<table>
 				<tr>
 				<td>Numero :</td>
-				<td><input type="text" name="num" minlength="1"></td>
+				<td><input type="text" name="num"></td>
 				</tr>
 				<tr>
 				<td>Nom :</td>
@@ -40,7 +41,6 @@
 				die ("erreur connection");
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
-			
 			
 			/* SURTUOT NE PAS EFFACER */
 			/* C'EST LA RECHERCHE */
@@ -90,12 +90,16 @@
 			
 			$result = $link->query($query) or die("erreur select");
 			
+			print "<h2>Résultat :</h2>";
+			
 			if(isset($_GET['modif'])) {
 				$ancien_num = $_GET['modif'];
 				print "erreur modification du numero $ancien_num";
 			}
 			print "<table border>";
+			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
+				$nb_res++;
 				print "
 					<tr>
 					<form method=\"POST\" action=\"modifier_client.php?num_client=$tuple->num_client\">
@@ -129,6 +133,9 @@
 				";
 			}
 			print "</table>";
+			if($nb_res == 0) {
+				print "<h3>Aucun Résultat</h3>";
+			}
 		?>
 	</body>
 </html>
