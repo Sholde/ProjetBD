@@ -22,8 +22,8 @@
 			<li><a href="note.php">Note</a></li>
 			<li><a href="film.php">Film</a></li>
 			<li><a href="#">Projection</a></li>
-			<li><a href="#">Salle</a></li>
-			<li><a href="#">Cinema</a></li>
+			<li><a href="salle.php">Salle</a></li>
+			<li><a href="cinema.php">Cinema</a></li>
 			<li><a href="#">Personne</a></li>
 			<li><a href="#">Contribution</a></li>
 		</ul>

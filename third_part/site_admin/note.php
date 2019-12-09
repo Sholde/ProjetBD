@@ -80,18 +80,18 @@
 				$ancien_num = $_GET['modif'];
 				print "erreur modification du numero $ancien_num";
 			}
-			print "<table border>";
+			print "<table border><tr><th>Num Film</th><th>Nom Film</th><th>Num Client</th><th>Email</th></tr>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
 				$nb_res++;
 				print "
 					<tr>
 					<form method=\"POST\" action=\"modifier_note.php?num_film=$tuple->num_film&num_client=$tuple->num_client\">
-						<td><input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" size=\"2\" minlength=\"1\" placeholder=\"min 1\"></td>
-						<td><input type=\"text\" value=\"$tuple->nom_film\" name=\"nom_film\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
-						<td><input type=\"text\" value=\"$tuple->num_client\" name=\"num_client\" size=\"2\" minlength=\"1\" placeholder=\"min 1\"></td>
-						<td><input type=\"text\" value=\"$tuple->email\" name=\"email\" minlength=\"11\" maxlength=\"256\"></td>
-						<td><input type=\"number\" value=\"$tuple->note\" name=\"note\" min=\"0\" max=\"5\"></td>
+						<td><input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" size=\"2\" minlength=\"1\" placeholder=\"min 1\" readonly></td>
+						<td><input type=\"text\" value=\"$tuple->nom_film\" name=\"nom_film\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\" readonly></td>
+						<td><input type=\"text\" value=\"$tuple->num_client\" name=\"num_client\" size=\"2\" minlength=\"1\" placeholder=\"min 1\" readonly></td>
+						<td><input type=\"text\" value=\"$tuple->email\" name=\"email\" minlength=\"11\" maxlength=\"256\" readonly></td>
+						<td><input type=\"number\" value=\"$tuple->note\" name=\"note\" min=\"0\" max=\"5\" readonly></td>
 						<td><input type=\"submit\" value=\"modifier\"></td>
 						</form>
 						<form method=\"POST\" action=\"supprimer_note.php\">
@@ -109,20 +109,5 @@
 				print "<h3>Aucun Résultat</h3>";
 			}
 		?>
-		
-		<h2>Insérer :</h2>
-		<?php
-			if(isset($_GET['inser'])) {
-				print "impossible d'insérer se film";
-			}
-		?>
-		<table border>
-			<form method="POST" action="inserer_film.php">
-			<td><input type="text" name="num_film" size="2" minlength="1" placeholder="min 1"></td>
-			<td><input type="text" name="num_client" size="2" minlength="1" placeholder="min 1"></td>
-			<td><input type="number" name="note" min="0" max=5"></td>
-			<td><input type="submit" value="insérer"></td>
-			</form>
-		</table>
 	</body>
 </html>

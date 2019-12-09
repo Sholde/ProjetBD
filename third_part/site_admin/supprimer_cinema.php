@@ -5,12 +5,12 @@
 		exit();
 	}
 	
-	if(!isset($_POST['num_film']))  {
-		header("Location: film.php");
+	if(!isset($_POST['nom']))  {
+		header("Location: cinema.php");
 		exit();
 	}
 	
-	$num_film = $_POST['num_film'];
+	$nom = $_POST['nom'];
 			
 	$link = new mysqli("localhost", "Admin", "admin");
 	if($link->connect_errno) {
@@ -18,9 +18,9 @@
 	}
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "delete from Film where num_film = $num_film;";
+	$query = "delete from Cinema where nom = '$nom';";
 	$link->query($query) or die("erreur delete");
 	
-	header("Location: film.php");
+	header("Location: cinema.php");
 	exit();
 ?>

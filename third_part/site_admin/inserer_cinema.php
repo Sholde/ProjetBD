@@ -5,12 +5,9 @@
 		exit();
 	}
 	
-	$num_film = $_POST['num_film'];
 	$nom = $_POST['nom'];
-	$genre = $_POST['genre'];
-	$duree = $_POST['duree'];
-	$origine = $_POST['origine'];
-	$version = $_POST['version'];
+	$compagnie = $_POST['compagnie'];
+	$ville = $_POST['ville'];
 			
 	$link = new mysqli("localhost", "Admin", "admin");
 	if($link->connect_errno) {
@@ -18,12 +15,12 @@
 	}
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "insert into Film values ($num_film, '$nom', '$genre', $duree, '$origine', '$version');";
+	$query = "insert into Cinema values ('$nom', '$compagnie', '$ville');";
 	if(!$link->query($query)) {
-		header("Location: film.php?inser=$num_film");
+		header("Location: cinema.php?inser=$nom");
 		exit();
 	}
 	
-	header("Location: film.php");
+	header("Location: cinema.php");
 	exit();
 ?>

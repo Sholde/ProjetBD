@@ -174,13 +174,13 @@ insert into Clients values (170, "Strauss","Leo","leo.strauss@email.com","leo",0
 
 
 /* Cinema */
-insert into Cinema values ("Pathé Boulogne", "Pathé Gaumont");
-insert into Cinema values ("Ciné-Sel", "Sel");
+insert into Cinema values ("Pathé Boulogne", "Pathé Gaumont", "Boulogne");
+insert into Cinema values ("Ciné-Sel", "Sel", "Sèvres");
 
 /* Salle */
-insert into Salle values (1, "Pathé Boulogne", 30, "Boulogne");
-insert into Salle values (2, "Pathé Boulogne", 30, "Boulogne");
-insert into Salle values (1, "Ciné-Sel", 30, "Sèvres");
+insert into Salle values (1, "Pathé Boulogne", 30);
+insert into Salle values (2, "Pathé Boulogne", 30);
+insert into Salle values (1, "Ciné-Sel", 30);
 
 /* Film */
 insert into Film values (1, "The Matrix", "Science-Fiction - Action", 120, "USA", "all");
