@@ -57,17 +57,37 @@
 			}
 			
 			if($have == 0) {
-				$query = "select C.*, count(S.num_salle) as nb_salle from Cinema C, Salle S where S.nom_du_cinema = C.nom group by C.nom;";
+				$query = "select C.*, count(S.num_salle) as nb_salle 
+				from Cinema C, Salle S 
+				where S.nom_du_cinema = C.nom group by C.nom 
+				UNION select C.*, 0 as nb_salle 
+				from Cinema C 
+				where C.nom NOT IN (
+				select C.nom 
+				from Cinema C, Salle S 
+				where S.nom_du_cinema = C.nom 
+				group by C.nom
+				having count(S.num_salle) > 0);";
 			}
 			else {
-				$query = "select C.*, count(S.num_salle) as nb_salle from Cinema C, Salle S where S.nom_du_cinema = C.nom and ";
-				$query = $query . " " . $array[$have-1];
+				$query = "select C.*, count(S.num_salle) as nb_salle 
+				from Cinema C, Salle S 
+				where S.nom_du_cinema = C.nom and ";
+				$tmp = " " . $array[$have-1];
 				$have--;
 				while($have > 0) {
-					$query = $query . " and " . $array[$have-1];
+					$tmp = $tmp . " and " . $array[$have-1];
 					$have--;
 				}
-				$query = $query . " group by C.nom;" ;
+				$query = $query . $tmp . " group by C.nom UNION select C.*, 0 as nb_salle 
+				from Cinema C 
+				where C.nom NOT IN (
+				select C.nom 
+				from Cinema C, Salle S 
+				where S.nom_du_cinema = C.nom
+				group by C.nom
+				having count(S.num_salle) > 0) and ";
+				$query = $query . $tmp . ";";
 			}
 			/* SURTUOT NE PAS EFFACER */
 			
