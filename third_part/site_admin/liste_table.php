@@ -21,7 +21,7 @@
 			<li><a href="#">Réservation</a></li>
 			<li><a href="note.php">Note</a></li>
 			<li><a href="film.php">Film</a></li>
-			<li><a href="#">Projection</a></li>
+			<li><a href="projection.php">Projection</a></li>
 			<li><a href="salle.php">Salle</a></li>
 			<li><a href="cinema.php">Cinema</a></li>
 			<li><a href="#">Personne</a></li>
