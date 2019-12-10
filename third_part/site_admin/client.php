@@ -86,6 +86,7 @@
 				}
 				$query = $query . " ;" ;
 			}
+			print "$query";
 			/* SURTUOT NE PAS EFFACER */
 			
 			$result = $link->query($query) or die("erreur select");
