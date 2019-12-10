@@ -24,7 +24,7 @@
 			<li><a href="projection.php">Projection</a></li>
 			<li><a href="salle.php">Salle</a></li>
 			<li><a href="cinema.php">Cinema</a></li>
-			<li><a href="#">Personne</a></li>
+			<li><a href="personne.php">Personne</a></li>
 			<li><a href="#">Contribution</a></li>
 		</ul>
 	</body>
