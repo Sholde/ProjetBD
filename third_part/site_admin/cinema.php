@@ -93,19 +93,25 @@
 			
 			$result = $link->query($query) or die("erreur select");
 			
-			print "<h2>Résultat :</h2>";
+			print "<h2><a name=\"resultat\">Résultat :</a></h2>";
 			
-			if(isset($_GET['modif'])) {
-				$ancien_nom = $_GET['modif'];
-				print "erreur modification du cinema $ancien_nom";
+			if(isset($_GET['modif']) and isset($_GET['nom'])) {
+				$nom = $_GET['nom'];
+				print "Le cinema $nom existe déjà";
 			}
+			if(isset($_GET['suppr']) and isset($_GET['nom'])) {
+				$nom = $_GET['nom'];
+				print "impossible de supprimer le cinéma $nom";
+			}
+			
 			print "<table border><tr><th>Nom</th><th>Compagnie</th><th>Ville</th><th>Nb salle</th></tr>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
 				$nb_res++;
 				print "
 					<tr>
-					<form method=\"POST\" action=\"modifier_cinema.php?nom=$tuple->nom\">
+					<form method=\"POST\" action=\"modifier_cinema.php\">
+						<input type=\"text\" value=\"$tuple->nom\" name\"ancien_nom\" hidden>
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->compagnie\" name=\"compagnie\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->ville\" name=\"ville\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>

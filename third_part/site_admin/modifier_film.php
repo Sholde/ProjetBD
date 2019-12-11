@@ -5,13 +5,7 @@
 		exit();
 	}
 	
-	if(!isset($_POST['num_film']))  {
-		header("Location: film.php");
-		exit();
-	}
-	
 	$num = $_POST['num_film'];
-	
 	$nom = $_POST['nom'];
 	$genre = $_POST['genre'];
 	$duree = $_POST['duree'];
