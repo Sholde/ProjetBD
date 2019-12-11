@@ -15,7 +15,7 @@
 	}
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "select P.num_personne as num from Personne P where P.nom = '$nom' and P.prenom = '$prenom'";
+	$query = "select P.num_personne as num from Personne P where P.nom = '$nom' and P.prenom = '$prenom';";
 	$result = $link->query($query) or die("erreur select");
 	$tuple = mysqli_fetch_object($result);
 	if($tuple) {
@@ -25,7 +25,7 @@
 		exit();
 	}
 	
-	$query = "select max(P.num_personne) as num from Personne P";
+	$query = "select max(P.num_personne) as num from Personne P;";
 	$result = $link->query($query) or die("erreur select");
 	$tuple = mysqli_fetch_object($result);
 	if(!$tuple)

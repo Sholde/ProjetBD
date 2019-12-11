@@ -82,6 +82,14 @@
 				print "La personne $nom $prenom existe déjà";
 			}
 			
+			if(isset($_GET['suppr'])) {
+				if(isset($_GET['nom']) and isset($_GET['prenom'])) {
+					$nom = $_GET['nom'];
+					$prenom = $_GET['prenom'];
+					print "impossible de supprimer la personne $nom $prenom";
+				}
+			}
+			
 			print "<table border><tr><th>Nom</th><th>Prenom</th><th>Age</th></tr>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {

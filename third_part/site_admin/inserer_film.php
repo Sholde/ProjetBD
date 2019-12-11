@@ -5,7 +5,6 @@
 		exit();
 	}
 	
-	$num_film = $_POST['num_film'];
 	$nom = $_POST['nom'];
 	$genre = $_POST['genre'];
 	$duree = $_POST['duree'];
@@ -18,12 +17,31 @@
 	}
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "insert into Film values ($num_film, '$nom', '$genre', $duree, '$origine', '$version');";
-	if(!$link->query($query)) {
-		header("Location: film.php?inser=$num_film");
+	$query = "select F.num_film as num from Film F where F.nom = '$nom';";
+	$result = $link->query($query) or die("erreur select");
+	$tuple = mysqli_fetch_object($result);
+	if($tuple) {
+		$result->close();
+		$link->close();
+		header("Location: film.php?inser=1&nom=$nom#inserer");
 		exit();
 	}
 	
-	header("Location: film.php");
+	$query = "select max(F.num_film) as num from Film F;";
+	$result = $link->query($query) or die("erreur select");
+	$tuple = mysqli_fetch_object($result);
+	if(!$tuple)
+		die("erreur select");
+	$num = $tuple->num + 1;
+	
+	$query = "insert into Film values ($num, '$nom', '$genre', $duree, '$origine', '$version');";
+	if(!$link->query($query)) {
+		$result->close();
+		$link->close();
+		header("Location: film.php?inser=1&nom=$nom#inserer");
+		exit();
+	}
+	
+	header("Location: film.php#inserer");
 	exit();
 ?>
