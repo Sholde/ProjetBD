@@ -11,6 +11,8 @@
 	}
 	
 	$num = $_POST['num'];
+	$nom = $_POST['nom'];
+	$prenom = $_POST['prenom'];
 			
 	$link = new mysqli("localhost", "Admin", "admin");
 	if($link->connect_errno) {
@@ -21,7 +23,7 @@
 	$query = "delete from Personne where num_personne = $num;";
 	if(!$link->query($query)) {
 		$link->close();
-		header("Location: personne.php#resultat");
+		header("Location: personne.php?suppr=1&nom=$nom&prenom=$prenom#resultat");
 		exit();
 	}
 	

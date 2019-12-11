@@ -5,11 +5,7 @@
 	<body>
 		<h2>Recherche :</h2>
 		<form method="POST" action="film.php">
-			<table> 
-				<tr>
-				<td>Numero :</td>
-				<td><input type="text" name="num" size="5" maxlength="7"></td>
-				</tr>
+			<table>
 				<tr>
 				<td>Nom :</td>
 				<td><input type="text" name="nom"></td>
@@ -24,9 +20,9 @@
 				<td><input type="text" name="origine" size="5" maxlength="3"></td>
 				</tr>
 				<td>Version disponible :</td>
-				<td><input type="radio" name="version" value="all">all<br>
-				<input type="radio" name="version" value="vf">vf<br>
-				<input type="radio" name="version" value="vo">vo<br>
+				<td><input type="radio" name="version" value="all">all
+				<input type="radio" name="version" value="vf">vf
+				<input type="radio" name="version" value="vo">vo
 				</td>
 				</tr>
 			</table>
@@ -51,11 +47,6 @@
 			$array = array();
 			$have = 0;
 			
-			if(isset($_POST['num']) and is_numeric($_POST['num'])) {
-				$num = $_POST['num'];
-				$array[] = "num_film = $num";
-				$have++;
-			}
 			if(isset($_POST['nom'])) {
 				$nom = $_POST['nom'];
 				$array[] = "nom like \"%$nom%\"";
@@ -99,11 +90,17 @@
 			
 			$result = $link->query($query) or die("erreur select");
 			
-			print "<h2>Résultat :</h2>";
+			print "<h2><a name=\"resultat\">Résultat :</a></h2>";
 			
-			if(isset($_GET['modif'])) {
-				$ancien_num = $_GET['modif'];
-				print "erreur modification du numero $ancien_num";
+			if(isset($_GET['modif']) and isset($_GET['nom'])) {
+				$nom = $_GET['nom'];
+				print "Le film $nom existe déjà";
+			}
+			if(isset($_GET['suppr'])) {
+				if(isset($_GET['nom'])) {
+					$nom = $_GET['nom'];
+					print "impossible de supprimer le film $nom";
+				}
 			}
 			print "<table border> <tr> <th>Nom du film<th>Genre<th>Durée<th>Origine<th>Version disponible</th></tr>";
 			$nb_res = 0;
@@ -111,7 +108,8 @@
 				$nb_res++;
 				print "
 					<tr>
-					<form method=\"POST\" action=\"modifier_film.php?num_film=$tuple->num_film\">
+					<form method=\"POST\" action=\"modifier_film.php\">
+						<input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" hidden>
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->genre\" name=\"genre\" minlength=\"3\" maxlength=\"256\" placeholder=\"3 - 256 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->duree\" name=\"duree\" size=\"5\" maxlength=\"7\">min</td>
@@ -155,17 +153,18 @@
 			}
 		?>
 		
-		<h2>Insérer :</h2>
+		<h2><a name="inserer">Insérer :</a></h2>
 		<?php
-			if(isset($_GET['inser'])) {
-				print "impossible d'insérer se film";
+			if(isset($_GET['inser']) and isset($_GET['nom'])) {
+				$nom = $_GET['nom'];
+				print "impossible d'insérer le film $nom";
 			}
 		?>
 		<table border><tr> <th>Nom du film<th>Genre<th>Durée<th>Origine<th>Version disponible</th></tr>
 			<form method="POST" action="inserer_film.php">
 			<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 			<td><input type="text" name="genre" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-			<td><input type="text" name="duree" size="3" minlength="1" maxlength="3">min</td>
+			<td><input type="text" name="duree" size="5" minlength="1" maxlength="3">min</td>
 			<td><input type="text" name="origine" size="5" minlength="1" maxlength="3"></td>
 			<td><input type="radio" value="all" name="version" checked>all
 					<input type="radio" value="vf" name="version">vf

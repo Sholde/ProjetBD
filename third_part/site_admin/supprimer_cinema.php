@@ -6,7 +6,7 @@
 	}
 	
 	if(!isset($_POST['nom']))  {
-		header("Location: cinema.php");
+		header("Location: cinema.php#resultat");
 		exit();
 	}
 	
@@ -19,8 +19,13 @@
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
 	$query = "delete from Cinema where nom = '$nom';";
-	$link->query($query) or die("erreur delete");
+	if(!$link->query($query)) {
+		$link->close();
+		header("Location: cinema.php?suppr=1&nom=$nom#resultat");
+		exit();
+	}
 	
-	header("Location: cinema.php");
+	$link->close();
+	header("Location: cinema.php#resultat");
 	exit();
 ?>

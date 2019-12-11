@@ -5,14 +5,7 @@
 		exit();
 	}
 	
-	if(!isset($_GET['num_film']))  {
-		header("Location: film.php");
-		exit();
-	}
-	
-	$ancien_num = $_GET['num_film'];
-	
-	$num_film = $_POST['num_film'];
+	$num = $_POST['num_film'];
 	$nom = $_POST['nom'];
 	$genre = $_POST['genre'];
 	$duree = $_POST['duree'];
@@ -25,12 +18,26 @@
 	}
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "update Film set num_film = $num_film, nom = '$nom', genre = '$genre', duree = $duree, origine = '$origine', version_disponible = '$version' where num_film = $ancien_num;";
-	if(!$link->query($query)) {
-		header("Location: film.php?modif=$ancien_num");
+	$query = "select F.num_film from Film F where F.nom = '$nom' and F.num_film <> $num";
+	$result = $link->query($query) or die("erreur select");
+	$tuple = mysqli_fetch_object($result);
+	if($tuple) {
+		$result->close();	
+		$link->close();
+		header("Location: film.php?modif=1&nom=$nom#resultat");
 		exit();
 	}
 	
-	header("Location: film.php");
+	$query = "update Film set nom = '$nom', genre = '$genre', duree = $duree, origine = '$origine', version_disponible = '$version' where num_film = $num;";
+	if(!$link->query($query)) {
+		$result->close();	
+		$link->close();
+		header("Location: film.php?modif=1&nom=$nom#resultat");
+		exit();
+	}
+	
+	$result->close();	
+	$link->close();
+	header("Location: film.php#resultat");
 	exit();
 ?>
