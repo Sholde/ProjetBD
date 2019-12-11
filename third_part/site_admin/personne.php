@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Salle</title>
+		<title>Personne</title>
 	</head>	
 	<body>
 		<h2>Recherche :</h2>
@@ -40,11 +40,6 @@
 			$array = array();
 			$have = 0;
 			
-			if(isset($_POST['num']) and is_numeric($_POST['num'])) {
-				$num = $_POST['num'];
-				$array[] = "P.num_personne = $num";
-				$have++;
-			}
 			if(isset($_POST['nom'])) {
 				$nom = $_POST['nom'];
 				$array[] = "P.nom like \"%$nom%\"";
@@ -78,23 +73,26 @@
 			
 			$result = $link->query($query) or die("erreur select");
 			
-			print "<h2>Résultat :</h2>";
+			print "<h2><a name=\"resultat\">Résultat :</a></h2>";
 			
-			if(isset($_GET['modif']) and isset($_GET['num'])) {
-				$ancien_num = $_GET['num'];
-				print "erreur modification de la personne $ancien_num";
+			/* gestion erreur modif */
+			if(isset($_GET['modif']) and isset($_GET['nom']) and isset($_GET['prenom'])) {
+				$nom = $_GET['nom'];
+				$prenom = $_GET['prenom'];
+				print "La personne $nom $prenom existe déjà";
 			}
-			print "<table border><tr><th>Num Personne</th><th>Nom</th><th>Prenom</th><th>Age</th></tr>";
+			
+			print "<table border><tr><th>Nom</th><th>Prenom</th><th>Age</th></tr>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
 				$nb_res++;
 				print "
 					<tr>
-					<form method=\"POST\" action=\"modifier_personne.php?num=$tuple->num_personne\">
-						<td><input type=\"text\" value=\"$tuple->num_personne\" name=\"num\" size=\"5\" minlength=\"1\" placeholder=\"min 1\"></td>
+					<form method=\"POST\" action=\"modifier_personne.php\">
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->prenom\" name=\"prenom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->age\" name=\"age\" size=\"5\" minlength=\"1\" placeholder=\"min 1\"></td>
+						<input type=\"text\" value=\"$tuple->num_personne\" name=\"num\" hidden>
 						<td><input type=\"submit\" value=\"modifier\"></td>
 					</form>
 					<form method=\"POST\" action=\"supprimer_personne.php\">
@@ -110,18 +108,18 @@
 			}
 		?>
 		
-		<h2>Insérer :</h2>
+		<h2><a name="inserer">Insérer :</a></h2>
 		<?php
-			if(isset($_GET['inser']) and isset($_GET['num'])) {
-				$ancien_num = $_GET['num'];
-				print "impossible d'insérer la personne $ancien_num";
+			if(isset($_GET['inser']) and isset($_GET['nom']) and isset($_GET['prenom'])) {
+				$nom = $_GET['nom'];
+				$prenom = $_GET['prenom'];
+				print "impossible d'insérer la personne $nom $prenom";
 			}
 		?>
 		<table border>
 			<form method="POST" action="inserer_personne.php">
-				<tr><th>Num Personne</th><th>Nom</th><th>Prenom</th><th>Age</th></tr>
+				<tr><th>Nom</th><th>Prenom</th><th>Age</th></tr>
 				<tr>
-					<td><input type="text" name="num" size="5" minlength="1" placeholder="min 1"></td>
 					<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 					<td><input type="text" name="prenom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 					<td><input type="text" name="age" size="5" minlength="1" placeholder="min 1"></td>

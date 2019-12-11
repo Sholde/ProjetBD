@@ -52,7 +52,7 @@
 	if(!$link->query($query)) {
 		$result->close();	
 		$link->close();
-		header("Location: participe.php?modif=1&num_personne=$ancien_num_personne&um_film=$ancien_num_film#resultat");
+		header("Location: participe.php?modif=1&num_personne=$ancien_num_personne&num_film=$ancien_num_film#resultat");
 		exit();
 	}
 	else {

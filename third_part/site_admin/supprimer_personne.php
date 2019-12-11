@@ -19,8 +19,20 @@
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
 	$query = "delete from Personne where num_personne = $num;";
-	$link->query($query) or die("erreur delete");
+	if(!$link->query($query)) {
+		$link->close();
+		header("Location: personne.php#resultat");
+		exit();
+	}
 	
-	header("Location: personne.php");
+	$query = "update Personne set num_personne = num_personne - 1 where num_personne > $num;";
+	if(!$link->query($query)) {
+		$link->close();
+		header("Location: personne.php#resultat");
+		exit();
+	}
+	
+	$link->close();
+	header("Location: personne.php#resultat");
 	exit();
 ?>

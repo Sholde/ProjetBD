@@ -5,7 +5,7 @@
 	<body>
 		<h2>Recherche :</h2>
 		<form method="POST" action="film.php">
-			<table> 
+			<table>
 				<tr>
 				<td>Numero :</td>
 				<td><input type="text" name="num" size="5" maxlength="7"></td>
@@ -105,13 +105,14 @@
 				$ancien_num = $_GET['modif'];
 				print "erreur modification du numero $ancien_num";
 			}
-			print "<table border> <tr> <th>Nom du film<th>Genre<th>Durée<th>Origine<th>Version disponible</th></tr>";
+			print "<table border>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
 				$nb_res++;
 				print "
 					<tr>
 					<form method=\"POST\" action=\"modifier_film.php?num_film=$tuple->num_film\">
+						<td><input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" size=\"2\" minlength=\"1\" placeholder=\"min 1\"></td>
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->genre\" name=\"genre\" minlength=\"3\" maxlength=\"256\" placeholder=\"3 - 256 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->duree\" name=\"duree\" size=\"5\" maxlength=\"7\">min</td>
@@ -119,23 +120,23 @@
 				";
 				if($tuple->version_disponible == "all") {
 					print "
-						<td><input type=\"radio\" value=\"all\" name=\"version\" checked>all
-								<input type=\"radio\" value=\"vf\" name=\"version\">vf
-								<input type=\"radio\" value=\"vo\" name=\"version\">vo</td>
+						<td><input type=\"radio\" value=\"all\" name=\"version\" checked>all</td>
+						<td><input type=\"radio\" value=\"vf\" name=\"version\">vf</td>
+						<td><input type=\"radio\" value=\"vo\" name=\"version\">vo</td>
 					";
 				}
 				if($tuple->version_disponible == "vf") {
 					print "
-						<td><input type=\"radio\" value=\"all\" name=\"version\">all
-								<input type=\"radio\" value=\"vf\" name=\"version\" checked>vf 
-								<input type=\"radio\" value=\"vo\" name=\"version\">vo</td>
+						<td><input type=\"radio\" value=\"all\" name=\"version\">all</td>
+						<td><input type=\"radio\" value=\"vf\" name=\"version\" checked>vf</td>
+						<td><input type=\"radio\" value=\"vo\" name=\"version\">vo</td>
 					";
 				}
 				if($tuple->version_disponible == "vo") {
 					print "
-						<td><input type=\"radio\" value=\"all\" name=\"version\">all 
-								<input type=\"radio\" value=\"vf\" name=\"version\">vf
-								<input type=\"radio\" value=\"vo\" name=\"version\" checked>vo</td>
+						<td><input type=\"radio\" value=\"all\" name=\"version\">all</td>
+						<td><input type=\"radio\" value=\"vf\" name=\"version\">vf</td>
+						<td><input type=\"radio\" value=\"vo\" name=\"version\" checked>vo</td>
 					";
 				}
 				print "
@@ -161,15 +162,16 @@
 				print "impossible d'insérer se film";
 			}
 		?>
-		<table border><tr> <th>Nom du film<th>Genre<th>Durée<th>Origine<th>Version disponible</th></tr>
+		<table border>
 			<form method="POST" action="inserer_film.php">
+			<td><input type="text" name="num_film" size="2" minlength="1" placeholder="min 1"></td>
 			<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-			<td><input type="text" name="genre" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-			<td><input type="text" name="duree" size="3" minlength="1" maxlength="3">min</td>
+			<td><input type="text" name="genre" minlength="3" maxlength="256" placeholder="3 - 256 caractères"></td>
+			<td><input type="text" name="duree" size="5" minlength="1" maxlength="7">min</td>
 			<td><input type="text" name="origine" size="5" minlength="1" maxlength="3"></td>
-			<td><input type="radio" value="all" name="version" checked>all
-					<input type="radio" value="vf" name="version">vf
-					<input type="radio" value="vo" name="version">vo</td>
+			<td><input type="radio" value="all" name="version" checked>all</td>
+			<td><input type="radio" value="vf" name="version">vf</td>
+			<td><input type="radio" value="vo" name="version">vo</td>
 			<td><input type="submit" value="insérer"></td>
 			</form>
 		</table>
