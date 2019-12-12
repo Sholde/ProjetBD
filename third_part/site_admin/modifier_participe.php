@@ -10,13 +10,40 @@
 		exit();
 	}
 	
+	if(!isset($_POST['Directeur']) and !isset($_POST['Scénariste']) and !isset($_POST['Acteur'])) {
+		header("Location: participe.php?modif=1&erreur=metier#resultat");
+		exit();
+	}
+	
 	$ancien_num_film = $_GET['num_film'];
 	$ancien_num_personne = $_GET['num_personne'];
 	
 	$nom_film = $_POST['nom_film'];
 	$nom = $_POST['nom'];
 	$prenom = $_POST['prenom'];
-	$metier = $_POST['metier'];
+	$metier = "";
+	$count = 0;
+	if(isset($_POST['Directeur'])) {
+		if($count)
+			$metier = $metier . " - " . $_POST['Directeur'];
+		else
+			$metier = $_POST['Directeur'];
+		$count++;
+	}
+	if(isset($_POST['Scénariste'])) {
+		if($count)
+			$metier = $metier . " - " . $_POST['Scénariste'];
+		else
+			$metier = $_POST['Scénariste'];
+		$count++;
+	}
+	if(isset($_POST['Acteur'])) {
+		if($count)
+			$metier = $metier . " - " . $_POST['Acteur'];
+		else
+			$metier = $_POST['Acteur'];
+		$count++;
+	}
 			
 	$link = new mysqli("localhost", "Admin", "admin");
 	if($link->connect_errno) {
