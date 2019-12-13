@@ -42,7 +42,7 @@
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 			
-			/* SURTUOT NE PAS EFFACER */
+			/* SURTOUT NE PAS EFFACER */
 			/* C'EST LA RECHERCHE */
 			$array = array();
 			$have = 0;
@@ -86,8 +86,8 @@
 				}
 				$query = $query . " ;" ;
 			}
-			print "$query";
-			/* SURTUOT NE PAS EFFACER */
+			
+			/* SURTOUT NE PAS EFFACER */
 			
 			$result = $link->query($query) or die("erreur select");
 			
@@ -97,7 +97,7 @@
 				$ancien_num = $_GET['modif'];
 				print "erreur modification du numero $ancien_num";
 			}
-			print "<table border>";
+			print "<table border ><tr><th>Numéro Client<th>Nom<th>Prénom<th>E-mail<th>Mot de passe<th>Réduction</th></tr>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
 				$nb_res++;
@@ -112,14 +112,14 @@
 				";
 				if($tuple->reduction) {
 					print "
-						<td><input type=\"radio\" value=\"1\" name=\"reduc\" size=\"1\" checked> oui</td>
-						<td><input type=\"radio\" value=\"0\" name=\"reduc\" size=\"1\"> non</td>
+						<td> <fieldset> <input type=\"radio\" value=\"1\" name=\"reduc\" checked> oui
+								<input type=\"radio\" value=\"0\" name=\"reduc\"> non </fieldset> </td>
 					";
 				}
 				else {
 					print "
-						<td><input type=\"radio\" value=\"1\" name=\"reduc\" size=\"1\"> oui</td>
-						<td><input type=\"radio\" value=\"0\" name=\"reduc\" size=\"1\" checked> non</td>
+						<td> <fieldset> <input type=\"radio\" value=\"1\" name=\"reduc\" size=\"3\"> oui
+								<input type=\"radio\" value=\"0\" name=\"reduc\" size=\"3\" checked> non </fieldset></td>
 					";
 				}
 				print "

@@ -16,6 +16,7 @@
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 		?>
+		<a href="index.php">Retour au menu principal</a>
 		<ul>
 			<li><a href="client.php">Clients</a></li>
 			<li><a href="#">Réservation</a></li>
@@ -26,6 +27,7 @@
 			<li><a href="cinema.php">Cinema</a></li>
 			<li><a href="personne.php">Personne</a></li>
 			<li><a href="participe.php">Contribution</a></li>
+			<li><a href="#">Suite des films</a></li>
 		</ul>
 	</body>
 </html>
