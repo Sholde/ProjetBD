@@ -87,7 +87,7 @@
 				print "
 					<tr>
 					<form method=\"POST\" action=\"modifier_salle.php?num=$tuple->num_salle&nom=$tuple->nom_du_cinema\">
-						<td><input type=\"text\" value=\"$tuple->num_salle\" name=\"num\" size=\"5\" minlength=\"1\" placeholder=\"min 1\"></td>
+						<td><input type=\"text\" value=\"$tuple->num_salle\" name=\"num\" size=\"5\" readonly></td>
 						<td><input type=\"text\" value=\"$tuple->nom_du_cinema\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"number\" value=\"$tuple->nb_de_place\" name=\"nb_place\" min=\"1\"></td>
 						<td><input type=\"submit\" value=\"modifier\"></td>
@@ -116,9 +116,8 @@
 		?>
 		<table border>
 			<form method="POST" action="inserer_salle.php">
-				<tr><th>Num Salle</th><th>Nom du Cinéma</th><th>Nb place</th></tr>
+				<tr><th>Nom du Cinéma</th><th>Nb place</th></tr>
 				<tr>
-					<td><input type="text" name="num" size="5" minlength="1" placeholder="min 1"></td>
 					<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 					<td><input type="number" value="1" name="nb_place" min="1"></td>
 					<td><input type="submit" value="insérer"></td>
