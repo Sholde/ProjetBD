@@ -15,7 +15,7 @@
 				die ("erreur connection");
 			}
 			$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
-			
+			print "<a href=\"index.php\">Retour au menu principal</a>";
 			$query = "SELECT COUNT(num_client) AS nb_inscrit FROM Clients;";
 			$result = $link->query($query) or die("erreur select");
 			$nb_inscrit = mysqli_fetch_object($result);
@@ -26,16 +26,8 @@
 			$nb_actif = mysqli_fetch_object($result);
 			printf("<h3>Nombre d'utilisateurs actif : %d soit %f %% des clients</h3>",$nb_actif->nb_actif,(100 * $nb_actif->nb_actif)/$nb_inscrit->nb_inscrit);
 			/* TO DO : Nombre de clients ayant bénéficié d'une réduction */
-			$query = "SELECT f.nom, sum(v.prix) as recette FROM Film f, Veut_voir v WHERE f.num_film = v.num_film GROUP BY f.num_film;";
 			
-			/* Union sum prix et moyenne des notes */
-			/* SELECT f.nom, p.recette,n.moyenne FROM Film f, (SELECT sum(prix) as recette,f.num_film FROM Veut_voir v,Film f WHERE f.num_film = v.num_film GROUP BY f.num_film) as p,(SELECT avg(n.note) AS moyenne,f.num_film  FROM Note n,Film f WHERE f.num_film = n.num_film GROUP BY f.num_film) as n WHERE f.num_film = n.num_film and f.num_film = p.num_film;
-			*/
-			
-			//~ $output = shell_exec('ls'); -> test du shell exec sur php mdr 
-			//~ pour interpreté du R lol: R CMD BATCH exemple.R et rm *.Rout pour clean
-			//~ echo ... > exemple.R 
-			//~ a href lien de l'image 
+			$query = "SELECT f.nom,sum(v.prix) as recette FROM Film f,Veut_voir v WHERE f.num_film IN (v.num_film) GROUP BY f.num_film UNION SELECT f.nom,0 as recette FROM Film f,Veut_voir v WHERE f.num_film NOT IN (SELECT v.num_film FROM Veut_voir v) GROUP BY f.num_film;";
 			
 			echo "<pre>$output</pre>";
 			
@@ -43,24 +35,16 @@
 			
 			print "<h3>Profit par film :</h3>";
 			print "<table border>";
-			print "<tr><th>Nom du film</th><th>Profit</th><th>Moyenne</th></tr>";
+			print "<tr><th>Nom du film</th><th>Profit</th></tr>";
 			while ($profit = mysqli_fetch_object($result))
 			{
 				print "<tr>";
 				print "<td>$profit->nom </td>";
-				if(!(empty($profit->recette)))
-				{
-					print "<td> $profit->recette € </td>";
-				}
-				else 
-				{
-					print "<td> 0 € </td>";
-				}
-				print "<td>$profit->note moyenne</td>";
+				print "<td> $profit->recette € </td>";
 				print "</tr>";					
 			}		
 			print "</table>";		
-			$query = "SELECT c.nom, (select sum(v.prix) as recette from Veut_voir v where v.num_se_joue IN (
+			$query = "SELECT c.nom, (select sum(v.prix) from Veut_voir v where v.num_se_joue IN (
 								select s.num_se_joue FROM Se_joue_dans s WHERE s.nom_du_cinema = c.nom)) as recette
 								FROM Cinema c;";
 			$result = $link->query($query) or die("erreur select");
@@ -83,10 +67,34 @@
 			}		
 			print "<td>total </td><td> $total €</td>";
 			print "</table>";
-			print "<h3> Taux de remplissages des salles </h3>";
-			/* TO DO : Nom du cinéma : date : heure : Numero des salles (par ordre) : taux de remplissage */
+			$query= "SELECT
+							s.nom_du_cinema,
+							s.jour,
+							s.heure,
+							s.num_salle,
+							COUNT(v.num_client) AS nb_reservations
+							FROM
+									Se_joue_dans s,
+									Veut_voir v
+							WHERE
+									s.num_se_joue = v.num_se_joue 
+							GROUP BY
+									s.num_se_joue;";
+			
+			print "<h3>Remplissages des salles:</h3>";
+			$result = $link->query($query) or die("erreur select");
+			print "<table border>";
+			 print "<tr><th>Date<th>Heure<th>Numéro de la Salle <th> Nom du Cinéma <th> Nombre de réservations</th></tr>";
+			while ($salle_remp = mysqli_fetch_object($result))
+			{
+				print "<tr>";
+				print "<td>$salle_remp->jour </td><td>$salle_remp->heure</td> <td>$salle_remp->num_salle</td> <td>$salle_remp->nom_du_cinema</td> <td>$salle_remp->nb_reservations</td>";
+				print "</tr>";					
+			}		
+			print "</table>";
 			print "<h3> Influence de chaque cinéma </h3>";
 			/* TO DO : Nom du cinéma : date : Nombre de clients qui vont voir un film dans ce cinéma */
+			
 			$result->close();
 			$link->close();
 		?>
