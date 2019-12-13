@@ -115,7 +115,7 @@
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->compagnie\" name=\"compagnie\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->ville\" name=\"ville\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
-						<td><input type=\"text\" value=\"$tuple->nb_salle\" size=\"5\" readonly></td>
+						<td><center>$tuple->nb_salle</center></td>
 						<td><input type=\"submit\" value=\"modifier\"></td>
 					</form>
 					<form method=\"POST\" action=\"supprimer_cinema.php\">

@@ -12,7 +12,7 @@
 				</tr>		
 				<tr>
 				<td>Num de salle :</td>
-				<td><input type="text" name="salle"></td>
+				<td><input type="number" name="salle" min="1"></td>
 				</tr>		
 				<tr>
 				<td>Nom du cinéma :</td>
@@ -85,10 +85,10 @@
 			}
 			
 			if($have == 0) {
-				$query = "SELECT s.*, f.nom as nom_film FROM Se_joue_dans s, Film f where s.num_film = f.num_film;";
+				$query = "SELECT s.*, f.nom as nom_film, f.version_disponible FROM Se_joue_dans s, Film f where s.num_film = f.num_film;";
 			}
 			else {
-				$query = "SELECT s.*, f.nom as nom_film FROM Se_joue_dans s, Film f where s.num_film = f.num_film and ";
+				$query = "SELECT s.*, f.nom as nom_film, f.version_disponible FROM Se_joue_dans s, Film f where s.num_film = f.num_film and ";
 				$query = $query . " " . $array[$have-1];
 				$have--;
 				while($have > 0) {
@@ -108,20 +108,45 @@
 				//~ print "erreur modification du cinema $ancien_nom";
 			//~ }
 			
-			print "<table border><tr><th>ID</th><th>Date</th><th>Heure</th><th>Version</th><th>Nom du film</th><th>Num de Salle</th><th>Nom du Cinéma</th></tr>";
+			print "<table border><tr><th>Date</th><th>Heure</th><th>Version</th><th>Nom du film</th><th>Num de Salle</th><th>Nom du Cinéma</th></tr>";
 			$nb_res = 0;
 			while($tuple = mysqli_fetch_object($result)) {
 				$nb_res++;
 				print "
 					<tr>
 					<form method=\"POST\" action=\"modifier_projection.php\">
-						<td><input type=\"text\" value=\"$tuple->num_se_joue\" name=\"nim_se_joue\" size=\"5\" placeholder=\"min 1\"></td>
+						<input type=\"text\" value=\"$tuple->num_se_joue\" name=\"num_se_joue\" hidden>
 						<td><input type=\"text\" value=\"$tuple->jour\" name=\"compagnie\" size=\"8\"></td>
 						<td><input type=\"text\" value=\"$tuple->heure\" name=\"ville\" size=\"8\"></td>
-						<td><input type=\"text\" value=\"$tuple->version\" size=\"5\"></td>
-						<td><input type=\"text\" value=\"$tuple->nom_film\"</td>
-						<td><input type=\"text\" value=\"$tuple->num_salle\" size=\"5\" ></td>
-						<td><input type=\"text\" value=\"$tuple->nom_du_cinema\"></td>
+				";
+				if($tuple->version_disponible == "all") {
+					if($tuple->version == "vf") {
+						print "
+								<td><input type=\"radio\" name=\"version\" value=\"vf\" checked>vf
+								<input type=\"radio\" name=\"version\" value=\"vo\">vo</td>
+						";
+					}
+					if($tuple->version == "vo") {
+						print "
+								<td><input type=\"radio\" name=\"version\" value=\"vf\">vf
+								<input type=\"radio\" name=\"version\" value=\"vo\" checked>vo</td>
+						";
+					}
+				}
+				if($tuple->version_disponible == "vf") {
+					print "
+							<td><input type=\"radio\" name=\"version\" value=\"vf\" checked>vf</td>
+					";
+				}
+				if($tuple->version_disponible == "vo") {
+					print "
+							<td><input type=\"radio\" name=\"version\" value=\"vo\" checked>vo</td>
+					";
+				}
+				print "
+						<td><input type=\"text\" value=\"$tuple->nom_film\" name=\"nom_film\" minlength=\"3\" minlength=\"30\"></td>
+						<td><input type=\"number\" value=\"$tuple->num_salle\" min=\"1\"></td>
+						<td><input type=\"text\" value=\"$tuple->nom_du_cinema\" name=\"nom_cinema\" minlength=\"3\" minlength=\"30\"></td>
 						<td><input type=\"submit\" value=\"modifier\"></td>
 					</form>
 					<form method=\"POST\" action=\"supprimer_projection.php\">
