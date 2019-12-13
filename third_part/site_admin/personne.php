@@ -16,7 +16,7 @@
 				</tr>
 				<tr>
 				<td>Age :</td>
-				<td><input type="text" name="age" size="5" maxlength="3">ans</td>
+				<td><input type="number" name="age" min="1" max="150"></td>
 				</tr>
 			</table>
 			<input type="submit" value="rechercher">
@@ -99,7 +99,7 @@
 					<form method=\"POST\" action=\"modifier_personne.php\">
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->prenom\" name=\"prenom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
-						<td><input type=\"text\" value=\"$tuple->age\" name=\"age\" size=\"5\" minlength=\"1\" placeholder=\"min 1\"></td>
+						<td><input type=\"number\" value=\"$tuple->age\" name=\"age\" min=\"1\" max=\"150\"></td>
 						<input type=\"text\" value=\"$tuple->num_personne\" name=\"num\" hidden>
 						<td><input type=\"submit\" value=\"modifier\"></td>
 					</form>
@@ -130,7 +130,7 @@
 				<tr>
 					<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 					<td><input type="text" name="prenom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-					<td><input type="text" name="age" size="5" minlength="1" placeholder="min 1"></td>
+					<td><input type="number" name="age" value="1" min="1" max="150"></td>
 					<td><input type="submit" value="insérer"></td>
 				</tr>
 			</form>

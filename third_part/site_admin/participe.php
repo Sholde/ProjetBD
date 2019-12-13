@@ -20,8 +20,9 @@
 				</tr>
 				<tr>
 				<td>Métier :</td>
-				<td><input type="text" name="metier" maxlength="30"></td>
-				</tr>
+				<td><input type="checkbox" name="Directeur" value="Directeur">Directeur
+					<input type="checkbox" name="Scénariste" value="Scénariste">Scénariste
+					<input type="checkbox" name="Acteur" value="Acteur">Acteur</td>
 			</table>
 			<input type="submit" value="rechercher">
 			<input type="reset" value="annuler">
@@ -59,8 +60,30 @@
 				$array[] = "P.prenom like \"%$prenom%\"";
 				$have++;
 			}
-			if(isset($_POST['metier'])) {
-				$metier = $_POST['metier'];
+			if(isset($_POST['Directeur']) or isset($_POST['Scénariste']) or isset($_POST['Acteur'])) {
+				$metier = "";
+				$count = 0;
+				if(isset($_POST['Directeur'])) {
+					if($count)
+						$metier = $metier . " - " . $_POST['Directeur'];
+					else
+						$metier = $_POST['Directeur'];
+					$count++;
+				}
+				if(isset($_POST['Scénariste'])) {
+					if($count)
+						$metier = $metier . " - " . $_POST['Scénariste'];
+					else
+						$metier = $_POST['Scénariste'];
+					$count++;
+				}
+				if(isset($_POST['Acteur'])) {
+					if($count)
+						$metier = $metier . " - " . $_POST['Acteur'];
+					else
+						$metier = $_POST['Acteur'];
+					$count++;
+				}
 				$array[] = "PA.metier like \"%$metier%\"";
 				$have++;
 			}
@@ -91,6 +114,9 @@
 			if(isset($_GET['modif']) and isset($_GET['erreur']) and $_GET['erreur'] == "personne") {
 				print "cette personne n'existe pas";
 			}
+			if(isset($_GET['modif']) and isset($_GET['erreur']) and $_GET['erreur'] == "metier") {
+				print "aucun metier sélectioner";
+			}
 			else if(isset($_GET['modif']) and isset($_GET['num_personne']) and isset($_GET['num_film'])) {
 				$ancien_num_personne = $_GET['num_personne'];
 				$ancien_num_film = $_GET['num_film'];
@@ -107,12 +133,41 @@
 						<td><input type=\"text\" value=\"$tuple->nom_film\" name=\"nom_film\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->prenom\" name=\"prenom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
-						<td><input type=\"text\" value=\"$tuple->metier\" name=\"metier\" minlength=\"3\" maxlength=\"256\" placeholder=\"3 - 256 caractères\"></td>
+				";
+				
+				/* directeur */
+				$query = "select * from Participe_au_film P where P.num_film = $tuple->num_film and P.num_personne = $tuple->num_personne and metier like \"%directeur%\";";
+				$res = $link->query($query) or die("erreur select");
+				$tmp = mysqli_fetch_object($res);
+				if($tmp)
+					print "<td><input type=\"checkbox\" name=\"Directeur\" value=\"Directeur\" checked>Directeur";
+				else
+					print "<td><input type=\"checkbox\" name=\"Directeur\" value=\"Directeur\">Directeur";
+				
+				/* scénariste */
+				$query = "select * from Participe_au_film P where P.num_film = $tuple->num_film and P.num_personne = $tuple->num_personne and metier like \"%scénariste%\";";
+				$res = $link->query($query) or die("erreur select");
+				$tmp = mysqli_fetch_object($res);
+				if($tmp)
+					print "<input type=\"checkbox\" name=\"Scénariste\" value=\"Scénariste\" checked>Scénariste";
+				else
+					print "<input type=\"checkbox\" name=\"Scénariste\" value=\"Scénariste\">Scénariste";
+				
+				/* acteur */
+				$query = "select * from Participe_au_film P where P.num_film = $tuple->num_film and P.num_personne = $tuple->num_personne and metier like \"%acteur%\";";
+				$res = $link->query($query) or die("erreur select");
+				$tmp = mysqli_fetch_object($res);
+				if($tmp)
+					print "<input type=\"checkbox\" name=\"Acteur\" value=\"Acteur\" checked>Acteur</td>";
+				else
+					print "<input type=\"checkbox\" name=\"Acteur\" value=\"Acteur\">Acteur</td>";
+				
+				print "
 						<td><input type=\"submit\" value=\"modifier\"></td>
 					</form>
 					<form method=\"POST\" action=\"supprimer_participe.php\">
 						<td><input type=\"text\" value=\"$tuple->num_personne\" name=\"num_personne\" hidden>
-						<td><input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" hidden>
+						<input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" hidden>
 						<input type=\"submit\" value=\"supprimer\"></td>
 					</form>
 					</tr>
@@ -132,10 +187,14 @@
 			if(isset($_GET['inser']) and isset($_GET['erreur']) and $_GET['erreur'] == "personne") {
 				print "cette personne n'existe pas";
 			}
-			else if(isset($_GET['inser']) and isset($_GET['num_personne']) and isset($_GET['num_film'])) {
-				$num_personne = $_GET['num_personne'];
-				$num_film = $_GET['num_film'];
-				print "impossible d'insérer la personne $num_personne pour le film $num_film";
+			if(isset($_GET['inser']) and isset($_GET['erreur']) and $_GET['erreur'] == "metier") {
+				print "aucun metier sélectioner";
+			}
+			else if(isset($_GET['inser']) and isset($_GET['nom']) and isset($_GET['prenom']) and isset($_GET['nom_film'])) {
+				$nom = $_GET['nom'];
+				$prenom = $_GET['prenom'];
+				$nom_film = $_GET['nom_film'];
+				print "impossible d'insérer la personne $nom $prenom pour le film $nom_film";
 			}
 		?>
 		<table border>
@@ -145,7 +204,9 @@
 					<td><input type="text" name="nom_film" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 					<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 					<td><input type="text" name="prenom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-					<td><input type="text" name="metier" minlength="3" maxlength="256" placeholder="3 - 256 caractères"></td>
+					<td><input type="checkbox" name="Directeur" value="Directeur">Directeur
+					<input type="checkbox" name="Scénariste" value="Scénariste">Scénariste
+					<input type="checkbox" name="Acteur" value="Acteur">Acteur</td>
 					<td><input type="submit" value="insérer"></td>
 				</tr>
 			</form>

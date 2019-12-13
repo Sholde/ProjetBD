@@ -5,7 +5,6 @@
 		exit();
 	}
 	
-	$num = $_POST['num'];
 	$nom = $_POST['nom'];
 	$nb_place = $_POST['nb_place'];
 			
@@ -14,6 +13,15 @@
 		die ("erreur connection");
 	}
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
+	
+	$query = "select max(num_salle) as num from Salle where nom_du_cinema = '$nom';";
+	$result = $link->query($query) or die("erreur select");
+	$tuple = mysqli_fetch_object($result);
+	if(!$tuple) {
+		$num = 1;
+	}
+	else
+		$num = $tuple->num + 1;
 	
 	$query = "insert into Salle values ($num, '$nom', $nb_place);";
 	if(!$link->query($query)) {
