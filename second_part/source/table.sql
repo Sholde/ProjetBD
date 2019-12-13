@@ -50,8 +50,7 @@ CREATE TABLE Suit(
 );
 CREATE TABLE Se_joue_dans(
 	num_se_joue INT,
-	jour date,
-    heure time,
+	jour datetime NOT NULL,
     version VARCHAR(30) NOT NULL,
     num_film INT,
     num_salle INT,
