@@ -1,23 +1,11 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="../css/menu.css">
+		<link rel="stylesheet" href="../css/menu_principal.css">
 		<title>Réserve Ta Place</title>
 	</head>
 	<body>
 		<div>
-			<h1>Réserve Ta Place</h1>
 			<ul class="menu">
-				<li>
-					<a href="info.php">Info</a>
-				</li>
-				<li>
-					<a href="liste_cinema.php">Cinéma</a>
-				</li>
-				<li>
-					<a href="liste_film.php">Film</a>
-				</li>
-				<li>
-					<a href="rechercher.php">Rechercher</a>
 				</li>
 				<?php
 					session_start();
@@ -38,12 +26,24 @@
 						</li>";
 					}
 				?>
+				<li>
+					<a href="info.php">Info</a>
+				</li>
+				<li>
+					<a href="liste_cinema.php">Cinéma</a>
+				</li>
+				<li>
+					<a href="liste_film.php">Film</a>
+				</li>
 			</ul>
 		</div>
-	</body>
-	<footer>
-		<div>
-			reserve-ta-place.com &copy;
+			<h1 class="titre">Réserve Ta Place</h1>
+			<form method="POST" action="calcul.php">
+			 <div class="search-box">
+					<input class="search-txt" type="text" name="recherche" placeholder="Rechercher un film">
+			</div>
+			<input type="submit" hidden>
+			</form>
 		</div>
-	</footer>
+	</body>
 </html>
