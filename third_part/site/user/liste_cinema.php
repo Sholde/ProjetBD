@@ -10,7 +10,7 @@
 	
 	$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
 	
-	$query = "Select C.* from Cinema C group by C.nom;";
+	$query = "Select C.*, S.ville, count(S.num_salle) as nb from Cinema C, Salle S where C.nom = S.nom_du_cinema group by C.nom;";
 	$result = $link->query($query) or die("erreur select");
 	
 	print "

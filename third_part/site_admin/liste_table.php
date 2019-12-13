@@ -27,7 +27,6 @@
 			<li><a href="cinema.php">Cinema</a></li>
 			<li><a href="personne.php">Personne</a></li>
 			<li><a href="participe.php">Contribution</a></li>
-			<li><a href="#">Suite des films</a></li>
 		</ul>
 	</body>
 </html>
