@@ -14,7 +14,7 @@
 				<td><input type="text" name="genre"></td>
 				</tr>
 				<td>Duree :</td>
-				<td><input type="text" name="duree" size="5" maxlength="7"> min</td>
+				<td><input type="number" name="duree" min="1" max="1000"></td>
 				</tr>
 				<td>Origine :</td>
 				<td><input type="text" name="origine" size="5" maxlength="3"></td>
@@ -112,7 +112,7 @@
 						<input type=\"text\" value=\"$tuple->num_film\" name=\"num_film\" hidden>
 						<td><input type=\"text\" value=\"$tuple->nom\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
 						<td><input type=\"text\" value=\"$tuple->genre\" name=\"genre\" minlength=\"3\" maxlength=\"256\" placeholder=\"3 - 256 caractères\"></td>
-						<td><input type=\"text\" value=\"$tuple->duree\" name=\"duree\" size=\"5\" maxlength=\"7\">min</td>
+						<td><input type=\"number\" value=\"$tuple->duree\" name=\"duree\" min=\"1\" max=\"1000\"></td>
 						<td><input type=\"text\" value=\"$tuple->origine\" name=\"origine\" size=\"5\" maxlength=\"3\"></td>
 				";
 				if($tuple->version_disponible == "all") {
@@ -164,7 +164,7 @@
 			<form method="POST" action="inserer_film.php">
 			<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
 			<td><input type="text" name="genre" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-			<td><input type="text" name="duree" size="5" minlength="1" maxlength="3">min</td>
+			<td><input type="number" name="duree" value="1" min="1" max="1000"></td>
 			<td><input type="text" name="origine" size="5" minlength="1" maxlength="3"></td>
 			<td><input type="radio" value="all" name="version" checked>all
 					<input type="radio" value="vf" name="version">vf

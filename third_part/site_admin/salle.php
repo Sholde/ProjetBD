@@ -8,11 +8,15 @@
 			<table>
 				<tr>
 				<td>Numéro Salle :</td>
-				<td><input type="text" name="num" size="5"></td>
+				<td><input type="number" name="num" min="1"></td>
 				</tr>
 				<tr>
 				<td>Nom du cinéma :</td>
 				<td><input type="text" name="nom"></td>
+				</tr>
+				<tr>
+				<td>Nombre de place min :</td>
+				<td><input type="number" name="nb_place" min="1"></td>
 				</tr>
 			</table>
 			<input type="submit" value="rechercher">
@@ -44,6 +48,11 @@
 			if(isset($_POST['num']) and is_numeric($_POST['num'])) {
 				$num = $_POST['num'];
 				$array[] = "S.num_salle = $num";
+				$have++;
+			}
+			if(isset($_POST['nb_place']) and is_numeric($_POST['nb_place'])) {
+				$nb_place = $_POST['nb_place'];
+				$array[] = "S.nb_de_place >= $nb_place";
 				$have++;
 			}
 			
@@ -80,7 +89,7 @@
 					<form method=\"POST\" action=\"modifier_salle.php?num=$tuple->num_salle&nom=$tuple->nom_du_cinema\">
 						<td><input type=\"text\" value=\"$tuple->num_salle\" name=\"num\" size=\"5\" minlength=\"1\" placeholder=\"min 1\"></td>
 						<td><input type=\"text\" value=\"$tuple->nom_du_cinema\" name=\"nom\" minlength=\"3\" maxlength=\"30\" placeholder=\"3 - 30 caractères\"></td>
-						<td><input type=\"text\" value=\"$tuple->nb_de_place\" name=\"nb_place\" size=\"5\" minlength=\"1\" placeholder=\"min 1\"></td>
+						<td><input type=\"number\" value=\"$tuple->nb_de_place\" name=\"nb_place\" min=\"1\"></td>
 						<td><input type=\"submit\" value=\"modifier\"></td>
 					</form>
 					<form method=\"POST\" action=\"supprimer_salle.php\">
@@ -111,7 +120,7 @@
 				<tr>
 					<td><input type="text" name="num" size="5" minlength="1" placeholder="min 1"></td>
 					<td><input type="text" name="nom" minlength="3" maxlength="30" placeholder="3 - 30 caractères"></td>
-					<td><input type="text" name="nb_place" size="5" minlength="1" placeholder="min 1"></td>
+					<td><input type="number" value="1" name="nb_place" min="1"></td>
 					<td><input type="submit" value="insérer"></td>
 				</tr>
 			</form>
