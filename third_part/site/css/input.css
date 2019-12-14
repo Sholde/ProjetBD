@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-image: url(../img/background.jpg);
+}
+
+.contenu {
+	position:absolute;
+	right:30%;
+	left:30%;
+	top:20%;
+	bottom:20%;
+	background: white;
+	border-radius: 5px;
+}
+
+input[type=text],input[type=password]{
+	padding: 5px 10px;
+	box-sizing: border-box;
+  border: 2px solid #ccc;
+	border-radius: 4px;
+  background-color: #f8f8f8;
+  transition:background-color 0.8s,padding 0.4s;
+}
+input[type=text]:focus,input[type=password]:focus{
+	background-color: white;
+	padding: 7px 11px;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: grey;
+  border: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+	border-radius: 5px;
+	transition:border-radius 1s,background-color 1s,padding 1s;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
+	 background-color: #b3b6b7;
+}

@@ -6,7 +6,7 @@
 		exit();
 	}
 	
-	print "<html><head><title>Film</title></head><body>";
+	print "<html><head><title>Film</title> <link rel=\"stylesheet\" href=\"../css/input.css\"></head><body>";
 	
 	/* variable */
 	$num_film = $_GET['num_film'];
@@ -28,7 +28,7 @@
 	$result = $link->query($query) or die("erreur select");
 	
 	$tuple = mysqli_fetch_object($result);
-	
+	print "	<div class = \"contenu\">";
 	print "<form method=\"POST\" action=\"noter.php\">";
 	print "<input type=\"text\" name=\"num_film\" value=\"$tuple->num_film\" hidden>";
 	print "<table>";
@@ -62,7 +62,7 @@
 	print "</table>";
 	print "<input type=\"submit\" value=\"valider\">";
 	print "</form>";
-	
+	print "</div>";
 	$result->close();
 	$link->close();
 	

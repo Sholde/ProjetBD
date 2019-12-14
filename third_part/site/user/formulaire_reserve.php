@@ -11,7 +11,7 @@
 		exit();
 	}
 	
-	print "<html><head><title>Réserve</title></head><body>";
+	print "<html><head><title>Réserve</title> <link rel=\"stylesheet\" href=\"../css/input.css\"></head><body>";
 	
 	/* variable */
 	$num_se_joue = $_GET['num_se_joue'];
@@ -45,7 +45,7 @@
 	
 	$query_client = "Select * from Clients where email = '$email_client';";
 	$client = $link->query($query_client) or die("erreur select");
-	
+	print "	<div class = \"contenu\">";
 	print "<form method=\"POST\" action=\"reserve.php\">";
 	print "<input type=\"text\" name=\"num_se_joue\" value=\"$num_se_joue\" hidden>";
 	print "<input type=\"text\" name=\"num_film\" value=\"$num_film\" hidden>";
@@ -119,7 +119,7 @@
 	print "<input type=\"submit\" value=\"valider\">";
 	print "<a href=\"index.php\">annuler</a>";
 	print "</form>";
-	
+	print "</div>";
 	$link->close();
 	
 	print "</body></html>";

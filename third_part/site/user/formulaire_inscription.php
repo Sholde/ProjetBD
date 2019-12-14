@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Se connecter</title>
+		<link rel="stylesheet" href="../css/input.css">
 	</head>
 	<body>
 		<form method="POST" action="inscrire.php">
