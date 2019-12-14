@@ -4,14 +4,21 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-image: url(../img/background.jpg);
+}
+
 h1 {
 	margin-left: 15%;
 	margin-top: 2%;
+	color:  #f5b7b1 ;
+	text-shadow: 2px 2px 0 #ec7063;
 }
 
 .contenu {
 	margin-top: 2%;
 	margin-left: 15%;
+	margin-bottom: 10px;
 	width: 70%;
 	padding: 10px;
 	background: #444444;
@@ -22,16 +29,18 @@ h1 {
 .text {
 	display: inline-block;
 	width: 100%;
+	text-shadow: 2px 3px 5px rgba(0,0,0,0.3);
 }
 
 a {
 	margin: 30px;
 	padding: 20px;
-	background: red;
+	background: #ec7063;
 	font-size: 20px;
 	display: block;
 	text-decoration: none;
 	color: black;
+	transition: background-color 0.5s, transform 0.5s; 
 	border-radius: 10px;
 }
 
@@ -40,6 +49,8 @@ ul {
 }
 
 a:hover {
-	background: white;
+	background:white;
+	transform: translateX(5px); 
 }
+
 

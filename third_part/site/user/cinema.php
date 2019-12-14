@@ -1,6 +1,6 @@
 <?php
 	
-	print "<html><head><title>Cinéma</title></head><body>";
+	print "<html><head><title>Cinéma</title> 	<link rel=\"stylesheet\" href=\"../css/resultat.css\"> </head><body>";
 	
 	/* variable */
 	$nom = $_GET['nom'];
@@ -17,13 +17,22 @@
 	
 	$tuple = mysqli_fetch_object($result);
 	
+	print "<div class=\"contenu\">";
+	print "<div class=\"description\">";
+	
 	print "
 		$tuple->nom<br>
 		$tuple->compagnie<br>
 		$tuple->ville<br>
 		nb salle : $tuple->nb<br>
+		</div>
+		<div class=\"lien\">
 		<a href=\"projection_cinema.php?nom=$tuple->nom\">Voir les projections</a>
 	";
+	print "</div>";
+	print "</div>";
+	
+	print "<img height=\"400\" width = \"500\" src=\"../img/pathe_cine.jpg\"> ";
 	
 	$result->close();
 	$link->close();

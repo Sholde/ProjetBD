@@ -1,6 +1,7 @@
 <?php
-	
-	print "<html><head><title>Film</title></head><body>";
+		print "<html><head><title>Film</title>
+					<link rel=\"stylesheet\" href=\"../css/resultat.css\">
+					</head><body>";
 	
 	$num_film = $_GET['num_film'];
 	
@@ -31,7 +32,8 @@
 		and S.num_film_suiv = $num_film;
 	";
 	$film_prec = $link->query($query_prec) or die("erreur select");
-	
+	print "<div class=\"contenu\">";
+	print "<div class=\"description\">";
 	print "<table>";
 	$tuple = mysqli_fetch_object($result);
 		print "	<tr>
@@ -75,7 +77,6 @@
 	print "</td>";
 	print "</tr>";
 	
-	
 	/* acteur */
 	$query = "select * from Personne P, Participe_au_film PA where PA.num_personne = P.num_personne and PA.num_film = $num_film and PA.metier like '%Act%';";
 	$result = $link->query($query) or die("erreur select");
@@ -89,8 +90,13 @@
 	print "</ul>";
 	print "</td>";
 	print "</tr>";
-		
-		print "
+	
+	print "</table>";
+	print "</div>";
+	print "<div class=\"lien\">";
+	print "<table>";
+	
+			print "
 						<tr>
 						<td><a href=\"projection_film.php?num_film=$num_film\">Voir les projections</a></td>
 						</tr>
@@ -115,8 +121,11 @@
 				</tr>
 			";
 		}
-	print "</table>";
 	
+	print "</table>";
+	print "</div>";
+	print "</div>";
+	print "<iframe height=\"400px\" width=\"550px\" src=\"https://www.youtube.com/embed/hIjeGNy8jKc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
 	$result->close();
 	$link->close();
 	

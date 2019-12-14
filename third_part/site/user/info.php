@@ -3,6 +3,6 @@
 		<title>Réserve Ta Place</title>
 	</head>
 	<body>
-		info
+		coming soon
 	</body>
 </html>

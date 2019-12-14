@@ -14,7 +14,7 @@
 	$result = $link->query($query) or die("erreur select");
 	
 	print "
-		<h1>Liste des Films :</h1>
+		<h1>Liste des Films</h1>
 	";
 	print "<div class=\"contenu\">";
 	while ($tuple = mysqli_fetch_object($result)){
