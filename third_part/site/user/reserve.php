@@ -33,8 +33,8 @@
 		$max++;
 	}
 	
-	print "Place acheté : $tmp";
-	
+	print "Place acheté : $tmp <br>";
+	print "<a href=\"index.php\">Retour au menu principal</a>";
 	$result->close();
 	$link->close();
 ?>

@@ -121,7 +121,8 @@
 				</tr>
 			";
 		}
-	
+	print "<tr><td><a href=\"liste_film.php\">Retour à liste de films</a></td></tr>";
+	print "<tr><td><a href=\"index.php\">Retour au menu principal</a></td></tr>";
 	print "</table>";
 	print "</div>";
 	print "</div>";

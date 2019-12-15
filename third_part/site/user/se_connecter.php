@@ -8,7 +8,7 @@
 		<form method="POST" action="connecte.php">
 			<table>
 				<tr>
-				<td>email</td>
+				<td>Adresse E-mail</td>
 				<td><input type="text" name="email" minlength="11"></td>
 				</tr>
 				<tr>
@@ -16,7 +16,7 @@
 				<td><input type="password" name="mdp" minlength="3" maxlength="16" placeholder="3 - 16 caractères"></td>
 				</tr>
 			</table>
-			<input type="Submit" value="Se connecter"><input type="reset">
+			<input type="Submit" value="Se connecter"><input type="reset"><br>
 		</form>
 		<a href="formulaire_inscription.php">crée un compte</a>
 		<?php
@@ -27,6 +27,7 @@
 				}
 			}
 		?>
+		<a href="index.php">Retour au menu principal</a>
 		</div>
 	</body>
 </html>

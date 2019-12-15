@@ -36,7 +36,6 @@
 		$query = "insert into Note value ($num_client, $num_film, $note);";
 		$link->query($query) or die("erreur insert");
 	}
-	
 	$result->close();
 	$link->close();
 	

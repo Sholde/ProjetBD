@@ -17,15 +17,6 @@ body {
 	background: #444444;
 	border-radius: 10px;
 }
-
-.contenu > .lien {
-	position:absolute;
-	right:5%;
-	left:5%;
-	bottom:10%;
-	background: white;
-	border-radius: 10px;
-}
 .contenu > .description {
 	position:absolute;
 	right:5%;
@@ -34,6 +25,16 @@ body {
 	background: white;
 	border-radius: 10px;
 }
+
+.contenu > .lien {
+	position:absolute;
+	right:5%;
+	left:5%;
+	bottom:5%;
+	background: white;
+	border-radius: 10px;
+}
+
 tr {
 	color:red;
 }

@@ -12,9 +12,11 @@ body {
 	right:30%;
 	left:30%;
 	top:20%;
-	bottom:20%;
 	background: white;
 	border-radius: 5px;
+}
+#erreur {
+	color:red;
 }
 
 input[type=text],input[type=password]{

@@ -11,8 +11,8 @@ body {
 h1 {
 	margin-left: 15%;
 	margin-top: 2%;
-	color:  #f5b7b1 ;
-	text-shadow: 2px 2px 0 #ec7063;
+	color:  white;
+	text-shadow: 2px 3px 5px rgba(0,0,0,0.3);
 }
 
 .contenu {

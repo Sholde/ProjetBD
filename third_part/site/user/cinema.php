@@ -27,8 +27,10 @@
 		nb salle : $tuple->nb<br>
 		</div>
 		<div class=\"lien\">
-		<a href=\"projection_cinema.php?nom=$tuple->nom\">Voir les projections</a>
+		<a href=\"projection_cinema.php?nom=$tuple->nom\">Voir les projections</a><br>
 	";
+	print "<a href=\"liste_cinema.php\">Retour à la liste des films</a><br>";
+	print "<a href=\"index.php\">Retour au menu principal</a>";
 	print "</div>";
 	print "</div>";
 	

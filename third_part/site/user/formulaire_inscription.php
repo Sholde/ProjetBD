@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="../css/input.css">
 	</head>
 	<body>
+		<div class = "contenu">
 		<form method="POST" action="inscrire.php">
 			<table>
 				<tr>
@@ -33,5 +34,7 @@
 				}
 			}
 		?>
+			<a href="index.php">Retour au menu principal</a>
+		</div>
 	</body>
 </html>

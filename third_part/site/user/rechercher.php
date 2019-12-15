@@ -1,8 +1,10 @@
 <html>
 	<head>
 		<title>Réserver une place</title>
+		<link rel="stylesheet" href="../css/input.css">
 	</head>
 	<body>
+		<div class = "contenu">
 		<form method="POST" action="calcul.php">
 			<table>
 				<tr>
@@ -26,5 +28,6 @@
 			</table>
 			<input type="submit" value="rechercher">
 		</form>
+		</div>
 	</body>
 </html>

@@ -118,6 +118,9 @@
 	print "</table>";
 	print "<input type=\"submit\" value=\"valider\">";
 	print "<a href=\"index.php\">annuler</a>";
+	print "<br><a href=film.php?num_film=$num_film>Retour à la fiche technique du film</a>";
+	print "<br><a href=projection_film.php?num_film=$num_film>Réserver ce film à une autre date ? </a>";
+	print "<br><a href=liste_film.php>Réserver un autre film</a>";
 	print "</form>";
 	print "</div>";
 	$link->close();

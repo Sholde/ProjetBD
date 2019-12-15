@@ -52,7 +52,7 @@ li a:hover:after {
 	left: 35%;
 	color:white;
 	font-size:35px;
-	text-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+	text-shadow: 2px 3px 5px rgba(0,0,0,0.3); /* shadow pour le texte sinon c'est moche */
 }
 
 .search-box{

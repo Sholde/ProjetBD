@@ -2,7 +2,6 @@
 	print "<html><head><title>Film</title>
 	<link rel=\"stylesheet\" href=\"../css/liste.css\">
 	</head><body>";
-	
 	$link = new mysqli("localhost", "Anonyme", "anonyme");
 	if($link->connect_errno) {
 		    die ("Erreur de connexion : errno: " . $link->errno . " error: "  . $link->error);

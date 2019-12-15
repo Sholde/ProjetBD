@@ -60,7 +60,8 @@
 	";
 	}
 	print "</table>";
-	print "<input type=\"submit\" value=\"valider\">";
+	print "<input type=\"submit\" value=\"valider\"> <br>";
+	print "<br><a href=film.php?num_film=$num_film>Retour à la fiche technique du film</a>";
 	print "</form>";
 	print "</div>";
 	$result->close();
