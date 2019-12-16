@@ -4,9 +4,38 @@
 	box-sizing: border-box;
 }
 
-h1 {
+body {
+	background-image: url(../img/background.jpg);
+}
+
+.titre a {
+	text-decoration: none;
+	color: white;
+	font-size: 35px;
+}
+
+.titre a:hover {
+	background: #4C8DD6;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+h1, h4 {
+	color: white;
 	margin-left: 15%;
 	margin-top: 2%;
+}
+
+.res a {
+	color: white;
+	text-decoration: none;
+	background:#4C8DD6;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.res a:hover {
+	color: #4C8DD6;
 }
 
 .contenu {
@@ -14,7 +43,7 @@ h1 {
 	margin-left: 15%;
 	width: 70%;
 	padding: 10px;
-	background: #444444;
+	background: #4C8DD6;
 	display: block;
 	border-radius: 10px;
 }
@@ -24,10 +53,10 @@ h1 {
 	width: 100%;
 }
 
-.contenu a {
+.contenu > a {
 	margin: 30px;
 	padding: 20px;
-	background: red;
+	background: #9cc4f2;
 	font-size: 20px;
 	display: block;
 	text-decoration: none;

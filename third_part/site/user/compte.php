@@ -1,8 +1,13 @@
 <?php
 	session_start();
+	if(!isset($_SESSION['session'])) {
+		header("Location: se_connecter.php");
+		exit();
+	}
 	$email_client = $_SESSION['session'];
 	
 	print "<html><head><title>Compte</title></head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	$link = new mysqli("localhost", "Client", "client");
 	if($link->connect_errno) {
