@@ -2,6 +2,7 @@
 	print "<html><head><title>Film</title>
 	<link rel=\"stylesheet\" href=\"../css/liste.css\">
 	</head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	$link = new mysqli("localhost", "Anonyme", "anonyme");
 	if($link->connect_errno) {
@@ -14,7 +15,7 @@
 	$result = $link->query($query) or die("erreur select");
 	
 	print "
-		<h1>Liste des Films :</h1>
+		<h1 name=\"liste\">Liste des Films :</h1>
 	";
 	print "<div class=\"contenu\">";
 	while ($tuple = mysqli_fetch_object($result)){

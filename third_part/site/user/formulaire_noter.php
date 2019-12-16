@@ -7,6 +7,7 @@
 	}
 	
 	print "<html><head><title>Film</title></head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	/* variable */
 	$num_film = $_GET['num_film'];

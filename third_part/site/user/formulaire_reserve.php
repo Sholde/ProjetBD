@@ -12,6 +12,7 @@
 	}
 	
 	print "<html><head><title>Réserve</title></head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	/* variable */
 	$num_se_joue = $_GET['num_se_joue'];
@@ -37,7 +38,7 @@
 	$tuple = mysqli_fetch_object($res_nb_place);
 	$nb_place = $tuple->nb;
 	
-	$query_se_joue = "Select * from Se_joue_dans J, Salle S where S.num_salle = J.num_salle and S.nom_du_cinema = J.nom_du_cinema and J.num_se_joue = $num_se_joue;";
+	$query_se_joue = "Select * from Se_joue_dans J, Salle S, Cinema C where C.nom = S.nom_du_cinema and S.num_salle = J.num_salle and S.nom_du_cinema = J.nom_du_cinema and J.num_se_joue = $num_se_joue;";
 	$se_joue = $link->query($query_se_joue) or die("erreur select");
 	
 	$query_film = "Select * from Film where num_film = $num_film;";
@@ -59,6 +60,7 @@
 		</tr>
 	";
 	$tuple = mysqli_fetch_object($se_joue);
+	$array = explode(" ",$tuple->jour);
 	print "
 		<tr>
 		<td>Cinéma : </td>
@@ -74,11 +76,11 @@
 		</tr>
 		<tr>
 		<td>Jour : </td>
-		<td><input type=\"text\" value=\"$tuple->jour\" readonly></td>
+		<td><input type=\"text\" value=\"$array[0]\" readonly></td>
 		</tr>
 		<tr>
 		<td>heure : </td>
-		<td><input type=\"text\" value=\"$tuple->heure\" readonly></td>
+		<td><input type=\"text\" value=\"$array[1]\" readonly></td>
 		</tr>
 	";
 	$tuple = mysqli_fetch_object($client);

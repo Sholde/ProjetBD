@@ -2,6 +2,7 @@
 	print "<html><head><title>Cinéma</title>
 	<link rel=\"stylesheet\" href=\"../css/liste.css\">
 	</head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	$link = new mysqli("localhost", "Anonyme", "anonyme");
 	if($link->connect_errno) {

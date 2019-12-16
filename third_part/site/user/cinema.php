@@ -1,6 +1,7 @@
 <?php
 	
 	print "<html><head><title>Cinéma</title></head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	/* variable */
 	$nom = $_GET['nom'];
