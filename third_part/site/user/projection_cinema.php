@@ -12,7 +12,7 @@
 	$nom = $_GET['nom'];
 	
 	date_default_timezone_set('Europe/Paris');
-	$jour = date('o-m-d H:m:s');
+	$jour = date('Y-m-d H:i:s');
 	echo "On est le $jour<br><br>";
 	
 	/* connexion serveur */
@@ -31,7 +31,7 @@
 		<br>
 	";
 		
-	$query = "Select * from Cinema C, Film F, Se_joue_dans J, Salle S where S.nom_du_cinema = C.nom and S.nom_du_cinema = J.nom_du_cinema and S.num_salle = J.num_salle and J.num_film = F.num_film and J.nom_du_cinema = C.nom and C.nom = '$nom';";
+	$query = "Select * from Cinema C, Film F, Se_joue_dans J, Salle S where S.nom_du_cinema = C.nom and S.nom_du_cinema = J.nom_du_cinema and S.num_salle = J.num_salle and J.num_film = F.num_film and J.nom_du_cinema = C.nom and C.nom = '$nom' and J.jour > '$jour';";
 	$result = $link->query($query) or die("erreur select");
 	
 	/* affiche les films disponnible dans ce cinema */
