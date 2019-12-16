@@ -8,6 +8,42 @@ body {
 	background-image: url(../img/background.jpg);
 }
 
+.menu ul {
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menu ul li {
+	margin-top: 10px;
+  float: right;
+}
+
+.menu ul li a {
+    text-decoration:none;
+    color: white;
+    padding: 0 5px;
+    text-align: center;
+    font-size: 20px;
+    color: #FFF;
+}
+
+.menu ul li a:after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    height: 2px;
+    width: 0;
+    transition: width .5s ease, background-color .5s ease;
+}
+.menu ul li a:hover:after {
+    width: 90%;
+    background: #FFF;
+}
+
 .titre a {
 	text-decoration: none;
 	color: white;
@@ -36,6 +72,7 @@ h1, h4 {
 
 .res a:hover {
 	color: #4C8DD6;
+	background: white;
 }
 
 .contenu {
@@ -64,11 +101,11 @@ h1, h4 {
 	border-radius: 10px;
 }
 
-ul {
+.contenu ul {
 	list-style: none;
 }
 
-a:hover {
+.contenu > a:hover {
 	background: white;
 }
 

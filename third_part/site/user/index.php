@@ -41,9 +41,9 @@
 			</ul>
 		</div>
 			<h1 class="titre">Réserve Ta Place</h1>
-			<form method="POST" action="calcul.php">
+			<form method="POST" action="liste_film.php">
 			 <div class="search-box">
-					<input class="search-txt" type="text" name="recherche" placeholder="Rechercher un film">
+					<input class="search-txt" type="text" name="nom" placeholder="Rechercher un film">
 			</div>
 			<input type="submit" hidden>
 			</form>

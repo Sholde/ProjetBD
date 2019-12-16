@@ -2,6 +2,44 @@
 	print "<html><head><title>Cinéma</title>
 	<link rel=\"stylesheet\" href=\"../css/liste.css\">
 	</head><body>";
+?>
+	<div class="menu">
+			<ul>
+				</li>
+				<?php
+					session_start();
+					if(!isset($_SESSION['session'])) {
+						print "<li>
+							<a href=\"se_connecter.php\">Se connecter</a>
+						</li>";
+						print "<li>
+							<a href=\"formulaire_inscription.php\">S'inscrire</a>
+						</li>";
+					}
+					else {
+						print "<li>
+							<a href=\"deconnecte.php\">Se Déconnecter</a>
+						</li>";
+						print "<li>
+							<a href=\"compte.php\">Compte</a>
+						</li>";
+						print "<li>
+							<a href=\"reservation.php\">Mes réservation</a>
+						</li>";
+					}
+				?>
+				<li>
+					<a href="info.php">Info</a>
+				</li>
+				<li>
+					<a href="liste_cinema.php">Cinéma</a>
+				</li>
+				<li>
+					<a href="liste_film.php">Film</a>
+				</li>
+			</ul>
+		</div>
+	<?php
 	print "<h1 class=\"titre\"><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	$link = new mysqli("localhost", "Anonyme", "anonyme");
