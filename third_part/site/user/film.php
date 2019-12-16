@@ -1,6 +1,7 @@
 <?php
 	
 	print "<html><head><title>Film</title></head><body>";
+	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	$num_film = $_GET['num_film'];
 	
@@ -54,7 +55,7 @@
 	print "<td> Directeur : ";
 	print "<ul>";
 	while($tuple = mysqli_fetch_object($result)) {
-		print "<li>$tuple->nom $tuple->prenom</li>";
+		print "<li><a href=\"personne.php?num=$tuple->num_personne\">$tuple->nom $tuple->prenom</a></li>";
 	}
 	print "</ul>";
 	print "</td>";
@@ -69,7 +70,7 @@
 	print "<td> Scénariste : ";
 	print "<ul>";
 	while($tuple = mysqli_fetch_object($result)) {
-		print "<li>$tuple->nom $tuple->prenom</li>";
+		print "<li><a href=\"personne.php?num=$tuple->num_personne\">$tuple->nom $tuple->prenom</a></li>";
 	}
 	print "</ul>";
 	print "</td>";
@@ -84,7 +85,7 @@
 	print "<td> Acteur : ";
 	print "<ul>";
 	while($tuple = mysqli_fetch_object($result)) {
-		print "<li>$tuple->nom $tuple->prenom</a></li>";
+		print "<li><a href=\"personne.php?num=$tuple->num_personne\">$tuple->nom $tuple->prenom</a></li>";
 	}
 	print "</ul>";
 	print "</td>";
