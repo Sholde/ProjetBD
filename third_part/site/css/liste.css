@@ -48,12 +48,12 @@ body {
 	text-decoration: none;
 	color: white;
 	font-size: 35px;
-	transition: color 0.5s ease; 
 }
 
 .titre a:hover {
-	color: #4C8DD6;
-	border-radius:10px;
+	background: #4C8DD6;
+	padding: 20px;
+	border-radius: 10px;
 }
 
 h1, h4 {
@@ -90,24 +90,38 @@ h1, h4 {
 	width: 100%;
 }
 
-.contenu > a {
+.contenu > .block {
 	margin: 30px;
-	padding: 20px;
+	padding: 30px;
 	background: #9cc4f2;
 	font-size: 20px;
 	display: block;
 	text-decoration: none;
 	color: black;
 	border-radius: 10px;
-	transition: background-color 0.5s, transform 0.5s; 
 }
 
 .contenu ul {
 	list-style: none;
 }
 
-.contenu > a:hover {
+.contenu > .block:hover {
 	background: white;
-	transform: translateX(5px);
 }
 
+.block a {
+  width: border-box;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  padding: 3px;
+  background: #4C8DD6;
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+.block a:hover {
+  background: #9cc4f2;
+}
