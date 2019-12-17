@@ -230,21 +230,21 @@ insert into Suit values (8, 9);
 /* Participe au film */
 insert into Participe_au_film values (1, 1, "Acteur");
 insert into Participe_au_film values (2, 1, "Acteur");
-insert into Participe_au_film values (3, 1, "Directrice - Scénariste");
-insert into Participe_au_film values (4, 1, "Directrice - Scénariste");
-insert into Participe_au_film values (5, 1, "Actrice");
+insert into Participe_au_film values (3, 1, "Directeur - Scénariste");
+insert into Participe_au_film values (4, 1, "Directeur - Scénariste");
+insert into Participe_au_film values (5, 1, "Acteur");
 
 insert into Participe_au_film values (1, 2, "Acteur");
 insert into Participe_au_film values (2, 2, "Acteur");
-insert into Participe_au_film values (3, 2, "Directrice - Scénariste");
-insert into Participe_au_film values (4, 2, "Directrice - Scénariste");
-insert into Participe_au_film values (5, 2, "Actrice");
+insert into Participe_au_film values (3, 2, "Directeur - Scénariste");
+insert into Participe_au_film values (4, 2, "Directeur - Scénariste");
+insert into Participe_au_film values (5, 2, "Acteur");
 
 insert into Participe_au_film values (1, 3, "Acteur");
 insert into Participe_au_film values (2, 3, "Acteur");
-insert into Participe_au_film values (3, 3, "Directrice - Scénariste");
-insert into Participe_au_film values (4, 3, "Directrice - Scénariste");
-insert into Participe_au_film values (5, 3, "Actrice");
+insert into Participe_au_film values (3, 3, "Directeur - Scénariste");
+insert into Participe_au_film values (4, 3, "Directeur - Scénariste");
+insert into Participe_au_film values (5, 3, "Acteur");
 
 insert into Participe_au_film values (6, 4,"Directeur");
 insert into Participe_au_film values (7, 4, "Scénariste");
@@ -256,7 +256,7 @@ insert into Participe_au_film values (3, 5, "Scénariste");
 insert into Participe_au_film values (4, 5, "Scénariste");
 insert into Participe_au_film values (11, 5, "Directeur");
 insert into Participe_au_film values (12, 5, "Acteur");
-insert into Participe_au_film values (13, 5, "Actrice");
+insert into Participe_au_film values (13, 5, "Acteur");
 insert into Participe_au_film values (14, 5, "Acteur");
 
 insert into Participe_au_film values (15, 6, "Directeur");
@@ -277,17 +277,17 @@ insert into Participe_au_film values (16, 9, "Acteur");
 insert into Participe_au_film values (17, 9, "Scénariste");
 
 /* Se_joue_dans */ /* On va mettre les films la semaine du 16 vu qu on va présenté cette semaine la */
-insert into Se_joue_dans values(1, '2019-12-16 10:00:00', "vf", 1, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(2, '2019-12-16 10:00:00', "vo", 6, 2, "Pathé Boulogne");
-insert into Se_joue_dans values(3, '2019-12-16 15:00:00', "vf", 2, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(4, '2019-12-16 16:00:00', "vf", 5, 2, "Pathé Boulogne");
-insert into Se_joue_dans values(5, '2019-12-16 10:00:00', "vf", 4, 1, "Ciné-Sel");
-insert into Se_joue_dans values(6, '2019-12-16 15:00:00', "vf", 5, 1, "Ciné-Sel");
-insert into Se_joue_dans values(7, '2019-12-17 09:00:00', "vf", 3, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(8, '2019-12-17 11:00:00', "vf", 1, 1, "Ciné-Sel");
-insert into Se_joue_dans values(9, '2019-12-18 17:00:00', "vf", 4, 1, "Pathé Boulogne");
-insert into Se_joue_dans values(10, '2019-12-18 17:00:00', "vo", 6, 1, "Ciné-Sel");
-insert into Se_joue_dans values(11, '2019-12-20 14:00:00', "vo", 2, 1, "Ciné-Sel");
+insert into Se_joue_dans values(1, '2019-12-18 10:00:00', "vf", 1, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(2, '2019-12-18 10:00:00', "vo", 6, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(3, '2019-12-18 15:00:00', "vf", 2, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(4, '2019-12-18 16:00:00', "vf", 5, 2, "Pathé Boulogne");
+insert into Se_joue_dans values(5, '2019-12-18 10:00:00', "vf", 4, 1, "Ciné-Sel");
+insert into Se_joue_dans values(6, '2019-12-18 15:00:00', "vf", 5, 1, "Ciné-Sel");
+insert into Se_joue_dans values(7, '2019-12-19 09:00:00', "vf", 3, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(8, '2019-12-19 11:00:00', "vf", 1, 1, "Ciné-Sel");
+insert into Se_joue_dans values(9, '2019-12-20 17:00:00', "vf", 4, 1, "Pathé Boulogne");
+insert into Se_joue_dans values(10, '2019-12-20 17:00:00', "vo", 6, 1, "Ciné-Sel");
+insert into Se_joue_dans values(11, '2019-12-21 14:00:00', "vo", 2, 1, "Ciné-Sel");
 insert into Se_joue_dans values(12, '2019-12-21 21:00:00', "vo", 1, 1, "Pathé Boulogne");
 
 

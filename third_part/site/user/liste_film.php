@@ -17,15 +17,34 @@
 						</li>";
 					}
 					else {
+						$email = $_SESSION['session'];
+						
+						$link = new mysqli("localhost", "Client", "client");
+						if($link->connect_errno) {
+									die ("Erreur de connexion : errno: " . $link->errno . " error: "  . $link->error);
+						}
+						
+						$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
+						
+						$query = "select reduction from Clients where email = '$email';";
+						$result = $link->query($query) or die("erreur");
+						$tuple = mysqli_fetch_object($result);
 						print "<li>
 							<a href=\"deconnecte.php\">Se Déconnecter</a>
 						</li>";
 						print "<li>
 							<a href=\"compte.php\">Compte</a>
 						</li>";
+						if(!$tuple->reduction) {
+							print "<li>
+								<a href=\"abonner.php\">S'abonner</a>
+							</li>";
+						}
 						print "<li>
 							<a href=\"reservation.php\">Mes réservation</a>
 						</li>";
+						$result->close();
+						$link->close();
 					}
 				?>
 				<li>
@@ -66,7 +85,7 @@
 	while ($tuple = mysqli_fetch_object($result)){
 		$number++;
 		print "
-				<a href=\"film.php?num_film=$tuple->num_film\">
+				<a class=\"block\" href=\"film.php?num_film=$tuple->num_film\">
 					<ul class=\"text\">
 						<li>$tuple->nom</li>
 						<li>Note du film : $tuple->moyenne</li>
@@ -75,7 +94,13 @@
 		";
 	}
 	if(!$number)
-		print "Aucun résultat";
+		print "
+				<a class=\"block\">
+					<ul class=\"text\">
+						<li>Aucun résultat</li>
+					</ul>
+				</a>
+		";
 	print "</div>";
 	
 	$result->close();
