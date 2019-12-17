@@ -73,8 +73,8 @@
 		print "
 				<div class=\"block\">
 					<ul class=\"text\">
-						<li><h3>$tuple->nom_film</h3></li>
-						<li>Cinéma : $tuple->nom_du_cinema</li>
+						<li><a href=\"film.php?num_film=$tuple->num_film\"><h3>$tuple->nom_film</h3></a></li>
+						<li>Cinéma : <a href=\"cinema.php?nom=$tuple->nom_du_cinema\">$tuple->nom_du_cinema</a></li>
 						<li>Numéro de la salle : $tuple->num_salle</li>
 						<li>Date : $array[0]</li>
 						<li>Heure : $array[1]</li>
