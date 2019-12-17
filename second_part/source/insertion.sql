@@ -230,21 +230,21 @@ insert into Suit values (8, 9);
 /* Participe au film */
 insert into Participe_au_film values (1, 1, "Acteur");
 insert into Participe_au_film values (2, 1, "Acteur");
-insert into Participe_au_film values (3, 1, "Directrice - Scénariste");
-insert into Participe_au_film values (4, 1, "Directrice - Scénariste");
-insert into Participe_au_film values (5, 1, "Actrice");
+insert into Participe_au_film values (3, 1, "Directeur - Scénariste");
+insert into Participe_au_film values (4, 1, "Directeur - Scénariste");
+insert into Participe_au_film values (5, 1, "Acteur");
 
 insert into Participe_au_film values (1, 2, "Acteur");
 insert into Participe_au_film values (2, 2, "Acteur");
-insert into Participe_au_film values (3, 2, "Directrice - Scénariste");
-insert into Participe_au_film values (4, 2, "Directrice - Scénariste");
-insert into Participe_au_film values (5, 2, "Actrice");
+insert into Participe_au_film values (3, 2, "Directeur - Scénariste");
+insert into Participe_au_film values (4, 2, "Directeur - Scénariste");
+insert into Participe_au_film values (5, 2, "Acteur");
 
 insert into Participe_au_film values (1, 3, "Acteur");
 insert into Participe_au_film values (2, 3, "Acteur");
-insert into Participe_au_film values (3, 3, "Directrice - Scénariste");
-insert into Participe_au_film values (4, 3, "Directrice - Scénariste");
-insert into Participe_au_film values (5, 3, "Actrice");
+insert into Participe_au_film values (3, 3, "Directeur - Scénariste");
+insert into Participe_au_film values (4, 3, "Directeur - Scénariste");
+insert into Participe_au_film values (5, 3, "Acteur");
 
 insert into Participe_au_film values (6, 4,"Directeur");
 insert into Participe_au_film values (7, 4, "Scénariste");
@@ -256,7 +256,7 @@ insert into Participe_au_film values (3, 5, "Scénariste");
 insert into Participe_au_film values (4, 5, "Scénariste");
 insert into Participe_au_film values (11, 5, "Directeur");
 insert into Participe_au_film values (12, 5, "Acteur");
-insert into Participe_au_film values (13, 5, "Actrice");
+insert into Participe_au_film values (13, 5, "Acteur");
 insert into Participe_au_film values (14, 5, "Acteur");
 
 insert into Participe_au_film values (15, 6, "Directeur");
