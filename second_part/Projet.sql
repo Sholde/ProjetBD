@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.24-MariaDB, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.17  Distrib 10.3.20-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: Projet
 -- ------------------------------------------------------
--- Server version	10.1.24-MariaDB-6
+-- Server version	10.3.20-MariaDB-1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -216,8 +216,7 @@ DROP TABLE IF EXISTS `Se_joue_dans`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Se_joue_dans` (
   `num_se_joue` int(11) NOT NULL,
-  `jour` date DEFAULT NULL,
-  `heure` time DEFAULT NULL,
+  `jour` datetime NOT NULL,
   `version` varchar(30) NOT NULL,
   `num_film` int(11) DEFAULT NULL,
   `num_salle` int(11) DEFAULT NULL,
@@ -236,7 +235,7 @@ CREATE TABLE `Se_joue_dans` (
 
 LOCK TABLES `Se_joue_dans` WRITE;
 /*!40000 ALTER TABLE `Se_joue_dans` DISABLE KEYS */;
-INSERT INTO `Se_joue_dans` VALUES (1,'2019-12-16','10:00:00','vf',1,1,'Pathé Boulogne'),(2,'2019-12-16','10:00:00','vo',6,2,'Pathé Boulogne'),(3,'2019-12-16','15:00:00','vf',2,1,'Pathé Boulogne'),(4,'2019-12-16','16:00:00','vf',5,2,'Pathé Boulogne'),(5,'2019-12-16','10:00:00','vf',4,1,'Ciné-Sel'),(6,'2019-12-16','15:00:00','vf',5,1,'Ciné-Sel'),(7,'2019-12-17','09:00:00','vf',3,1,'Pathé Boulogne'),(8,'2019-12-17','11:00:00','vf',1,1,'Ciné-Sel'),(9,'2019-12-18','17:00:00','vf',4,1,'Pathé Boulogne'),(10,'2019-12-18','17:00:00','vo',6,1,'Ciné-Sel'),(11,'2019-12-20','14:00:00','vo',2,1,'Ciné-Sel'),(12,'2019-12-21','21:00:00','vo',1,1,'Pathé Boulogne');
+INSERT INTO `Se_joue_dans` VALUES (1,'2019-12-16 10:00:00','vf',1,1,'Pathé Boulogne'),(2,'2019-12-16 10:00:00','vo',6,2,'Pathé Boulogne'),(3,'2019-12-16 15:00:00','vf',2,1,'Pathé Boulogne'),(4,'2019-12-16 16:00:00','vf',5,2,'Pathé Boulogne'),(5,'2019-12-16 10:00:00','vf',4,1,'Ciné-Sel'),(6,'2019-12-16 15:00:00','vf',5,1,'Ciné-Sel'),(7,'2019-12-17 09:00:00','vf',3,1,'Pathé Boulogne'),(8,'2019-12-17 11:00:00','vf',1,1,'Ciné-Sel'),(9,'2019-12-18 17:00:00','vf',4,1,'Pathé Boulogne'),(10,'2019-12-18 17:00:00','vo',6,1,'Ciné-Sel'),(11,'2019-12-20 14:00:00','vo',2,1,'Ciné-Sel'),(12,'2019-12-21 21:00:00','vo',1,1,'Pathé Boulogne');
 /*!40000 ALTER TABLE `Se_joue_dans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,6 +298,144 @@ LOCK TABLES `Veut_voir` WRITE;
 INSERT INTO `Veut_voir` VALUES (1,1,1,1,6),(2,1,1,1,6),(3,1,2,1,5),(4,1,50,1,6),(5,1,50,1,6),(6,1,50,1,6),(7,1,50,1,5),(8,1,50,1,6),(9,1,45,1,6),(10,1,45,1,6),(11,1,45,1,5),(12,1,45,1,6),(13,1,45,1,6),(14,1,45,1,6),(15,1,45,1,5),(16,1,45,1,6),(17,1,45,1,6),(18,1,30,1,5),(19,1,30,1,6),(20,1,30,1,6),(21,1,30,1,6),(22,1,5,1,5),(23,1,12,1,6),(24,2,6,6,6),(25,2,6,6,6),(26,2,6,6,5),(27,2,24,6,6),(28,2,24,6,6),(29,2,24,6,6),(30,2,24,6,5),(31,2,47,6,6),(32,2,47,6,6),(33,3,109,2,5),(34,3,109,2,6),(35,3,109,2,5),(36,3,64,2,6),(37,3,64,2,6),(38,3,64,2,5),(39,3,64,2,6),(40,3,64,2,6),(41,3,64,2,5),(42,3,134,2,6),(43,3,134,2,6),(44,3,134,2,5),(45,3,134,2,6),(46,3,78,2,6),(47,3,78,2,5),(48,3,78,2,6),(49,3,78,2,6),(50,4,109,5,5),(51,4,117,5,6),(52,4,160,5,6),(53,4,10,5,5),(54,4,57,5,6),(55,4,57,5,6),(56,4,57,5,5),(57,4,57,5,6),(58,4,76,5,6),(59,4,76,5,5),(60,4,131,5,6),(61,4,137,5,6),(62,4,131,5,5),(63,4,8,5,6),(64,4,81,5,6),(65,4,81,5,5),(66,4,81,5,6),(67,4,81,5,6),(68,5,14,4,6),(70,5,14,4,5),(71,5,14,4,6),(72,5,14,4,6),(73,6,11,5,6),(74,6,14,5,5),(75,6,99,5,6),(76,6,99,5,6),(77,6,99,5,6),(78,6,99,5,5),(79,6,126,5,6),(80,6,126,5,6),(81,7,87,3,6),(82,7,87,3,6),(83,7,87,3,6),(84,7,87,3,6),(85,8,104,1,6),(86,8,104,1,6),(87,8,7,1,6),(88,8,8,1,6),(89,8,8,1,6),(90,9,44,4,6),(91,9,44,4,6),(92,9,44,4,6),(93,9,44,4,6),(94,9,44,4,6),(95,9,44,4,6),(96,9,44,4,6),(97,9,44,4,6),(98,10,153,6,6),(99,10,153,6,6),(100,10,153,6,6),(101,10,153,6,6),(102,10,153,6,6),(103,10,153,6,6),(104,10,153,6,6),(105,10,153,6,6),(106,10,153,6,6),(107,10,153,6,6),(108,10,153,6,6),(109,10,153,6,6),(110,10,153,6,6),(111,10,153,6,6),(112,10,153,6,6),(113,10,153,6,6),(114,11,36,2,6),(115,11,36,2,6),(116,11,36,2,6),(117,11,144,2,6),(118,11,36,2,6),(119,11,36,2,6),(120,11,36,2,6),(121,11,36,2,6),(122,12,14,1,6),(123,12,15,1,6),(124,12,14,1,6),(125,12,14,1,6),(126,12,117,1,6),(127,12,117,1,6),(128,12,9,1,6),(129,12,9,1,6);
 /*!40000 ALTER TABLE `Veut_voir` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `client_avec_reduction`
+--
+
+DROP TABLE IF EXISTS `client_avec_reduction`;
+/*!50001 DROP VIEW IF EXISTS `client_avec_reduction`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `client_avec_reduction` (
+  `num_client` tinyint NOT NULL,
+  `nom` tinyint NOT NULL,
+  `prenom` tinyint NOT NULL,
+  `email` tinyint NOT NULL,
+  `mot_de_passe` tinyint NOT NULL,
+  `reduction` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `film_vf`
+--
+
+DROP TABLE IF EXISTS `film_vf`;
+/*!50001 DROP VIEW IF EXISTS `film_vf`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `film_vf` (
+  `num_film` tinyint NOT NULL,
+  `nom` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `film_vo`
+--
+
+DROP TABLE IF EXISTS `film_vo`;
+/*!50001 DROP VIEW IF EXISTS `film_vo`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `film_vo` (
+  `num_film` tinyint NOT NULL,
+  `nom` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `personne_majeur`
+--
+
+DROP TABLE IF EXISTS `personne_majeur`;
+/*!50001 DROP VIEW IF EXISTS `personne_majeur`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `personne_majeur` (
+  `num_personne` tinyint NOT NULL,
+  `nom` tinyint NOT NULL,
+  `prenom` tinyint NOT NULL,
+  `age` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `client_avec_reduction`
+--
+
+/*!50001 DROP TABLE IF EXISTS `client_avec_reduction`*/;
+/*!50001 DROP VIEW IF EXISTS `client_avec_reduction`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `client_avec_reduction` AS (select `c`.`num_client` AS `num_client`,`c`.`nom` AS `nom`,`c`.`prenom` AS `prenom`,`c`.`email` AS `email`,`c`.`mot_de_passe` AS `mot_de_passe`,`c`.`reduction` AS `reduction` from `Clients` `c` where `c`.`reduction` <> 0) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `film_vf`
+--
+
+/*!50001 DROP TABLE IF EXISTS `film_vf`*/;
+/*!50001 DROP VIEW IF EXISTS `film_vf`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `film_vf` AS (select `f`.`num_film` AS `num_film`,`f`.`nom` AS `nom` from (`Film` `f` join `Se_joue_dans` `j`) where `f`.`num_film` = `j`.`num_film` and `j`.`version` like 'vf' group by `f`.`nom`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `film_vo`
+--
+
+/*!50001 DROP TABLE IF EXISTS `film_vo`*/;
+/*!50001 DROP VIEW IF EXISTS `film_vo`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `film_vo` AS (select `f`.`num_film` AS `num_film`,`f`.`nom` AS `nom` from (`Film` `f` join `Se_joue_dans` `j`) where `f`.`num_film` = `j`.`num_film` and `j`.`version` like 'vo' group by `f`.`nom`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `personne_majeur`
+--
+
+/*!50001 DROP TABLE IF EXISTS `personne_majeur`*/;
+/*!50001 DROP VIEW IF EXISTS `personne_majeur`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `personne_majeur` AS (select `p`.`num_personne` AS `num_personne`,`p`.`nom` AS `nom`,`p`.`prenom` AS `prenom`,`p`.`age` AS `age` from `Personne` `p` where `p`.`age` >= 18) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -309,4 +446,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-09 19:05:08
+-- Dump completed on 2019-12-17 10:58:52
