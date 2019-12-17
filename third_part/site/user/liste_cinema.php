@@ -78,7 +78,7 @@
 	print "<div class=\"contenu\">";
 	while ($tuple = mysqli_fetch_object($result)){ 
 		print "
-				<a href=\"cinema.php?nom=$tuple->nom\">
+				<a class=\"block\" href=\"cinema.php?nom=$tuple->nom\">
 					<ul class=\"text\">
 						<li>$tuple->nom</li>
 						<li>$tuple->ville</li>

@@ -85,7 +85,7 @@
 	while ($tuple = mysqli_fetch_object($result)){
 		$number++;
 		print "
-				<a href=\"film.php?num_film=$tuple->num_film\">
+				<a class=\"block\" href=\"film.php?num_film=$tuple->num_film\">
 					<ul class=\"text\">
 						<li>$tuple->nom</li>
 						<li>Note du film : $tuple->moyenne</li>
@@ -95,7 +95,7 @@
 	}
 	if(!$number)
 		print "
-				<a>
+				<a class=\"block\">
 					<ul class=\"text\">
 						<li>Aucun résultat</li>
 					</ul>

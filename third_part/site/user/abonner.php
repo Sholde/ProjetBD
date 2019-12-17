@@ -77,7 +77,7 @@
 	
 	print "<div class=\"contenu\">";
 		print "
-				<a href=\"ajout_abonnement.php\">
+				<a class=\"block\" href=\"ajout_abonnement.php\">
 					<ul class=\"text\">
 						<li>Compte : $email</li>
 						<li>Prix de l'abonnement : 30 $</li>

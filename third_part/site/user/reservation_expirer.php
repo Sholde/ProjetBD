@@ -71,7 +71,7 @@
 		$number++;
 		$array = explode(" ",$tuple->jour);
 		print "
-				<a>
+				<div class=\"block\">
 					<ul class=\"text\">
 						<li><h3>$tuple->nom_film</h3></li>
 						<li>Cinéma : $tuple->nom_du_cinema</li>
@@ -80,16 +80,16 @@
 						<li>Heure : $array[1]</li>
 						<li>Nb de place acheté : $tuple->nb_place</li>
 					</ul>
-				</a>
+				</div>
 		";
 	}
 	if(!$number) {
 		print "
-				<a>
+				<div class=\"block\">
 					<ul class=\"text\">
 						<li>Aucune réservation expiré</li>
 					</ul>
-				</a>
+				</div>
 		";
 	}
 	print "</div>";
