@@ -103,17 +103,17 @@
 	
 	print "<div class=\"contenu\">";
 		print "
-				<a href=\"ajout_abonnement.php\">
+				<div class=\"block\">
 					<ul class=\"text\">
-						<li>Nom du film : $tuple->nom_film</li>
-						<li>Cinéma : $tuple->nom_du_cinema</li>
+						<li>Nom du film : <a href=\"film.php?num_film=$tuple->num_film\">$tuple->nom_film</a></li>
+						<li>Cinéma : <a href=\"cinema.php?nom=$tuple->nom_du_cinema\">$tuple->nom_du_cinema</a></li>
 						<li>Numéro de la salle : $tuple->num_salle</li>
 						<li>Date : $array[0]</li>
 						<li>Heure : $array[1]</li>
 						<li>Place acheté : $tmp</li>
 						<li></li>
 					</ul>
-				</a>
+				</div>
 		";
 	print "</div>";
 
