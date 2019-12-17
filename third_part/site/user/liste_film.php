@@ -78,7 +78,7 @@
 	$result = $link->query($query) or die("erreur select");
 	
 	print "
-		<h1 name=\"liste\">Liste des Films :</h1>
+		<h1 name=\"liste\">Listes des Films :</h1>
 	";
 	$number = 0;
 	print "<div class=\"contenu\">";
