@@ -48,12 +48,12 @@ body {
 	text-decoration: none;
 	color: white;
 	font-size: 35px;
+	transition: color 0.5s ease; 
 }
 
 .titre a:hover {
-	background: #4C8DD6;
-	padding: 20px;
-	border-radius: 10px;
+	color: #4C8DD6;
+	border-radius:10px;
 }
 
 h1, h4 {
@@ -99,6 +99,7 @@ h1, h4 {
 	text-decoration: none;
 	color: black;
 	border-radius: 10px;
+	transition: background-color 0.5s, transform 0.5s; 
 }
 
 .contenu ul {
@@ -107,5 +108,6 @@ h1, h4 {
 
 .contenu > a:hover {
 	background: white;
+	transform: translateX(5px);
 }
 
