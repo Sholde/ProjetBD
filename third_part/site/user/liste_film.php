@@ -94,7 +94,13 @@
 		";
 	}
 	if(!$number)
-		print "Aucun résultat";
+		print "
+				<a>
+					<ul class=\"text\">
+						<li>Aucun résultat</li>
+					</ul>
+				</a>
+		";
 	print "</div>";
 	
 	$result->close();

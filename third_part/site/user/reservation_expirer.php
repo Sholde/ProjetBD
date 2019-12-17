@@ -66,7 +66,9 @@
 	print "<h1>Réservation expiré :</h1>";
 	
 	print "<div class=\"contenu\">";
+	$number = 0;
 	while($tuple = mysqli_fetch_object($result)) {
+		$number++;
 		$array = explode(" ",$tuple->jour);
 		print "
 				<a>
@@ -77,6 +79,15 @@
 						<li>Date : $array[0]</li>
 						<li>Heure : $array[1]</li>
 						<li>Nb de place acheté : $tuple->nb_place</li>
+					</ul>
+				</a>
+		";
+	}
+	if(!$number) {
+		print "
+				<a>
+					<ul class=\"text\">
+						<li>Aucune réservation expiré</li>
 					</ul>
 				</a>
 		";
