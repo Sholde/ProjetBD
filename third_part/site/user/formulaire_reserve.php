@@ -1,18 +1,75 @@
 <?php
+	print "<html><head><title>Film</title>
+	<link rel=\"stylesheet\" href=\"../css/liste.css\">
+	</head><body>";
+?>
+	<div class="menu">
+			<ul>
+				</li>
+				<?php
+					session_start();
+					if(!isset($_SESSION['session'])) {
+						print "<li>
+							<a href=\"se_connecter.php\">Se connecter</a>
+						</li>";
+						print "<li>
+							<a href=\"formulaire_inscription.php\">S'inscrire</a>
+						</li>";
+					}
+					else {
+						$email = $_SESSION['session'];
+						
+						$link = new mysqli("localhost", "Client", "client");
+						if($link->connect_errno) {
+									die ("Erreur de connexion : errno: " . $link->errno . " error: "  . $link->error);
+						}
+						
+						$link->select_db('Projet') or die("Erreur de selection de la BD: " . $link->error);
+						
+						$query = "select reduction from Clients where email = '$email';";
+						$result = $link->query($query) or die("erreur");
+						$tuple = mysqli_fetch_object($result);
+						print "<li>
+							<a href=\"deconnecte.php\">Se Déconnecter</a>
+						</li>";
+						print "<li>
+							<a href=\"compte.php\">Compte</a>
+						</li>";
+						if(!$tuple->reduction) {
+							print "<li>
+								<a href=\"abonner.php\">S'abonner</a>
+							</li>";
+						}
+						print "<li>
+							<a href=\"reservation.php\">Mes réservation</a>
+						</li>";
+						$result->close();
+						$link->close();
+					}
+				?>
+				<li>
+					<a href="info.php">Info</a>
+				</li>
+				<li>
+					<a href="liste_cinema.php">Cinéma</a>
+				</li>
+				<li>
+					<a href="liste_film.php">Film</a>
+				</li>
+			</ul>
+		</div>
+	<?php
+	print "<h1 class=\"titre\"><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	if(!isset($_GET['num_se_joue']) | !isset($_GET['num_film'])) {
 		header("Location: index.php");
 		exit();
 	}
 	
-	session_start();
 	if(!isset($_SESSION['session'])) {
 		header("Location: se_connecter.php");
 		exit();
 	}
-	
-	print "<html><head><title>Réserve</title></head><body>";
-	print "<h1><a href=\"index.php\">Réserve TA Place</a></h1>";
 	
 	/* variable */
 	$num_se_joue = $_GET['num_se_joue'];
@@ -48,9 +105,14 @@
 	$client = $link->query($query_client) or die("erreur select");
 	
 	print "<form method=\"POST\" action=\"reserve.php\">";
+	print "<div class=\"contenu\">";
 	print "<input type=\"text\" name=\"num_se_joue\" value=\"$num_se_joue\" hidden>";
 	print "<input type=\"text\" name=\"num_film\" value=\"$num_film\" hidden>";
 	print "<input type=\"text\" name=\"num_client\" value=\"$num_client\" hidden>";
+	print "
+				<div class=\"block\">
+					<ul class=\"text\">
+	";
 	print "<table>";
 	$tuple = mysqli_fetch_object($film);
 	print "
@@ -120,8 +182,14 @@
 	print "</table>";
 	print "<input type=\"submit\" value=\"valider\">";
 	print "<a href=\"index.php\">annuler</a>";
+	print "</ul></div></div>";
 	print "</form>";
 	
+	$se_joue->close();
+	$res_nb_place->close();
+	$result->close();
+	$client->close();
+	$film->close();
 	$link->close();
 	
 	print "</body></html>";
