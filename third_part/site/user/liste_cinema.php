@@ -72,7 +72,7 @@
 	$result = $link->query($query) or die("erreur select");
 	
 	print "
-		<h1>Listes des Cinéma : </h1>
+		<h1>Listes des Cinémas : </h1>
 	";
 	
 	print "<div class=\"contenu\">";
