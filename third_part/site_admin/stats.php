@@ -70,7 +70,6 @@
 			$query= "SELECT
 							s.nom_du_cinema,
 							s.jour,
-							s.heure,
 							s.num_salle,
 							COUNT(v.num_client) AS nb_reservations
 							FROM
@@ -84,17 +83,49 @@
 			print "<h3>Remplissages des salles:</h3>";
 			$result = $link->query($query) or die("erreur select");
 			print "<table border>";
-			 print "<tr><th>Date<th>Heure<th>Numéro de la Salle <th> Nom du Cinéma <th> Nombre de réservations</th></tr>";
+			print "<tr><th>Date<th>Numéro de la Salle <th> Nom du Cinéma <th> Nombre de réservations</th></tr>";
 			while ($salle_remp = mysqli_fetch_object($result))
 			{
 				print "<tr>";
-				print "<td>$salle_remp->jour </td><td>$salle_remp->heure</td> <td>$salle_remp->num_salle</td> <td>$salle_remp->nom_du_cinema</td> <td>$salle_remp->nb_reservations</td>";
+				print "<td>$salle_remp->jour </td><td>$salle_remp->num_salle</td> <td>$salle_remp->nom_du_cinema</td> <td>$salle_remp->nb_reservations</td>";
 				print "</tr>";					
 			}		
 			print "</table>";
-			print "<h3> Influence de chaque cinéma </h3>";
+			print "<h3> Recette/Influence de chaque cinéma par jour</h3>";
 			/* TO DO : Nom du cinéma : date : Nombre de clients qui vont voir un film dans ce cinéma */
-			
+			$query= "SELECT DISTINCT Date(jour) as jour FROM Se_joue_dans;";
+			$result = $link->query($query) or die("erreur select");
+			while ($date_du_jour= mysqli_fetch_object($result))
+			{
+				print "<h4>Date du jour $date_du_jour->jour</h4>";
+				$query2 ="SELECT DISTINCT nom_du_cinema FROM Se_joue_dans WHERE jour like \"$date_du_jour->jour%\";";
+				$result2 = $link->query($query2) or die("erreur select");
+				print "</ul>";
+				while ($nom_cine = mysqli_fetch_object($result2))
+				{
+					$query3 = "SELECT
+					SUM((
+					SELECT
+							SUM(v.prix)
+					FROM
+							Veut_voir v
+					WHERE
+							v.num_se_joue = j.num_se_joue
+					)) AS recette,
+					(SELECT COUNT(num_client) FROM Veut_voir v WHERE v.num_se_joue = j.num_se_joue) as nbr_reservations,
+					nom_du_cinema
+					FROM
+							Se_joue_dans j
+					WHERE
+							jour LIKE \"$date_du_jour->jour%\" AND nom_du_cinema = \"$nom_cine->nom_du_cinema\";"; /* ne pas changé le = par like*/
+					$result3 = $link->query($query3) or die("erreur select");
+					$recette = mysqli_fetch_object($result3);
+					print "<li>Le cinéma $nom_cine->nom_du_cinema à fait $recette->recette € de recette avec $recette->nbr_reservations places réservées</li>";
+				}	
+				print "</ul> ";
+			}		
+			$result3->close();
+			$result2->close();
 			$result->close();
 			$link->close();
 		?>
