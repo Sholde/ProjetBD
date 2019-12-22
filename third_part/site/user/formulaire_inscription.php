@@ -1,8 +1,13 @@
 <html>
 	<head>
 		<title>Se connecter</title>
+		<link rel="stylesheet" href="../css/liste.css">
 	</head>
 	<body>
+		<div class="menu">
+			<div class="contenu">
+				<div class="block">
+				<ul class="text">
 		<form method="POST" action="inscrire.php">
 			<table>
 				<tr>
@@ -32,5 +37,7 @@
 				}
 			}
 		?>
+			</ul>
+		</div></div>
 	</body>
 </html>
