@@ -19,7 +19,10 @@
 			$query = "SELECT COUNT(num_client) AS nb_inscrit FROM Clients;";
 			$result = $link->query($query) or die("erreur select");
 			$nb_inscrit = mysqli_fetch_object($result);
-			print "<h3>Nombres d'inscrits : $nb_inscrit->nb_inscrit dont ? ayant bénéficié de reductions</h3>";
+			$query = "SELECT COUNT(num_client) AS nb_abo FROM Clients WHERE  reduction = 1;";
+			$result = $link->query($query) or die("erreur select");
+			$nb_abo= mysqli_fetch_object($result);
+			print "<h3>Nombres d'inscrits : $nb_inscrit->nb_inscrit dont $nb_abo->nb_abo clients abonnés</h3>";
 			
 			$query = "SELECT COUNT(cl.num_client) AS nb_actif FROM Clients cl WHERE cl.num_client in (select v.num_client from Veut_voir v);";
 			$result = $link->query($query) or die("erreur select");
